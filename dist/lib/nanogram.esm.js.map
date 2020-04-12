@@ -1,0 +1,1 @@
+{"version":3,"file":"nanogram.esm.js","sources":["../../src/nanogram.ts"],"sourcesContent":["export default class Nanogram {\n  public URL = '123';\n\n  public log() {\n    console.log(this.URL);\n  }\n}\n"],"names":[],"mappings":";;;;;;;;;;;AAAA;IAAA;QACS,QAAG,GAAG,KAAK,CAAC;KAKpB;IAHQ,sBAAG,GAAV;QACE,OAAO,CAAC,GAAG,CAAC,IAAI,CAAC,GAAG,CAAC,CAAC;KACvB;IACH,eAAC;AAAD,CAAC"}
