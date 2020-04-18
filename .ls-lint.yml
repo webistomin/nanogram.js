@@ -18,3 +18,4 @@ ignore:
   - .idea
   - .\@config
   - .\.eslintrc.js
+  - .\.size-limit.js
