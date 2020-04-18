@@ -1,10 +1,10 @@
 import { IThumbnail } from './common/thumbnail';
 export interface ITagsResponse {
     entry_data: {
-        TagPage: ITags[];
+        TagPage: ITagsContent[];
     };
 }
-export interface ITags {
+export interface ITagsContent {
     graphql: {
         hashtag: {
             id: string;
@@ -18,7 +18,7 @@ export interface ITags {
                 count: number;
                 page_info: {
                     has_next_page: boolean;
-                    end_cursor: string;
+                    end_cursor: string | null;
                 };
                 edges: IHashtagContent[];
             };
@@ -30,7 +30,7 @@ export interface ITags {
                 edges: IHashtagContent[];
             };
             edge_hashtag_to_related_tags: {
-                edges: ITagContent[];
+                edges: IRelatedTagContent[];
             };
         };
     };
@@ -73,7 +73,7 @@ export interface IMediaToCaption {
         text: string;
     };
 }
-export interface ITagContent {
+export interface IRelatedTagContent {
     node: {
         name: string;
     };

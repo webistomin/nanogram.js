@@ -5,6 +5,7 @@ import { ILocationDirectoryResponse } from './types/location-directory-page';
 import { ICitiesResponse } from './types/cities-page';
 import { IPlacesResponse } from './types/places-page';
 import { IPlaceResponse } from './types/place-page';
+import { ISearchResponse } from './types/search-page';
 
 export default class Nanogram {
   private readonly INSTAGRAM_HOSTNAME: URL;
@@ -74,5 +75,10 @@ export default class Nanogram {
   public async getMediaByPlaceId(placeId: number): Promise<IPlaceResponse> {
     const url = this.buildUrl(`explore/locations/${placeId}`);
     return this.HTTP<IPlaceResponse>(url);
+  }
+
+  public async getMediaBySearchQuery(query: string): Promise<ISearchResponse> {
+    const url = this.buildUrl(`web/search/topsearch/?context=blended&query=${query}&include_reel=true`);
+    return this.HTTP<ISearchResponse>(url);
   }
 }

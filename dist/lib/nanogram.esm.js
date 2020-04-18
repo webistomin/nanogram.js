@@ -193,6 +193,18 @@ function () {
     });
   };
 
+  Nanogram.prototype.getMediaBySearchQuery = function (query) {
+    return __awaiter(this, void 0, void 0, function () {
+      var url;
+      return __generator(this, function (_a) {
+        url = this.buildUrl("web/search/topsearch/?context=blended&query=" + query + "&include_reel=true");
+        return [2
+        /*return*/
+        , this.HTTP(url)];
+      });
+    });
+  };
+
   return Nanogram;
 }();
 

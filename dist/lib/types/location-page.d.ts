@@ -1,10 +1,10 @@
 import { IThumbnail } from './common/thumbnail';
 export interface ILocationResponse {
     entry_data: {
-        LocationPage: ILocation[];
+        LocationPage: ILocationContent[];
     };
 }
-export interface ILocation {
+export interface ILocationContent {
     graphql: {
         id: string;
         name: string;
@@ -22,9 +22,9 @@ export interface ILocation {
             count: number;
             page_info: {
                 has_next_page: boolean;
-                end_cursor: string;
+                end_cursor: string | null;
             };
-            edges: ILocationContent[];
+            edges: ILocationMedia[];
         };
     };
     logging_page_id: string;
@@ -32,7 +32,7 @@ export interface ILocation {
     recent_pictures_and_videos_subheader: boolean;
     top_images_and_videos_subheader: boolean;
 }
-export interface ILocationContent {
+export interface ILocationMedia {
     node: {
         comments_disabled: boolean;
         id: string;

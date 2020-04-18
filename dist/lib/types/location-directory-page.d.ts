@@ -1,10 +1,10 @@
 import { ICountry } from './common/country';
 export interface ILocationDirectoryResponse {
     entry_data: {
-        LocationsDirectoryPage: ILocationDirectory[];
+        LocationsDirectoryPage: ILocationDirectoryContent[];
     };
 }
-export interface ILocationDirectory {
+export interface ILocationDirectoryContent {
     county_list: ICountry[];
     next_page: number;
     logging_page_id: string;

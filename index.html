@@ -17,7 +17,8 @@
     // result = await lib.getAllLocations();
     // result = await lib.getCitiesByCountryId('US');
     // result = await lib.getPlacesByCityId('c2728325');
-    result = await lib.getMediaByPlaceId(2999512);
+    // result = await lib.getMediaByPlaceId(2999512);
+    let result = await lib.getMediaBySearchQuery('test');
     console.log(result);
   };
   parse();
