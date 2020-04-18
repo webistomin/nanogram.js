@@ -7,7 +7,7 @@ export interface ILocationDirectoryResponse {
 }
 
 export interface ILocationDirectoryContent {
-  county_list: ICountry[];
+  country_list: ICountry[];
   next_page: number;
   logging_page_id: string;
 }
