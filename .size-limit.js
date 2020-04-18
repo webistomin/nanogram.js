@@ -1,6 +1,6 @@
 module.exports = [
   {
-    path: "dist/lib/*.js",
+    path: "dist/*.js",
     limit: "200 ms"
   }
 ];
