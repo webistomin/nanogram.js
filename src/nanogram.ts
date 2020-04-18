@@ -8,11 +8,11 @@ import { IPlaceResponse } from './types/place-page';
 import { ISearchResponse } from './types/search-page';
 
 export default class Nanogram {
-  private readonly INSTAGRAM_HOSTNAME: URL;
+  private readonly INSTAGRAM_HOSTNAME: string;
   private readonly SHARED_DATA_TEG_EXP: RegExp;
 
   constructor() {
-    this.INSTAGRAM_HOSTNAME = new URL('https://www.instagram.com/');
+    this.INSTAGRAM_HOSTNAME = 'https://www.instagram.com/';
     this.SHARED_DATA_TEG_EXP = /^[\w\W]*<script type="text\/javascript">window._sharedData = ({[\w\W]*});<\/script>[\w\W]*$/g;
   }
 
@@ -57,8 +57,7 @@ export default class Nanogram {
     }
 
     const url = this.buildUrl(username);
-    const response = await this.HTTP<IUserProfileResponse>(url);
-    return response;
+    return this.HTTP<IUserProfileResponse>(url);
   }
 
   public async getMediaByTag(tag: string): Promise<ITagsResponse | undefined> {
@@ -68,8 +67,7 @@ export default class Nanogram {
     }
 
     const url = this.buildUrl(`explore/tags/${tag}`);
-    const response = await this.HTTP<ITagsResponse>(url);
-    return response;
+    return this.HTTP<ITagsResponse>(url);
   }
 
   public async getMediaByLocation(locationId: number, placeName: string): Promise<ILocationResponse | undefined> {
@@ -79,14 +77,12 @@ export default class Nanogram {
     }
 
     const url = this.buildUrl(`explore/locations/${locationId}/${placeName}`);
-    const response = await this.HTTP<ILocationResponse>(url);
-    return response;
+    return this.HTTP<ILocationResponse>(url);
   }
 
   public async getAllLocations(): Promise<ILocationDirectoryResponse | undefined> {
     const url = this.buildUrl(`explore/locations/`);
-    const response = await this.HTTP<ILocationDirectoryResponse>(url);
-    return response;
+    return this.HTTP<ILocationDirectoryResponse>(url);
   }
 
   public async getCitiesByCountryId(countryId: string): Promise<ICitiesResponse | undefined> {
@@ -96,8 +92,7 @@ export default class Nanogram {
     }
 
     const url = this.buildUrl(`explore/locations/${countryId}`);
-    const response = await this.HTTP<ICitiesResponse>(url);
-    return response;
+    return this.HTTP<ICitiesResponse>(url);
   }
 
   public async getPlacesByCityId(cityId: string): Promise<IPlacesResponse | undefined> {
@@ -107,8 +102,7 @@ export default class Nanogram {
     }
 
     const url = this.buildUrl(`explore/locations/${cityId}`);
-    const response = await this.HTTP<IPlacesResponse>(url);
-    return response;
+    return this.HTTP<IPlacesResponse>(url);
   }
 
   public async getMediaByPlaceId(placeId: number): Promise<IPlaceResponse | undefined> {
@@ -118,8 +112,7 @@ export default class Nanogram {
     }
 
     const url = this.buildUrl(`explore/locations/${placeId}`);
-    const response = await this.HTTP<IPlaceResponse>(url);
-    return response;
+    return this.HTTP<IPlaceResponse>(url);
   }
 
   public async getMediaBySearchQuery(query: string): Promise<ISearchResponse | undefined> {
@@ -129,7 +122,6 @@ export default class Nanogram {
     }
 
     const url = this.buildUrl(`web/search/topsearch/?context=blended&query=${query}&include_reel=true`);
-    const response = await this.HTTP<ISearchResponse>(url);
-    return response;
+    return this.HTTP<ISearchResponse>(url);
   }
 }

@@ -6,22 +6,13 @@
 </head>
 <body>
 <h1>TEST</h1>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=fetch%2CPromise"></script>
 <script src="../dist/nanogram.umd.js"></script>
 <script>
-  const lib = new Nanogram();
-  let result = null;
-  const parse = async () => {
-    // result = await lib.getMediaByUsername('rockone_tattoo');
-    // result = await lib.getMediaByTag('test1');
-    // result = await lib.getMediaByLocation(6264386, 'highbridge-park');
-    // result = await lib.getAllLocations();
-    // result = await lib.getCitiesByCountryId('US');
-    // result = await lib.getPlacesByCityId('c2728325');
-    // result = await lib.getMediaByPlaceId(2999512);
-    let result = await lib.getMediaBySearchQuery('test');
-    console.log(result);
-  };
-  parse();
+  var lib = new Nanogram();
+  lib.getMediaBySearchQuery('test').then(function (value) {
+    console.log(value);
+  })
 </script>
 </body>
 </html>

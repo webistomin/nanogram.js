@@ -37,7 +37,18 @@ const BANNER_TEXT = `/**
 const baseConfig = {
   input: `src/${LIBRARY_NAME}.ts`,
   plugins: {
-    common: [json(), typescript(), sourceMaps(), banner(() => BANNER_TEXT)],
+    common: [
+      json(),
+      typescript(),
+      sourceMaps(),
+      terser({
+        output: {
+          ecma: 5,
+          comments: false,
+        },
+      }),
+      banner(() => BANNER_TEXT),
+    ],
     babel: {
       exclude: 'node_modules/**',
       extensions: ['.js', '.ts'],
@@ -144,11 +155,6 @@ if (!argv.format || argv.format === 'umd') {
       commonjs({
         include: 'node_modules/**',
       }),
-      // terser({
-      //   output: {
-      //     ecma: 5,
-      //   },
-      // }),
     ],
   };
   buildFormats.push(unpkgConfig);
