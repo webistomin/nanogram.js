@@ -13,12 +13,12 @@ export default class Nanogram {
     private buildUrl;
     private parseJSON;
     private HTTP;
-    getMediaByUsername(username: string): Promise<IUserProfileResponse>;
-    getMediaByTag(tag: string): Promise<ITagsResponse>;
-    getMediaByLocation(locationId: number, placeName: string): Promise<ILocationResponse>;
-    getAllLocations(): Promise<ILocationDirectoryResponse>;
-    getCitiesByCountryId(countryId: string): Promise<ICitiesResponse>;
-    getPlacesByCityId(cityId: string): Promise<IPlacesResponse>;
-    getMediaByPlaceId(placeId: number): Promise<IPlaceResponse>;
-    getMediaBySearchQuery(query: string): Promise<ISearchResponse>;
+    getMediaByUsername(username: string): Promise<IUserProfileResponse | undefined>;
+    getMediaByTag(tag: string): Promise<ITagsResponse | undefined>;
+    getMediaByLocation(locationId: number, placeName: string): Promise<ILocationResponse | undefined>;
+    getAllLocations(): Promise<ILocationDirectoryResponse | undefined>;
+    getCitiesByCountryId(countryId: string): Promise<ICitiesResponse | undefined>;
+    getPlacesByCityId(cityId: string): Promise<IPlacesResponse | undefined>;
+    getMediaByPlaceId(placeId: number): Promise<IPlaceResponse | undefined>;
+    getMediaBySearchQuery(query: string): Promise<ISearchResponse | undefined>;
 }

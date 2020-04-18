@@ -1,5 +1,5 @@
 module.exports = {
-  '{src,test}/**/*.{js,ts}': [
+  'src/**/*.{js,ts}': [
     'other:eslint:write',
     'other:prettier:write',
     'npx scriptlint',

@@ -77,7 +77,7 @@ function () {
       var parsedData = content.replace(this.SHARED_DATA_TEG_EXP, '$1');
       return JSON.parse(parsedData);
     } catch (error) {
-      console.error("Failure during parsing: " + error);
+      console.error("Nanogram: failure during parsing JSON.\nError message: " + error.message);
     }
   };
 
@@ -94,14 +94,25 @@ function () {
             return [4
             /*yield*/
             , fetch(request, requestOptions).then(function (response) {
-              return response.text();
+              if (response.ok) {
+                return response.text();
+              } else {
+                console.error('Nanogram: error during request.\nProbably making too many requests to the Instagram application.\nAlso check method parameters.');
+              }
             })];
 
           case 1:
             response = _a.sent();
+
+            if (response) {
+              return [2
+              /*return*/
+              , this.parseJSON(response)];
+            }
+
             return [2
             /*return*/
-            , this.parseJSON(response)];
+            ];
         }
       });
     });
@@ -109,96 +120,217 @@ function () {
 
   Nanogram.prototype.getMediaByUsername = function (username) {
     return __awaiter(this, void 0, void 0, function () {
-      var url;
+      var url, response;
       return __generator(this, function (_a) {
-        url = this.buildUrl(username);
-        return [2
-        /*return*/
-        , this.HTTP(url)];
+        switch (_a.label) {
+          case 0:
+            if (!username) {
+              console.error('Nanogram: please provide a valid username');
+              return [2
+              /*return*/
+              ];
+            }
+
+            url = this.buildUrl(username);
+            return [4
+            /*yield*/
+            , this.HTTP(url)];
+
+          case 1:
+            response = _a.sent();
+            return [2
+            /*return*/
+            , response];
+        }
       });
     });
   };
 
   Nanogram.prototype.getMediaByTag = function (tag) {
     return __awaiter(this, void 0, void 0, function () {
-      var url;
+      var url, response;
       return __generator(this, function (_a) {
-        url = this.buildUrl("explore/tags/" + tag);
-        return [2
-        /*return*/
-        , this.HTTP(url)];
+        switch (_a.label) {
+          case 0:
+            if (!tag) {
+              console.error('Nanogram: please provide a valid tag');
+              return [2
+              /*return*/
+              ];
+            }
+
+            url = this.buildUrl("explore/tags/" + tag);
+            return [4
+            /*yield*/
+            , this.HTTP(url)];
+
+          case 1:
+            response = _a.sent();
+            return [2
+            /*return*/
+            , response];
+        }
       });
     });
   };
 
   Nanogram.prototype.getMediaByLocation = function (locationId, placeName) {
     return __awaiter(this, void 0, void 0, function () {
-      var url;
+      var url, response;
       return __generator(this, function (_a) {
-        url = this.buildUrl("explore/locations/" + locationId + "/" + placeName);
-        return [2
-        /*return*/
-        , this.HTTP(url)];
+        switch (_a.label) {
+          case 0:
+            if (!locationId || !placeName) {
+              console.error('Nanogram: please provide a valid location id and place name');
+              return [2
+              /*return*/
+              ];
+            }
+
+            url = this.buildUrl("explore/locations/" + locationId + "/" + placeName);
+            return [4
+            /*yield*/
+            , this.HTTP(url)];
+
+          case 1:
+            response = _a.sent();
+            return [2
+            /*return*/
+            , response];
+        }
       });
     });
   };
 
   Nanogram.prototype.getAllLocations = function () {
     return __awaiter(this, void 0, void 0, function () {
-      var url;
+      var url, response;
       return __generator(this, function (_a) {
-        url = this.buildUrl("explore/locations/");
-        return [2
-        /*return*/
-        , this.HTTP(url)];
+        switch (_a.label) {
+          case 0:
+            url = this.buildUrl("explore/locations/");
+            return [4
+            /*yield*/
+            , this.HTTP(url)];
+
+          case 1:
+            response = _a.sent();
+            return [2
+            /*return*/
+            , response];
+        }
       });
     });
   };
 
   Nanogram.prototype.getCitiesByCountryId = function (countryId) {
     return __awaiter(this, void 0, void 0, function () {
-      var url;
+      var url, response;
       return __generator(this, function (_a) {
-        url = this.buildUrl("explore/locations/" + countryId);
-        return [2
-        /*return*/
-        , this.HTTP(url)];
+        switch (_a.label) {
+          case 0:
+            if (!countryId) {
+              console.error('Nanogram: please provide a valid country id');
+              return [2
+              /*return*/
+              ];
+            }
+
+            url = this.buildUrl("explore/locations/" + countryId);
+            return [4
+            /*yield*/
+            , this.HTTP(url)];
+
+          case 1:
+            response = _a.sent();
+            return [2
+            /*return*/
+            , response];
+        }
       });
     });
   };
 
   Nanogram.prototype.getPlacesByCityId = function (cityId) {
     return __awaiter(this, void 0, void 0, function () {
-      var url;
+      var url, response;
       return __generator(this, function (_a) {
-        url = this.buildUrl("explore/locations/" + cityId);
-        return [2
-        /*return*/
-        , this.HTTP(url)];
+        switch (_a.label) {
+          case 0:
+            if (!cityId) {
+              console.error('Nanogram: please provide a valid city id');
+              return [2
+              /*return*/
+              ];
+            }
+
+            url = this.buildUrl("explore/locations/" + cityId);
+            return [4
+            /*yield*/
+            , this.HTTP(url)];
+
+          case 1:
+            response = _a.sent();
+            return [2
+            /*return*/
+            , response];
+        }
       });
     });
   };
 
   Nanogram.prototype.getMediaByPlaceId = function (placeId) {
     return __awaiter(this, void 0, void 0, function () {
-      var url;
+      var url, response;
       return __generator(this, function (_a) {
-        url = this.buildUrl("explore/locations/" + placeId);
-        return [2
-        /*return*/
-        , this.HTTP(url)];
+        switch (_a.label) {
+          case 0:
+            if (!placeId) {
+              console.error('Nanogram: please provide a valid place id');
+              return [2
+              /*return*/
+              ];
+            }
+
+            url = this.buildUrl("explore/locations/" + placeId);
+            return [4
+            /*yield*/
+            , this.HTTP(url)];
+
+          case 1:
+            response = _a.sent();
+            return [2
+            /*return*/
+            , response];
+        }
       });
     });
   };
 
   Nanogram.prototype.getMediaBySearchQuery = function (query) {
     return __awaiter(this, void 0, void 0, function () {
-      var url;
+      var url, response;
       return __generator(this, function (_a) {
-        url = this.buildUrl("web/search/topsearch/?context=blended&query=" + query + "&include_reel=true");
-        return [2
-        /*return*/
-        , this.HTTP(url)];
+        switch (_a.label) {
+          case 0:
+            if (!query) {
+              console.error('Nanogram: please provide a search query');
+              return [2
+              /*return*/
+              ];
+            }
+
+            url = this.buildUrl("web/search/topsearch/?context=blended&query=" + query + "&include_reel=true");
+            return [4
+            /*yield*/
+            , this.HTTP(url)];
+
+          case 1:
+            response = _a.sent();
+            return [2
+            /*return*/
+            , response];
+        }
       });
     });
   };
