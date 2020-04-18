@@ -22,4 +22,3 @@ export default class Nanogram {
     getMediaByPlaceId(placeId: number): Promise<IPlaceResponse>;
     getMediaBySearchQuery(query: string): Promise<ISearchResponse>;
 }
-//# sourceMappingURL=nanogram.d.ts.map
