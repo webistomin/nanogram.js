@@ -11,5 +11,6 @@ export interface ILocationDirectoryContent {
 }
 export interface ILocationDirectoryResult {
     country_list: ICountry[] | null;
+    ok: boolean;
 }
 //# sourceMappingURL=location-directory-page.d.ts.map

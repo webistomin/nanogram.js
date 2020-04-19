@@ -41,12 +41,12 @@ const baseConfig = {
       json(),
       typescript(),
       sourceMaps(),
-      // terser({
-      //   output: {
-      //     ecma: 5,
-      //     comments: false,
-      //   },
-      // }),
+      terser({
+        output: {
+          ecma: 5,
+          comments: false,
+        },
+      }),
       banner(() => BANNER_TEXT),
     ],
     babel: {

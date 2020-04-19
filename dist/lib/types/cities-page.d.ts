@@ -15,5 +15,6 @@ export interface ICityContent {
 export interface ICitiesResult {
     country_info: ICountry | null;
     city_list: ICity[] | null;
+    ok: boolean;
 }
 //# sourceMappingURL=cities-page.d.ts.map

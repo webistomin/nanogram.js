@@ -20,5 +20,6 @@ export interface IPlacesResult {
         city_info: ICity | null;
         location_list: ILocation[] | null;
     };
+    ok: boolean;
 }
 //# sourceMappingURL=places-page.d.ts.map

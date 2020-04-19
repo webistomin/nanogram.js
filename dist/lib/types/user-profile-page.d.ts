@@ -85,5 +85,6 @@ export interface IUserProfileImage {
 }
 export interface IUserProfileResult {
     profile: IUserProfileContent['graphql']['user'] | null;
+    ok: boolean;
 }
 //# sourceMappingURL=user-profile-page.d.ts.map

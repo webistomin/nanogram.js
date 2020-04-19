@@ -80,5 +80,6 @@ export interface IRelatedTagContent {
 }
 export interface ITagsResult {
     tag: ITagsContent['graphql']['hashtag'] | null;
+    ok: boolean;
 }
 //# sourceMappingURL=tags-page.d.ts.map

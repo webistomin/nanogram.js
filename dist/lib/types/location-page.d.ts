@@ -70,5 +70,6 @@ export interface IMediaToCaption {
 }
 export interface ILocationResult {
     location: ILocationContent['graphql']['location'] | null;
+    ok: boolean;
 }
 //# sourceMappingURL=location-page.d.ts.map

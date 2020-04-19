@@ -15,5 +15,6 @@ export interface IPlaceContent {
 }
 export interface IPlaceResult {
     location: IPlaceContent['graphql']['location'] | null;
+    ok: boolean;
 }
 //# sourceMappingURL=place-page.d.ts.map

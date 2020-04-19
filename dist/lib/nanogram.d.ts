@@ -13,6 +13,7 @@ export default class Nanogram {
     private buildUrl;
     private parseJSON;
     private HTTP;
+    private static logError;
     getMediaByUsername(username: string): Promise<IUserProfileResult>;
     getMediaByTag(tag: string): Promise<ITagsResult>;
     getMediaByLocation(locationId: number, placeName: string): Promise<ILocationResult>;

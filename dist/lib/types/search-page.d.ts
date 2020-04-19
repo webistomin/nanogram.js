@@ -52,8 +52,11 @@ export interface ISearchHashtag {
     position: number;
 }
 export interface ISearchResult {
-    users: ISearchResponse['users'] | null;
-    places: ISearchResponse['places'] | null;
-    hashtags: ISearchResponse['hashtags'] | null;
+    media: {
+        users: ISearchResponse['users'] | null;
+        places: ISearchResponse['places'] | null;
+        hashtags: ISearchResponse['hashtags'] | null;
+    };
+    ok: boolean;
 }
 //# sourceMappingURL=search-page.d.ts.map
