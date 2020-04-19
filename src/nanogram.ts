@@ -174,7 +174,7 @@ export default class Nanogram {
     return result;
   }
 
-  public async getPlaceByCityId(cityId: string): Promise<IPlacesResult> {
+  public async getPlacesByCityId(cityId: string): Promise<IPlacesResult> {
     const result: IPlacesResult = {
       place: {
         city_info: null,

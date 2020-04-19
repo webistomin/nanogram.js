@@ -10,10 +10,10 @@ export interface IPlace {
   lng: number;
   slug: string;
   blurb: string;
-  website: URL;
+  website: string;
   phone: string;
   primary_alias_on_fb: string;
-  address_json: JSON;
+  address_json: string;
   profile_pic_url: string;
   edge_location_to_media: {
     count: number;
@@ -61,11 +61,13 @@ export interface IPlaceLocationToMedia {
       count: number;
     };
     owner: {
-      id: number;
+      id: string;
     };
     thumbnail_src: string;
     thumbnail_resources: IThumbnail[];
     is_video: boolean;
+    accessibility_caption?: string | null;
+    video_view_count?: number;
   };
 }
 
@@ -76,30 +78,32 @@ export interface IPlaceMediaToCaption {
 }
 
 export interface IPlaceLocationToTopPosts {
-  id: string;
-  edge_media_to_caption: {
-    edges: IPlaceMediaToCaption[];
-  };
-  shortcode: string;
-  edge_media_to_comment: {
-    count: number;
-  };
-  taken_at_timestamp: DOMTimeStamp;
-  dimensions: {
-    height: number;
-    width: number;
-  };
-  display_url: string;
-  edge_liked_by: {
-    count: number;
-  };
-  edge_media_preview_like: {
-    count: number;
-  };
-  owner: {
-    id: number;
-  };
-  thumbnail_src: string;
-  thumbnail_resources: IThumbnail[];
-  is_video: boolean;
+  node: {
+    id: string;
+    edge_media_to_caption: {
+      edges: IPlaceMediaToCaption[];
+    };
+    shortcode: string;
+    edge_media_to_comment: {
+      count: number;
+    };
+    taken_at_timestamp: DOMTimeStamp;
+    dimensions: {
+      height: number;
+      width: number;
+    };
+    display_url: string;
+    edge_liked_by: {
+      count: number;
+    };
+    edge_media_preview_like: {
+      count: number;
+    };
+    owner: {
+      id: string;
+    };
+    thumbnail_src: string;
+    thumbnail_resources: IThumbnail[];
+    is_video: boolean;
+  }
 }

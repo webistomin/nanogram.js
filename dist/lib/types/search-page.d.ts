@@ -32,6 +32,8 @@ export interface ISearchPlaces {
             short_name: string;
             external_source: string;
             facebook_places_id: number;
+            lng?: number;
+            lat?: number;
         };
         title: string;
         subtitle: string;

@@ -14,6 +14,10 @@ describe('Nanogram library', () => {
       lib = new Nanogram();
     });
 
+    afterEach(() => {
+      jest.clearAllMocks();
+    });
+
     it('fetch correct URL', async () => {
       fetchMock.mockResponseOnce(JSON.stringify({}));
       await lib.getMediaBySearchQuery(SEARCH_QUERY);

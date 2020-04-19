@@ -19,7 +19,7 @@ export default class Nanogram {
     getMediaByLocation(locationId: number, placeName: string): Promise<ILocationResult>;
     getCountries(): Promise<ILocationDirectoryResult>;
     getCitiesByCountryId(countryId: string): Promise<ICitiesResult>;
-    getPlaceByCityId(cityId: string): Promise<IPlacesResult>;
+    getPlacesByCityId(cityId: string): Promise<IPlacesResult>;
     getMediaByPlaceId(placeId: number): Promise<IPlaceResult>;
     getMediaBySearchQuery(query: string): Promise<ISearchResult>;
 }
