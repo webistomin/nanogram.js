@@ -70,6 +70,7 @@ export default class Nanogram {
 
     const url = this.buildUrl(username);
     const response = await this.HTTP<IUserProfileResponse>(url);
+
     const profile = response?.entry_data?.ProfilePage[0]?.graphql?.user;
 
     if (profile) {
