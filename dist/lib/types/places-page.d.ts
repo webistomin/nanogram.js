@@ -2,7 +2,9 @@ import { ICountry } from './common/country';
 import { ICity } from './common/city';
 import { ILocation } from './common/location';
 export interface IPlacesResponse {
-    LocationsDirectoryPage: IPlacesContent[];
+    entry_data: {
+        LocationsDirectoryPage: IPlacesContent[];
+    };
 }
 export interface IPlacesContent {
     city_directory_page: boolean;
@@ -11,5 +13,12 @@ export interface IPlacesContent {
     location_list: ILocation[];
     next_page: number;
     logging_page_id: string;
+}
+export interface IPlacesResult {
+    place: {
+        country_info: ICountry | null;
+        city_info: ICity | null;
+        location_list: ILocation[] | null;
+    };
 }
 //# sourceMappingURL=places-page.d.ts.map

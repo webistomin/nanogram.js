@@ -9,4 +9,7 @@ export interface ILocationDirectoryContent {
     next_page: number;
     logging_page_id: string;
 }
+export interface ILocationDirectoryResult {
+    country_list: ICountry[] | null;
+}
 //# sourceMappingURL=location-directory-page.d.ts.map

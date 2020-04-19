@@ -12,4 +12,8 @@ export interface ICityContent {
     next_page: number;
     logging_page_id: string;
 }
+export interface ICitiesResult {
+    country_info: ICountry | null;
+    city_list: ICity[] | null;
+}
 //# sourceMappingURL=cities-page.d.ts.map

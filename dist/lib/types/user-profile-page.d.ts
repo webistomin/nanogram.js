@@ -83,4 +83,7 @@ export interface IUserProfileImage {
     thumbnail_src: string;
     thumbnail_resources: IThumbnail[];
 }
+export interface IUserProfileResult {
+    profile: IUserProfileContent['graphql']['user'] | null;
+}
 //# sourceMappingURL=user-profile-page.d.ts.map

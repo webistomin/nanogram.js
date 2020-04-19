@@ -1,30 +1,32 @@
 import { IThumbnail } from './common/thumbnail';
 export interface ILocationResponse {
     entry_data: {
-        LocationPage: ILocationContent[];
+        LocationsPage: ILocationContent[];
     };
 }
 export interface ILocationContent {
     graphql: {
-        id: string;
-        name: string;
-        has_public_page: boolean;
-        lat: number;
-        lng: number;
-        slug: string;
-        blurb: string;
-        website: URL;
-        phone: string;
-        primary_alias_on_fb: string;
-        address_json: JSON;
-        profile_pic_url: string;
-        edge_location_to_media: {
-            count: number;
-            page_info: {
-                has_next_page: boolean;
-                end_cursor: string | null;
+        location: {
+            id: string;
+            name: string;
+            has_public_page: boolean;
+            lat: number;
+            lng: number;
+            slug: string;
+            blurb: string;
+            website: URL;
+            phone: string;
+            primary_alias_on_fb: string;
+            address_json: JSON;
+            profile_pic_url: string;
+            edge_location_to_media: {
+                count: number;
+                page_info: {
+                    has_next_page: boolean;
+                    end_cursor: string | null;
+                };
+                edges: ILocationMedia[];
             };
-            edges: ILocationMedia[];
         };
     };
     logging_page_id: string;
@@ -65,5 +67,8 @@ export interface IMediaToCaption {
     node: {
         text: string;
     };
+}
+export interface ILocationResult {
+    location: ILocationContent['graphql']['location'] | null;
 }
 //# sourceMappingURL=location-page.d.ts.map
