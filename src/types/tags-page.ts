@@ -34,13 +34,16 @@ export interface ITagsContent {
       edge_hashtag_to_related_tags: {
         edges: IRelatedTagContent[];
       };
+      edge_hashtag_to_null_state?: {
+        edges: any;
+      };
     };
   };
 }
 
 export interface IHashtagContent {
   node: {
-    comments_disabled: boolean;
+    comments_disabled?: boolean;
     __typename: string;
     id: string;
     edge_media_to_caption: {
@@ -68,7 +71,9 @@ export interface IHashtagContent {
     thumbnail_src: string;
     thumbnail_resources: IThumbnail[];
     is_video: boolean;
+    product_type?: string;
     accessibility_caption: string;
+    video_view_count?: number;
   };
 }
 
