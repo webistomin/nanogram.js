@@ -10,6 +10,12 @@
     <img src="https://travis-ci.org/webistomin/nanogram.js.svg?branch=master"
          alt="Travis CI">
   </a>
+  <a href="https://codecov.io/gh/webistomin/nanogram.js">
+    <img src="https://codecov.io/gh/webistomin/nanogram.js/branch/master/graph/badge.svg" alt="codecoverage" />
+  </a>
+  <a href="https://www.codefactor.io/repository/github/webistomin/nanogram.js"><img src="https://www.codefactor.io/repository/github/webistomin/nanogram.js/badge" alt="CodeFactor" /></a>
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/nanogram.js">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
 </p>
 
 <p align="center">
