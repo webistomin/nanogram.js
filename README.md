@@ -2,7 +2,7 @@
   <img width="75%" src="https://github.com/webistomin/nanogram.js/blob/master/assets/logo.svg" alt="Nanogram">
 </p>
 
-<h4 align="center">An easy-to-use and simple Instagram package that allow you to fetch media content **without API** and **access token**.</h4>
+<h4 align="center">An easy-to-use and simple Instagram package that allow you to fetch media content <strong>without API</strong> and <strong>access token</strong>.</h4>
 
 
 <p align="center">

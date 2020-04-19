@@ -3,5 +3,12 @@ language: node_js
 node_js:
   - "10.15.3"
 
+install:
+  - npm i
+  - npm i -g codecov
+
+after_success:
+  bash <(curl -s https://codecov.io/bash);
+
 notifications:
   email: false
