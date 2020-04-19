@@ -86,4 +86,5 @@ export interface IRelatedTagContent {
 
 export interface ITagsResult {
   tag: ITagsContent['graphql']['hashtag'] | null;
+  ok: boolean;
 }

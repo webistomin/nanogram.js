@@ -7,13 +7,13 @@
 <body>
 <h1>TEST</h1>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=fetch%2CPromise"></script>
-<script src="../dist/nanogram.umd.js"></script>
+<script src="../dist/nanogram.iife.js"></script>
 <script>
   const lib = new Nanogram();
   let result = null;
   const parse = async () => {
-    result = await lib.getMediaByUsername('rockone_tattoo');
-    // result = await lib.getMediaByTag('test1');
+    // result = await lib.getMediaByUsername('instagram');
+    result = await lib.getMediaByTag('test1');
     // result = await lib.getMediaByLocation(6264386, 'highbridge-park');
     // result = await lib.getCountries();
     // result = await lib.getCitiesByCountryId('US');

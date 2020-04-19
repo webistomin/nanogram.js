@@ -26,6 +26,7 @@ module.exports = {
   ],
   rules: {
     "prettier/prettier": ["warn"],
-    "@typescript-eslint/interface-name-prefix": 0
+    "@typescript-eslint/interface-name-prefix": 0,
+    "@typescript-eslint/camelcase": 0
   }
 };

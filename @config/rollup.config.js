@@ -41,12 +41,12 @@ const baseConfig = {
       json(),
       typescript(),
       sourceMaps(),
-      terser({
-        output: {
-          ecma: 5,
-          comments: false,
-        },
-      }),
+      // terser({
+      //   output: {
+      //     ecma: 5,
+      //     comments: false,
+      //   },
+      // }),
       banner(() => BANNER_TEXT),
     ],
     babel: {
@@ -118,7 +118,7 @@ if (!argv.format || argv.format === 'cjs') {
       compact: true,
       file: pkg.main,
       format: 'cjs',
-      exports: 'named',
+      // exports: 'named',
       globals,
     },
     plugins: [
@@ -135,7 +135,7 @@ if (!argv.format || argv.format === 'cjs') {
   buildFormats.push(cjsConfig);
 }
 
-if (!argv.format || argv.format === 'umd') {
+if (!argv.format || argv.format === 'iife') {
   const unpkgConfig = {
     ...baseConfig,
     external,
@@ -143,7 +143,7 @@ if (!argv.format || argv.format === 'umd') {
       compact: true,
       name: capitalize(LIBRARY_NAME),
       file: pkg.browser,
-      format: 'umd',
+      format: 'iife',
       globals,
     },
     plugins: [

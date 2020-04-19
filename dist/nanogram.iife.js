@@ -9,7 +9,7 @@
 *
 **/
 
-/*! *****************************************************************************
+var Nanogram=(function(){'use strict';/*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this file except in compliance with the License. You may obtain a copy of the
@@ -60,9 +60,7 @@ function __generator(thisArg, body) {
         } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
-}
-
-var Nanogram =
+}var Nanogram =
 /** @class */
 function () {
   function Nanogram() {
@@ -486,6 +484,4 @@ function () {
   };
 
   return Nanogram;
-}();
-
-export default Nanogram;
+}();return Nanogram;}());
