@@ -1,4 +1,6 @@
 import { IThumbnail } from './common/thumbnail';
+import { ICountry } from './common/country';
+import { ICity } from './common/city';
 
 export interface ILocationResponse {
   entry_data: {
@@ -16,10 +18,10 @@ export interface ILocationContent {
       lng: number;
       slug: string;
       blurb: string;
-      website: URL;
+      website: string;
       phone: string;
       primary_alias_on_fb: string;
-      address_json: JSON;
+      address_json: string;
       profile_pic_url: string;
       edge_location_to_media: {
         count: number;
@@ -29,19 +31,33 @@ export interface ILocationContent {
         };
         edges: ILocationMedia[];
       };
+      edge_location_to_top_posts?: {
+        count: number;
+        page_info: {
+          has_next_page: boolean;
+          end_cursor: string | null;
+        };
+        edges: ILocationMedia[];
+      };
+      directory?: {
+        country: ICountry;
+        city: ICity;
+      };
     };
   };
-  logging_page_id: string;
-  photos_and_videos_header: boolean;
-  recent_pictures_and_videos_subheader: boolean;
-  top_images_and_videos_subheader: boolean;
+  logging_page_id?: string;
+  photos_and_videos_header?: boolean;
+  recent_pictures_and_videos_subheader?: boolean;
+  top_images_and_videos_subheader?: boolean;
 }
 
 export interface ILocationMedia {
   node: {
-    comments_disabled: boolean;
+    comments_disabled?: boolean;
     id: string;
-    edge_media_to_caption: IMediaToCaption[];
+    edge_media_to_caption: {
+      edges: IMediaToCaption[];
+    };
     shortcode: string;
     edge_media_to_comment: {
       count: number;
@@ -64,6 +80,8 @@ export interface ILocationMedia {
     thumbnail_src: string;
     thumbnail_resources: IThumbnail[];
     is_video: boolean;
+    accessibility_caption?: string | null;
+    video_view_count?: number;
   };
 }
 

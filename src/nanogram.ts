@@ -159,7 +159,7 @@ export default class Nanogram {
 
     const url = this.buildUrl(`explore/locations/${countryId}`);
     const response = await this.HTTP<ICitiesResponse>(url);
-    const { city_list, country_info } = response?.entry_data.LocationsDirectoryPage[0];
+    const { city_list, country_info } = { ...response?.entry_data?.LocationsDirectoryPage[0] };
 
     if (city_list) {
       result.city_list = city_list;
@@ -191,7 +191,7 @@ export default class Nanogram {
 
     const url = this.buildUrl(`explore/locations/${cityId}`);
     const response = await this.HTTP<IPlacesResponse>(url);
-    const { city_info, country_info, location_list } = response?.entry_data?.LocationsDirectoryPage[0];
+    const { city_info, country_info, location_list } = { ...response?.entry_data?.LocationsDirectoryPage[0] };
 
     if (city_info) {
       result.place.city_info = city_info;
