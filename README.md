@@ -35,3 +35,12 @@
   <a href="#license">License</a>
 </p>
 
+## Key Features ✨
+
+* **Small.** 2.61KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size.
+* **No dependencies.**
+* **Easy to use.**
+* **Typescript** support
+
+
+
