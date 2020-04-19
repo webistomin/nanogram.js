@@ -1,11 +1,12 @@
-import { IUserProfileResponse } from './types/user-profile-page';
-import { ITagsResponse } from './types/tags-page';
-import { ILocationResponse } from './types/location-page';
-import { ILocationDirectoryResponse } from './types/location-directory-page';
-import { ICitiesResponse } from './types/cities-page';
-import { IPlacesResponse } from './types/places-page';
-import { IPlaceResponse } from './types/place-page';
-import { ISearchResponse } from './types/search-page';
+/* eslint-disable @typescript-eslint/camelcase */
+import { IUserProfileResponse, IUserProfileResult } from './types/user-profile-page';
+import { ITagsResponse, ITagsResult } from './types/tags-page';
+import { ILocationResponse, ILocationResult } from './types/location-page';
+import { ILocationDirectoryResponse, ILocationDirectoryResult } from './types/location-directory-page';
+import { ICitiesResponse, ICitiesResult } from './types/cities-page';
+import { IPlacesResponse, IPlacesResult } from './types/places-page';
+import { IPlaceResponse, IPlaceResult } from './types/place-page';
+import { ISearchResponse, ISearchResult } from './types/search-page';
 
 export default class Nanogram {
   private readonly INSTAGRAM_HOSTNAME: string;
@@ -50,78 +51,188 @@ export default class Nanogram {
     }
   }
 
-  public async getMediaByUsername(username: string): Promise<IUserProfileResponse | undefined> {
+  public async getMediaByUsername(username: string): Promise<IUserProfileResult> {
     if (!username) {
       console.error('Nanogram: please provide a valid username');
-      return;
+      return {
+        profile: null,
+      };
     }
 
     const url = this.buildUrl(username);
-    return this.HTTP<IUserProfileResponse>(url);
+    const response = await this.HTTP<IUserProfileResponse>(url);
+
+    if (response) {
+      return {
+        profile: response?.entry_data?.ProfilePage[0]?.graphql?.user || null,
+      };
+    }
+
+    return {
+      profile: null,
+    };
   }
 
-  public async getMediaByTag(tag: string): Promise<ITagsResponse | undefined> {
+  public async getMediaByTag(tag: string): Promise<ITagsResult> {
     if (!tag) {
       console.error('Nanogram: please provide a valid tag');
-      return;
+      return {
+        tag: null,
+      };
     }
 
     const url = this.buildUrl(`explore/tags/${tag}`);
-    return this.HTTP<ITagsResponse>(url);
+    const response = await this.HTTP<ITagsResponse>(url);
+
+    if (response) {
+      return {
+        tag: response?.entry_data?.TagPage[0]?.graphql?.hashtag || null,
+      };
+    }
+
+    return {
+      tag: null,
+    };
   }
 
-  public async getMediaByLocation(locationId: number, placeName: string): Promise<ILocationResponse | undefined> {
+  public async getMediaByLocation(locationId: number, placeName: string): Promise<ILocationResult> {
     if (!locationId || !placeName) {
       console.error('Nanogram: please provide a valid location id and place name');
-      return;
+      return {
+        location: null,
+      };
     }
 
     const url = this.buildUrl(`explore/locations/${locationId}/${placeName}`);
-    return this.HTTP<ILocationResponse>(url);
+    const response = await this.HTTP<ILocationResponse>(url);
+
+    if (response) {
+      return {
+        location: response?.entry_data?.LocationsPage[0]?.graphql?.location || null,
+      };
+    }
+
+    return {
+      location: null,
+    };
   }
 
-  public async getAllLocations(): Promise<ILocationDirectoryResponse | undefined> {
+  public async getCountries(): Promise<ILocationDirectoryResult> {
     const url = this.buildUrl(`explore/locations/`);
-    return this.HTTP<ILocationDirectoryResponse>(url);
+    const response = await this.HTTP<ILocationDirectoryResponse>(url);
+
+    if (response) {
+      return {
+        country_list: response?.entry_data?.LocationsDirectoryPage[0]?.country_list || null,
+      };
+    }
+
+    return {
+      country_list: null,
+    };
   }
 
-  public async getCitiesByCountryId(countryId: string): Promise<ICitiesResponse | undefined> {
+  public async getCitiesByCountryId(countryId: string): Promise<ICitiesResult> {
     if (!countryId) {
       console.error('Nanogram: please provide a valid country id');
-      return;
+      return {
+        city_list: null,
+        country_info: null,
+      };
     }
 
     const url = this.buildUrl(`explore/locations/${countryId}`);
-    return this.HTTP<ICitiesResponse>(url);
+    const response = await this.HTTP<ICitiesResponse>(url);
+
+    if (response) {
+      const { city_list, country_info } = response?.entry_data.LocationsDirectoryPage[0];
+
+      return {
+        city_list: city_list || null,
+        country_info: country_info || null,
+      };
+    }
+
+    return {
+      city_list: null,
+      country_info: null,
+    };
   }
 
-  public async getPlacesByCityId(cityId: string): Promise<IPlacesResponse | undefined> {
+  public async getPlaceByCityId(cityId: string): Promise<IPlacesResult> {
     if (!cityId) {
       console.error('Nanogram: please provide a valid city id');
-      return;
+      return {
+        place: {
+          city_info: null,
+          country_info: null,
+          location_list: null,
+        },
+      };
     }
 
     const url = this.buildUrl(`explore/locations/${cityId}`);
-    return this.HTTP<IPlacesResponse>(url);
+    const response = await this.HTTP<IPlacesResponse>(url);
+
+    if (response) {
+      const { city_info, country_info, location_list } = response?.entry_data?.LocationsDirectoryPage[0];
+
+      return {
+        place: {
+          city_info: city_info || null,
+          country_info: country_info || null,
+          location_list: location_list || null,
+        },
+      };
+    }
+    return {
+      place: {
+        city_info: null,
+        country_info: null,
+        location_list: null,
+      },
+    };
   }
 
-  public async getMediaByPlaceId(placeId: number): Promise<IPlaceResponse | undefined> {
+  public async getMediaByPlaceId(placeId: number): Promise<IPlaceResult> {
     if (!placeId) {
       console.error('Nanogram: please provide a valid place id');
-      return;
+      return {
+        location: null,
+      };
     }
 
     const url = this.buildUrl(`explore/locations/${placeId}`);
-    return this.HTTP<IPlaceResponse>(url);
+    const response = await this.HTTP<IPlaceResponse>(url);
+
+    if (response) {
+      return {
+        location: response?.entry_data?.LocationsPage[0]?.graphql.location || null,
+      };
+    }
+
+    return {
+      location: null,
+    };
   }
 
-  public async getMediaBySearchQuery(query: string): Promise<ISearchResponse | undefined> {
+  public async getMediaBySearchQuery(query: string): Promise<ISearchResult> {
     if (!query) {
       console.error('Nanogram: please provide a search query');
-      return;
+      return {
+        users: null,
+        hashtags: null,
+        places: null,
+      };
     }
 
     const url = this.buildUrl(`web/search/topsearch/?context=blended&query=${query}&include_reel=true`);
-    return this.HTTP<ISearchResponse>(url);
+    const { users, hashtags, places } = await this.HTTP<ISearchResponse>(url);
+
+    return {
+      users: users || null,
+      hashtags: hashtags || null,
+      places: places || null,
+    };
   }
 }
