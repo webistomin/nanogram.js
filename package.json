@@ -1,6 +1,6 @@
 {
   "name": "nanogram.js",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/nanogram.cjs.js",
   "module": "dist/nanogram.esm.js",
@@ -18,7 +18,7 @@
     "build": "run-s prebuild build:all build:dts other:typedoc",
     "build:all": "cross-env NODE_ENV=production rollup --config @config/rollup.config.js",
     "build:cjs": "cross-env NODE_ENV=production rollup --config @config/rollup.config.js --format cjs",
-    "build:dts": "tsc -d --declarationDir dist/lib --declarationMap --emitDeclarationOnly",
+    "build:dts": "tsc -d --declarationDir dist --declarationMap --emitDeclarationOnly",
     "build:es": "cross-env NODE_ENV=production rollup --config @config/rollup.config.js --format es",
     "build:iife": "cross-env NODE_ENV=production rollup --config @config/rollup.config.js --format iife",
     "dev": "rollup -c @config/rollup.config.js -w",

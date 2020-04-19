@@ -1,6 +1,8 @@
 <p align="center">
-  <img width="75%" src="https://github.com/webistomin/nanogram.js/blob/master/assets/logo.svg" alt="Nanogram">
+  <img width="50%" src="https://github.com/webistomin/nanogram.js/blob/master/assets/logo.svg" alt="Nanogram">
 </p>
+
+---
 
 <h4 align="center">An easy-to-use and simple Instagram package that allow you to fetch media content <strong>without API</strong> and <strong>access token</strong>.</h4>
 
@@ -16,6 +18,12 @@
   <a href="https://www.codefactor.io/repository/github/webistomin/nanogram.js"><img src="https://www.codefactor.io/repository/github/webistomin/nanogram.js/badge" alt="CodeFactor" /></a>
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/nanogram.js">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
+  <img alt="npm type definitions" src="https://img.shields.io/npm/types/nanogram.js">
+</p>
+
+<p align="center">
+<img alt="npm" src="https://img.shields.io/npm/v/nanogram.js">
+<img alt="npm" src="https://img.shields.io/npm/dm/nanogram.js">
 </p>
 
 <p align="center">
