@@ -83,3 +83,7 @@ export interface IRelatedTagContent {
     name: string;
   };
 }
+
+export interface ITagsResult {
+  tag: ITagsContent['graphql']['hashtag'] | null;
+}

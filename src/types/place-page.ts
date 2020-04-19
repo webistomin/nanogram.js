@@ -8,10 +8,14 @@ export interface IPlaceResponse {
 
 export interface IPlaceContent {
   graphql: {
-    location: IPlace[];
+    location: IPlace;
   };
   logging_page_id: string;
   photos_and_videos_header: boolean;
   recent_pictures_and_videos_subheader: boolean;
   top_images_and_videos_subheader: boolean;
+}
+
+export interface IPlaceResult {
+  location: IPlaceContent['graphql']['location'] | null;
 }
