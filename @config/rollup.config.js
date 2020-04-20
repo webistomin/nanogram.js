@@ -37,7 +37,18 @@ const BANNER_TEXT = `/**
 const baseConfig = {
   input: `src/${LIBRARY_NAME}.ts`,
   plugins: {
-    common: [json(), typescript(), sourceMaps(), banner(() => BANNER_TEXT)],
+    common: [
+      json(),
+      typescript(),
+      sourceMaps(),
+      terser({
+        output: {
+          ecma: 5,
+          comments: false,
+        },
+      }),
+      banner(() => BANNER_TEXT),
+    ],
     babel: {
       exclude: 'node_modules/**',
       extensions: ['.js', '.ts'],
@@ -72,6 +83,7 @@ if (!argv.format || argv.format === 'es') {
       name: capitalize(LIBRARY_NAME),
       file: pkg.module,
       format: 'esm',
+      exports: 'named',
     },
     plugins: [
       ...baseConfig.plugins.common,
@@ -106,6 +118,7 @@ if (!argv.format || argv.format === 'cjs') {
       compact: true,
       file: pkg.main,
       format: 'cjs',
+      // exports: 'named',
       globals,
     },
     plugins: [
@@ -129,7 +142,7 @@ if (!argv.format || argv.format === 'iife') {
     output: {
       compact: true,
       name: capitalize(LIBRARY_NAME),
-      file: pkg.browser,
+      file: pkg.browser['dist/nanogram.js'],
       format: 'iife',
       globals,
     },
@@ -142,13 +155,6 @@ if (!argv.format || argv.format === 'iife') {
       commonjs({
         include: 'node_modules/**',
       }),
-      terser({
-        output: {
-          ecma: 5,
-          comments: false,
-        },
-      }),
-      banner(() => BANNER_TEXT),
     ],
   };
   buildFormats.push(unpkgConfig);

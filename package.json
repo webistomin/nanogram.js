@@ -7,7 +7,10 @@
   ],
   "main": "dist/nanogram.cjs.js",
   "module": "dist/nanogram.esm.js",
-  "browser": "dist/nanogram.iife.js",
+  "browser": {
+    "dist/nanogram.js": "dist/nanogram.iife.js",
+    "dist/nanogram.esm.js": "dist/nanogram.esm.js"
+  },
   "unpkg": "dist/nanogram.iife.js",
   "jsdelivr": "dist/nanogram.iife.js",
   "typings": "dist/nanogram.d.ts",
