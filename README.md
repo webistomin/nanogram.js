@@ -49,7 +49,7 @@
 
 TBD
 
-## Installation
+## Installation ⚙
 
 ### Using package managers
 
@@ -71,11 +71,11 @@ Add script right before closing `</body>` tag
 <script src="https://unpkg.com/nanogram.js@0.1.0/dist/nanogram.iife.js"></script>
 ```
 
-## How to use
+## How to use 🤔
 
 TBD
 
-## Browser support
+## Browser support 🌎
 
 TBD
 
