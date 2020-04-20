@@ -1,3 +1,5 @@
+<!-- An easy-to-use and simple Instagram package that allow you to fetch media content without API and access token -->
+
 <p align="center">
   <img width="50%" src="https://raw.githubusercontent.com/webistomin/nanogram.js/260d58af351d84606a75b32160f349c9a444691d/assets/logo.svg" alt="Nanogram">
 </p>
@@ -19,11 +21,17 @@
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/nanogram.js">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
   <img alt="npm type definitions" src="https://img.shields.io/npm/types/nanogram.js">
+  <a href="https://bundlephobia.com/result?p=nanogram.js@0.1.0">
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js">
+  </a>
 </p>
 
 <p align="center">
 <a href="https://www.npmjs.com/package/nanogram.js"><img alt="npm" src="https://img.shields.io/npm/v/nanogram.js"></a>
 <a href="https://www.npmjs.com/package/nanogram.js"><img alt="downloads" src="https://img.shields.io/npm/dm/nanogram.js"></a>
+<a href="https://cdn.jsdelivr.net/npm/nanogram.js">
+<img src="https://data.jsdelivr.com/v1/package/npm/nanogram.js/badge?style=rounded" alt="jsdelivr">
+</a>
 </p>
 
 <p align="center">
@@ -39,11 +47,12 @@
 
 ## Key Features ✨
 
-* **Small.** 2.61KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size.
+* **Small.** 2.2KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size.
 * **No dependencies.**
 * No need for the **access token** secret.
 * **Easy to use.**
 * **Typescript** support
+* **Tree shakeable**
 
 ## Demo 👀
 
@@ -69,6 +78,8 @@ Add script right before closing `</body>` tag
 
 ```html
 <script src="https://unpkg.com/nanogram.js@0.1.0/dist/nanogram.iife.js"></script>
+or
+<script src="https://cdn.jsdelivr.net/npm/nanogram.js"></script>
 ```
 
 ## How to use 🤔
