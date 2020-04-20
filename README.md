@@ -37,6 +37,7 @@
 <p align="center">
   <a href="#key-features-">Key Features</a> •
   <a href="#demo-">Demo</a> •
+  <a href="#documentation-">Documentation</a> •
   <a href="#installation-">Installation</a> •
   <a href="#how-to-use-">How To Use</a> •
   <a href="#examples-">Examples</a> •
@@ -58,6 +59,10 @@
 
 ### [DEMO](https://nanogram-js.now.sh/)
 
+## Documentation 🔨
+
+You can read the full documentation [here](https://webistomin.github.io/nanogram.js/)
+
 ## Installation ⚙
 
 ### Using package managers
@@ -77,7 +82,7 @@ $ yarn add nanogram.js
 Add script right before closing `</body>` tag
 
 ```html
-<script src="https://unpkg.com/nanogram.js@0.1.0/dist/nanogram.iife.js"></script>
+<script src="https://unpkg.com/nanogram.js"></script>
 or
 <script src="https://cdn.jsdelivr.net/npm/nanogram.js"></script>
 ```
