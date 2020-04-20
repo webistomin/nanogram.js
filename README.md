@@ -87,13 +87,21 @@ If you want maximum browser compatibility, please use polyfills.
 
 See caniuse for [fetch](https://caniuse.com/#search=fetch) and [promise](https://caniuse.com/#search=promise).
 
-But if you want to send a polyfill only to browsers that need it, there's a handy service called [Polyfill.io](https://polyfill.io/v3/url-builder/) which does just that, it offers a wide array of polyfills.
+### Browsers polyfills
 
-Here's an example of using [polyfill.io](https://polyfill.io/v3/url-builder/) to polyfill only the `Fetch` and `Promise` feature, so if we put this right before closing `</body>` tag of index.html and `Nanogram.js` script, Polyfill.io will read the user agent and use that information to determine if the browser requires a polyfill for the feature or features listed. Since I'm using Chrome it will send back an empty response since my browser doesn't need it, pretty slick.
+If you want to send a polyfill only to browsers that need it, there's a handy service called [Polyfill.io](https://polyfill.io/v3/url-builder/) which does just that, it offers a wide array of polyfills.
+
+Here's an example of using [polyfill.io](https://polyfill.io/v3/url-builder/) to polyfill only the `Fetch` and `Promise` feature, so if we put this right before closing `</body>` tag of `index.html` and `Nanogram.js` script, Polyfill.io will read the user agent and use that information to determine if the browser requires a polyfill for the feature or features listed. Since I'm using Chrome it will send back an empty response since my browser doesn't need it, pretty slick.
 
 ```html
 <script src="https://polyfill.io/v3/polyfill.min.js?features=fetch%2CPromise></script>
 ```
+
+Alternatively, you can install packages like [es6-promise](https://github.com/stefanpenner/es6-promise) and [whatwg-fetch](https://github.com/github/fetch).
+
+### Node.js
+
+Node.js doesn't have a built-in implementation of the Fetch API, but you can use any library with a compatible interface, such [node-fetch](https://github.com/node-fetch/node-fetch):
 
 ## Credits
 
