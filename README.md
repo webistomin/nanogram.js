@@ -35,14 +35,14 @@
 </p>
 
 <p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#demo">Demo</a> •
-  <a href="#installation">Installation</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#examples">Examples</a> •
-  <a href="#browser-support">Browsers support</a> •
-  <a href="#contributing">Contributing</a> •
-  <a href="#license">License</a>
+  <a href="#key-features-">Key Features</a> •
+  <a href="#demo-">Demo</a> •
+  <a href="#installation-">Installation</a> •
+  <a href="#how-to-use-">How To Use</a> •
+  <a href="#examples-">Examples</a> •
+  <a href="#browser-support-">Browsers support</a> •
+  <a href="#contributing-">Contributing</a> •
+  <a href="#license-">License</a>
 </p>
 
 ## Key Features ✨
