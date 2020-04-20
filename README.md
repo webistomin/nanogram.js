@@ -56,7 +56,7 @@
 
 ## Demo 👀
 
-TBD
+### [DEMO](https://nanogram-js.now.sh/)
 
 ## Installation ⚙
 
@@ -205,8 +205,8 @@ _Note:_ get content from searchbar on the top of the page
 ## Examples ☺
 
 <details>
-    <summary>TBD</summary>
-    Something small enough to escape casual notice.
+    <summary>Vanilla.js (ES5)</summary>
+    <a href="https://github.com/webistomin/nanogram.js/blob/master/example/es5/index.html">See example</a>
 </details>
 
 ## Browsers support 🌎
