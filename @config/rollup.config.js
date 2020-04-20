@@ -72,7 +72,6 @@ if (!argv.format || argv.format === 'es') {
       name: capitalize(LIBRARY_NAME),
       file: pkg.module,
       format: 'esm',
-      exports: 'named',
     },
     plugins: [
       ...baseConfig.plugins.common,
@@ -107,7 +106,6 @@ if (!argv.format || argv.format === 'cjs') {
       compact: true,
       file: pkg.main,
       format: 'cjs',
-      // exports: 'named',
       globals,
     },
     plugins: [
