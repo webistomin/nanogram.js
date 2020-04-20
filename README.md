@@ -40,7 +40,7 @@
   <a href="#installation-">Installation</a> •
   <a href="#how-to-use-">How To Use</a> •
   <a href="#examples-">Examples</a> •
-  <a href="#browser-support-">Browsers support</a> •
+  <a href="#browsers-support-">Browsers support</a> •
   <a href="#contributing-">Contributing</a> •
   <a href="#license-">License</a>
 </p>
@@ -228,7 +228,7 @@ If you want to send a polyfill only to browsers that need it, there's a handy se
 Here's an example of using [polyfill.io](https://polyfill.io/v3/url-builder/) to polyfill only the `Fetch` and `Promise` feature, so if we put this right before closing `</body>` tag of `index.html` and `Nanogram.js` script, Polyfill.io will read the user agent and use that information to determine if the browser requires a polyfill for the feature or features listed. Since I'm using Chrome it will send back an empty response since my browser doesn't need it, pretty slick.
 
 ```html
-<script src="https://polyfill.io/v3/polyfill.min.js?features=fetch%2CPromise></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=fetch%2CPromise"></script>
 ```
 
 Alternatively, you can install packages like [es6-promise](https://github.com/stefanpenner/es6-promise) and [whatwg-fetch](https://github.com/github/fetch).
