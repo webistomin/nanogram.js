@@ -2857,8 +2857,9 @@ img {
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
 			<p align="center">
-				<img width="75%" src="https://github.com/webistomin/nanogram.js/blob/master/assets/logo.svg" alt="Nanogram">
+				<img width="50%" src="https://raw.githubusercontent.com/webistomin/nanogram.js/260d58af351d84606a75b32160f349c9a444691d/assets/logo.svg" alt="Nanogram">
 			</p>
+			<hr>
 			<h4 align="center">An easy-to-use and simple Instagram package that allow you to fetch media content <strong>without API</strong> and <strong>access token</strong>.</h4>
 			<p align="center">
 				<a href="https://travis-ci.org/webistomin/nanogram.js">
@@ -2871,15 +2872,179 @@ img {
 				<a href="https://www.codefactor.io/repository/github/webistomin/nanogram.js"><img src="https://www.codefactor.io/repository/github/webistomin/nanogram.js/badge" alt="CodeFactor" /></a>
 				<img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/nanogram.js">
 				<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
+				<img alt="npm type definitions" src="https://img.shields.io/npm/types/nanogram.js">
+			</p>
+			<p align="center">
+				<a href="https://www.npmjs.com/package/nanogram.js"><img alt="npm" src="https://img.shields.io/npm/v/nanogram.js"></a>
+				<a href="https://www.npmjs.com/package/nanogram.js"><img alt="downloads" src="https://img.shields.io/npm/dm/nanogram.js"></a>
 			</p>
 			<p align="center">
 				<a href="#key-features">Key Features</a> •
+				<a href="#demo">Demo</a> •
+				<a href="#installation">Installation</a> •
 				<a href="#how-to-use">How To Use</a> •
-				<a href="#download">Download</a> •
-				<a href="#credits">Credits</a> •
-				<a href="#related">Related</a> •
+				<a href="#examples">Examples</a> •
+				<a href="#browser-support">Browsers support</a> •
+				<a href="#contributing">Contributing</a> •
 				<a href="#license">License</a>
 			</p>
+			<a href="#key-features-✨" id="key-features-✨" style="color: inherit; text-decoration: none;">
+				<h2>Key Features ✨</h2>
+			</a>
+			<ul>
+				<li><strong>Small.</strong> 2.61KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size.</li>
+				<li><strong>No dependencies.</strong></li>
+				<li>No need for the <strong>access token</strong> secret.</li>
+				<li><strong>Easy to use.</strong></li>
+				<li><strong>Typescript</strong> support</li>
+			</ul>
+			<a href="#demo-👀" id="demo-👀" style="color: inherit; text-decoration: none;">
+				<h2>Demo 👀</h2>
+			</a>
+			<p>TBD</p>
+			<a href="#installation-⚙" id="installation-⚙" style="color: inherit; text-decoration: none;">
+				<h2>Installation ⚙</h2>
+			</a>
+			<a href="#using-package-managers" id="using-package-managers" style="color: inherit; text-decoration: none;">
+				<h3>Using package managers</h3>
+			</a>
+			<a href="#npm" id="npm" style="color: inherit; text-decoration: none;">
+				<h4>npm</h4>
+			</a>
+			<pre><code class="language-npm">$ npm install nanogram.js --save</code></pre>
+			<a href="#yarn" id="yarn" style="color: inherit; text-decoration: none;">
+				<h4>yarn</h4>
+			</a>
+			<pre><code class="language-yarn">$ yarn add nanogram.js</code></pre>
+			<a href="#via-cdn" id="via-cdn" style="color: inherit; text-decoration: none;">
+				<h3>via CDN</h3>
+			</a>
+			<p>Add script right before closing <code>&lt;/body&gt;</code> tag</p>
+			<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/nanogram.js@0.1.0/dist/nanogram.iife.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+			<a href="#how-to-use-🤔" id="how-to-use-🤔" style="color: inherit; text-decoration: none;">
+				<h2>How to use 🤔</h2>
+			</a>
+			<a href="#1-initialize-nanogramjs" id="1-initialize-nanogramjs" style="color: inherit; text-decoration: none;">
+				<h3>1. Initialize Nanogram.js</h3>
+			</a>
+			<p><strong>Option A: Using Webpack or Rollup:</strong></p>
+			<pre><code class="language-js"><span class="hljs-keyword">import</span> Nanogram <span class="hljs-keyword">from</span> <span class="hljs-string">'nanogram.js'</span>;
+
+<span class="hljs-keyword">const</span> instagramParser = <span class="hljs-keyword">new</span> Nanogram();</code></pre>
+			<p><strong>Option B: Using Node.js:</strong></p>
+			<pre><code class="language-js"><span class="hljs-keyword">const</span> Nanogram = <span class="hljs-built_in">require</span>(<span class="hljs-string">'nanogram.js'</span>);
+
+<span class="hljs-keyword">const</span> instagramParser = <span class="hljs-keyword">new</span> Nanogram();</code></pre>
+			<p><strong>Option C: Using CDN:</strong></p>
+			<pre><code class="language-js"><span class="hljs-comment">/* Nanogram is available from global namespace */</span>
+<span class="hljs-keyword">const</span> instagramParser = <span class="hljs-keyword">new</span> Nanogram();</code></pre>
+			<a href="#2-get-your-data" id="2-get-your-data" style="color: inherit; text-decoration: none;">
+				<h3>2. Get your data</h3>
+			</a>
+			<p><strong>Get media content by providing instagram username</strong></p>
+			<pre><code class="language-js">instagramParser.getMediaByUsername(<span class="hljs-string">'instagram'</span>).then(<span class="hljs-function">(<span class="hljs-params">media</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(media);
+});</code></pre>
+			<p><em>Note:</em> get content from <a href="https://www.instagram.com/instagram/">userpage</a></p>
+			<p><strong>Get media content by providing instagram tag</strong></p>
+			<pre><code class="language-js">instagramParser.getMediaByTag(<span class="hljs-string">'sunset'</span>).then(<span class="hljs-function">(<span class="hljs-params">media</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(media);
+});</code></pre>
+			<p><em>Note:</em> get content from <a href="https://www.instagram.com/explore/tags/sunset/">tag page</a></p>
+			<hr>
+			<p><strong>Get media content by providing location id and place name</strong></p>
+			<pre><code class="language-js">instagramParser.getMediaByLocation(<span class="hljs-number">6264386</span>, <span class="hljs-string">'highbridge-park'</span>).then(<span class="hljs-function">(<span class="hljs-params">media</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(media);
+});</code></pre>
+			<p><em>Note:</em> get content from <a href="https://www.instagram.com/explore/locations/6264386/highbridge-park">location page</a></p>
+			<hr>
+			<p><strong>Get all available countries</strong></p>
+			<pre><code class="language-js">instagramParser.getCountries().then(<span class="hljs-function">(<span class="hljs-params">countries</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(countries);
+});</code></pre>
+			<p><em>Note:</em> get countries from <a href="https://www.instagram.com/explore/locations/">location page</a></p>
+			<hr>
+			<p><strong>Get all cities by providing country id</strong></p>
+			<pre><code class="language-js">instagramParser.getCitiesByCountryId(<span class="hljs-string">'US'</span>).then(<span class="hljs-function">(<span class="hljs-params">cities</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(cities);
+});</code></pre>
+			<p><em>Note:</em> get cities from <a href="https://www.instagram.com/explore/locations/US/">country page</a></p>
+			<hr>
+			<p><strong>Get all places by providing city id</strong></p>
+			<pre><code class="language-js">instagramParser.getPlacesByCityId(<span class="hljs-string">'c2728325'</span>).then(<span class="hljs-function">(<span class="hljs-params">places</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(places);
+});</code></pre>
+			<p><em>Note:</em> get places from <a href="https://www.instagram.com/explore/locations/c2728325/">city page</a></p>
+			<hr>
+			<p><strong>Get media content by providing place id</strong></p>
+			<pre><code class="language-js">instagramParser.getMediaByPlaceId(<span class="hljs-number">2999512</span>).then(<span class="hljs-function">(<span class="hljs-params">media</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(media);
+});</code></pre>
+			<p><em>Note:</em> get content from <a href="https://www.instagram.com/explore/locations/2999512/">place page</a></p>
+			<hr>
+			<p><strong>Get media content by providing search query</strong></p>
+			<pre><code class="language-js">instagramParser.getMediaBySearchQuery(<span class="hljs-string">'sunset'</span>).then(<span class="hljs-function">(<span class="hljs-params">media</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(media);
+});</code></pre>
+			<p><em>Note:</em> get content from searchbar on the top of the page</p>
+			<hr>
+			<a href="#examples-☺" id="examples-☺" style="color: inherit; text-decoration: none;">
+				<h2>Examples ☺</h2>
+			</a>
+			<details>
+				<summary>TBD</summary>
+				Something small enough to escape casual notice.
+			</details>
+			<a href="#browsers-support-🌎" id="browsers-support-🌎" style="color: inherit; text-decoration: none;">
+				<h2>Browsers support 🌎</h2>
+			</a>
+			<table>
+				<thead>
+					<tr>
+						<th><a href="http://godban.github.io/browsers-support-badges/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" /></a><br/>IE / Edge</th>
+						<th><a href="http://godban.github.io/browsers-support-badges/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" /></a><br/>Firefox</th>
+						<th><a href="http://godban.github.io/browsers-support-badges/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" /></a><br/>Chrome</th>
+						<th><a href="http://godban.github.io/browsers-support-badges/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" /></a><br/>Safari</th>
+						<th><a href="http://godban.github.io/browsers-support-badges/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" /></a><br/>iOS Safari</th>
+						<th><a href="http://godban.github.io/browsers-support-badges/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" /></a><br/>Opera</th>
+						<th><a href="http://godban.github.io/browsers-support-badges/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/yandex/yandex_48x48.png" alt="Yandex" width="24px" height="24px" /></a><br/>Yandex</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+						<td>IE11*, Edge 12+</td>
+						<td>40+</td>
+						<td>42+</td>
+						<td>10.1+</td>
+						<td>10.3+</td>
+						<td>29+</td>
+						<td>15.6+</td>
+					</tr>
+			</tbody></table>
+			<p><code>*</code> – For IE11 you need to install <strong>fetch</strong> polyfill. Because of how <code>fetch()</code> works, you’ll also need a <strong>Promise</strong> polyfill.</p>
+			<p>If you want maximum browser compatibility, please use polyfills.</p>
+			<p>See caniuse for <a href="https://caniuse.com/#search=fetch">fetch</a> and <a href="https://caniuse.com/#search=promise">promise</a>.</p>
+			<a href="#browsers-polyfills" id="browsers-polyfills" style="color: inherit; text-decoration: none;">
+				<h3>Browsers polyfills</h3>
+			</a>
+			<p>If you want to send a polyfill only to browsers that need it, there&#39;s a handy service called <a href="https://polyfill.io/v3/url-builder/">Polyfill.io</a> which does just that, it offers a wide array of polyfills.</p>
+			<p>Here&#39;s an example of using <a href="https://polyfill.io/v3/url-builder/">polyfill.io</a> to polyfill only the <code>Fetch</code> and <code>Promise</code> feature, so if we put this right before closing <code>&lt;/body&gt;</code> tag of <code>index.html</code> and <code>Nanogram.js</code> script, Polyfill.io will read the user agent and use that information to determine if the browser requires a polyfill for the feature or features listed. Since I&#39;m using Chrome it will send back an empty response since my browser doesn&#39;t need it, pretty slick.</p>
+			<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://polyfill.io/v3/polyfill.min.js?features=fetch%2CPromise&gt;&lt;/script&gt;</span></span></code></pre>
+			<p>Alternatively, you can install packages like <a href="https://github.com/stefanpenner/es6-promise">es6-promise</a> and <a href="https://github.com/github/fetch">whatwg-fetch</a>.</p>
+			<a href="#nodejs" id="nodejs" style="color: inherit; text-decoration: none;">
+				<h3>Node.js</h3>
+			</a>
+			<p>Node.js doesn&#39;t have a built-in implementation of the <code>Fetch API</code>, but you can use any library with a compatible interface, such <a href="https://github.com/node-fetch/node-fetch">node-fetch</a>.</p>
+			<a href="#contributing-🎉" id="contributing-🎉" style="color: inherit; text-decoration: none;">
+				<h2>Contributing 🎉</h2>
+			</a>
+			<p>Found a bug? Missing a specific feature?
+			Your contributions are always welcome! Please have a look at the <a href="https://github.com/webistomin/nanogram.js/blob/master/CONTRIBUTING.md">contribution guidelines</a> first.</p>
+			<a href="#license-📄" id="license-📄" style="color: inherit; text-decoration: none;">
+				<h2>License 📄</h2>
+			</a>
+			<a href="#mit" id="mit" style="color: inherit; text-decoration: none;">
+				<h3><a href="https://github.com/webistomin/nanogram.js/blob/master/LICENSE">MIT</a></h3>
+			</a>
 		</div>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
