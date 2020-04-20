@@ -61,7 +61,7 @@ $ yarn add nanogram.js
 
 ### via CDN
 
-Add script right before closing </body> tag
+Add script right before closing `</body>` tag
 
 ```html
 <script src="https://unpkg.com/nanogram.js@0.1.0/dist/nanogram.iife.js"></script>
