@@ -45,6 +45,10 @@
 * **Easy to use.**
 * **Typescript** support
 
+## Demo
+
+TBD
+
 ## Installation
 
 ### Using package managers
@@ -66,6 +70,26 @@ Add script right before closing `</body>` tag
 ```html
 <script src="https://unpkg.com/nanogram.js@0.1.0/dist/nanogram.iife.js"></script>
 ```
+
+## How to use
+
+TBD
+
+## Browser support
+
+TBD
+
+## Credits
+
+TBD
+
+## Related
+
+TBD
+
+## License
+
+TDB
 
 
 
