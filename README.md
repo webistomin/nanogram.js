@@ -101,7 +101,7 @@ Alternatively, you can install packages like [es6-promise](https://github.com/st
 
 ### Node.js
 
-Node.js doesn't have a built-in implementation of the Fetch API, but you can use any library with a compatible interface, such [node-fetch](https://github.com/node-fetch/node-fetch):
+Node.js doesn't have a built-in implementation of the `Fetch API`, but you can use any library with a compatible interface, such [node-fetch](https://github.com/node-fetch/node-fetch).
 
 ## Credits
 
