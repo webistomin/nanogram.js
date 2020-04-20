@@ -82,7 +82,7 @@ $ yarn add nanogram.js
 Add script right before closing `</body>` tag
 
 ```html
-<script src="https://unpkg.com/nanogram.js"></script>
+<script src="https://unpkg.com/nanogram.js@1.0.0/dist/nanogram.iife.js"></script>
 or
 <script src="https://cdn.jsdelivr.net/npm/nanogram.js"></script>
 ```
