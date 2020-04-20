@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="50%" src="https://github.com/webistomin/nanogram.js/blob/master/assets/logo.svg" alt="Nanogram">
+  <img width="50%" src="https://raw.githubusercontent.com/webistomin/nanogram.js/260d58af351d84606a75b32160f349c9a444691d/assets/logo.svg" alt="Nanogram">
 </p>
 
 ---
@@ -22,8 +22,8 @@
 </p>
 
 <p align="center">
-<img alt="npm" src="https://img.shields.io/npm/v/nanogram.js">
-<img alt="npm" src="https://img.shields.io/npm/dm/nanogram.js">
+<a href="https://www.npmjs.com/package/nanogram.js"><img alt="npm" src="https://img.shields.io/npm/v/nanogram.js"></a>
+<a href="https://www.npmjs.com/package/nanogram.js"><img alt="downloads" src="https://img.shields.io/npm/dm/nanogram.js"></a>
 </p>
 
 <p align="center">
@@ -31,9 +31,9 @@
   <a href="#demo">Demo</a> •
   <a href="#installation">Installation</a> •
   <a href="#how-to-use">How To Use</a> •
+  <a href="#examples">Examples</a> •
   <a href="#browser-support">Browsers support</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
+  <a href="#contributing">Contributing</a> •
   <a href="#license">License</a>
 </p>
 
@@ -45,7 +45,7 @@
 * **Easy to use.**
 * **Typescript** support
 
-## Demo
+## Demo 👀
 
 TBD
 
@@ -73,7 +73,130 @@ Add script right before closing `</body>` tag
 
 ## How to use 🤔
 
-TBD
+### 1. Initialize Nanogram.js
+
+**Option A: Using Webpack or Rollup:**
+```js
+import Nanogram from 'nanogram.js';
+
+const instagramParser = new Nanogram();
+```
+
+**Option B: Using Node.js:**
+```js
+const Nanogram = require('nanogram.js');
+
+const instagramParser = new Nanogram();
+```
+
+**Option C: Using CDN:**
+```js
+/* Nanogram is available from global namespace */
+const instagramParser = new Nanogram();
+```
+
+### 2. Get your data
+
+**Get media content by providing instagram username**
+
+```js
+instagramParser.getMediaByUsername('instagram').then((media) => {
+  console.log(media);
+});
+```
+
+_Note:_ get content from [userpage](https://www.instagram.com/instagram/)
+
+**Get media content by providing instagram tag**
+
+```js
+instagramParser.getMediaByTag('sunset').then((media) => {
+  console.log(media);
+});
+```
+
+_Note:_ get content from [tag page](https://www.instagram.com/explore/tags/sunset/)
+
+---
+
+**Get media content by providing location id and place name**
+
+```js
+instagramParser.getMediaByLocation(6264386, 'highbridge-park').then((media) => {
+  console.log(media);
+});
+```
+
+_Note:_ get content from [location page](https://www.instagram.com/explore/locations/6264386/highbridge-park)
+
+---
+
+**Get all available countries**
+
+```js
+instagramParser.getCountries().then((countries) => {
+  console.log(countries);
+});
+```
+
+_Note:_ get countries from [location page](https://www.instagram.com/explore/locations/)
+
+---
+
+**Get all cities by providing country id**
+
+```js
+instagramParser.getCitiesByCountryId('US').then((cities) => {
+  console.log(cities);
+});
+```
+
+_Note:_ get cities from [country page](https://www.instagram.com/explore/locations/US/)
+
+---
+
+**Get all places by providing city id**
+
+```js
+instagramParser.getPlacesByCityId('c2728325').then((places) => {
+  console.log(places);
+});
+```
+
+_Note:_ get places from [city page](https://www.instagram.com/explore/locations/c2728325/)
+
+---
+
+**Get media content by providing place id**
+
+```js
+instagramParser.getMediaByPlaceId(2999512).then((media) => {
+  console.log(media);
+});
+```
+
+_Note:_ get content from [place page](https://www.instagram.com/explore/locations/2999512/)
+
+---
+
+**Get media content by providing search query**
+
+```js
+instagramParser.getMediaBySearchQuery('sunset').then((media) => {
+  console.log(media);
+});
+```
+
+_Note:_ get content from searchbar on the top of the page
+
+---
+
+## Examples ☺
+
+<details>
+    <summary>TBD</summary>
+    Something small enough to escape casual notice.
+</details>
 
 ## Browsers support 🌎
 
@@ -103,17 +226,15 @@ Alternatively, you can install packages like [es6-promise](https://github.com/st
 
 Node.js doesn't have a built-in implementation of the `Fetch API`, but you can use any library with a compatible interface, such [node-fetch](https://github.com/node-fetch/node-fetch).
 
-## Credits
 
-TBD
+## Contributing 🎉
 
-## Related
+Found a bug? Missing a specific feature?
+Your contributions are always welcome! Please have a look at the [contribution guidelines](https://github.com/webistomin/nanogram.js/blob/master/CONTRIBUTING.md) first.
 
-TBD
+## License 📄
 
-## License
-
-TDB
+### [MIT](https://github.com/webistomin/nanogram.js/blob/master/LICENSE)
 
 
 

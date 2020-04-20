@@ -1,7 +1,10 @@
 {
   "name": "nanogram.js",
   "version": "0.1.0",
-  "description": "",
+  "description": "An easy-to-use and simple Instagram package that allow you to fetch media content without API and access token.",
+  "keywords": [
+    "instagram", "instagram-scrapping", "instagram-photos", "instafeed", "instagram-api"
+  ],
   "main": "dist/nanogram.cjs.js",
   "module": "dist/nanogram.esm.js",
   "browser": "dist/nanogram.iife.js",
@@ -11,8 +14,7 @@
   "files": [
     "dist/*",
     "src/*",
-    "docs/*",
-    "test/*"
+    "docs/*"
   ],
   "scripts": {
     "build": "run-s prebuild build:all build:dts other:typedoc",
