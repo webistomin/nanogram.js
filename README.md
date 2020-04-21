@@ -65,7 +65,7 @@
 
 You can read the full documentation [here](https://webistomin.github.io/nanogram.js/)
 
-## Installation ⚙
+## Installation 🚀
 
 ### Using package managers
 
