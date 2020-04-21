@@ -33,7 +33,7 @@
 <img src="https://data.jsdelivr.com/v1/package/npm/nanogram.js/badge?style=rounded" alt="jsdelivr">
 </a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square" alt="contributors"> 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
@@ -45,8 +45,8 @@
   <a href="#how-to-use-">How To Use</a> •
   <a href="#examples-">Examples</a> •
   <a href="#browsers-support-">Browsers support</a> •
-  <a href="#contributing-">Contributing</a> •
-  <a href="#license-">License</a>
+  <a href="#license-">License</a>  •
+  <a href="#contributing-">Contributing</a>
 </p>
 
 ## Key Features ✨
@@ -245,18 +245,14 @@ Alternatively, you can install packages like [es6-promise](https://github.com/st
 
 Node.js doesn't have a built-in implementation of the `Fetch API`, but you can use any library with a compatible interface, such [node-fetch](https://github.com/node-fetch/node-fetch).
 
+## License 📄
+
+### [MIT](https://github.com/webistomin/nanogram.js/blob/master/LICENSE)
 
 ## Contributing 🎉
 
 Found a bug? Missing a specific feature?
 Your contributions are always welcome! Please have a look at the [contribution guidelines](https://github.com/webistomin/nanogram.js/blob/master/CONTRIBUTING.md) first.
-
-## License 📄
-
-### [MIT](https://github.com/webistomin/nanogram.js/blob/master/LICENSE)
-
-
-
 
 ## Contributors ✨
 
