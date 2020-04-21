@@ -1,7 +1,4 @@
 <!-- An easy-to-use and simple Instagram package that allow you to fetch media content without API and access token -->
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
   <img width="50%" src="https://raw.githubusercontent.com/webistomin/nanogram.js/260d58af351d84606a75b32160f349c9a444691d/assets/logo.svg" alt="Nanogram">
@@ -35,6 +32,9 @@
 <a href="https://cdn.jsdelivr.net/npm/nanogram.js">
 <img src="https://data.jsdelivr.com/v1/package/npm/nanogram.js/badge?style=rounded" alt="jsdelivr">
 </a>
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
 <p align="center">
