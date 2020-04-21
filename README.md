@@ -30,7 +30,6 @@
 <a href="https://www.npmjs.com/package/nanogram.js"><img alt="npm" src="https://img.shields.io/npm/v/nanogram.js"></a>
 <a href="https://www.npmjs.com/package/nanogram.js"><img alt="downloads" src="https://img.shields.io/npm/dm/nanogram.js"></a>
 <a href="https://cdn.jsdelivr.net/npm/nanogram.js">
-<img src="https://data.jsdelivr.com/v1/package/npm/nanogram.js/badge?style=rounded" alt="jsdelivr">
 </a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square" alt="contributors"> 
