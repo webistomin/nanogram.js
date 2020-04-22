@@ -16,8 +16,7 @@
   "typings": "dist/nanogram.d.ts",
   "files": [
     "dist/*",
-    "src/*",
-    "docs/*"
+    "src/*"
   ],
   "scripts": {
     "build": "run-s prebuild build:all build:dts other:typedoc",

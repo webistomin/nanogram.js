@@ -68,12 +68,12 @@ You can read the full documentation [here](https://webistomin.github.io/nanogram
 ### Using package managers
 
 #### npm
-```npm
+```shell script
 $ npm install nanogram.js --save
 ```
 
 #### yarn
-```yarn
+```shell script
 $ yarn add nanogram.js
 ```
 
