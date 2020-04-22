@@ -21,7 +21,7 @@
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/nanogram.js">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
   <img alt="npm type definitions" src="https://img.shields.io/npm/types/nanogram.js">
-  <a href="https://bundlephobia.com/result?p=nanogram.js@0.1.0">
+  <a href="https://bundlephobia.com/result?p=nanogram.js@1.0.0">
   <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js">
   </a>
 </p>
@@ -29,8 +29,6 @@
 <p align="center">
 <a href="https://www.npmjs.com/package/nanogram.js"><img alt="npm" src="https://img.shields.io/npm/v/nanogram.js"></a>
 <a href="https://www.npmjs.com/package/nanogram.js"><img alt="downloads" src="https://img.shields.io/npm/dm/nanogram.js"></a>
-<a href="https://cdn.jsdelivr.net/npm/nanogram.js">
-</a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <img src="https://img.shields.io/badge/all_contributors-1-orange.svg" alt="contributors"> 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
