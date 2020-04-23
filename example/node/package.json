@@ -1,0 +1,17 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "Node.js example",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "webistomin",
+  "license": "MIT",
+  "dependencies": {
+    "nanogram.js": "^1.0.0",
+    "node-fetch": "^2.6.0"
+  }
+}
