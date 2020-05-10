@@ -1,6 +1,6 @@
 module.exports = [
   {
-    path: "dist/*.js",
+    path: "dist/nanogram.iife.js",
     "limit": "5 KB",
   }
 ];

@@ -9,27 +9,32 @@ import { ISearchResponse, ISearchResult } from './types/search-page';
 
 export default class Nanogram {
   private readonly INSTAGRAM_HOSTNAME: string;
-  private readonly SHARED_DATA_TEG_EXP: RegExp;
+  private readonly SHARED_DATA_TAG_EXP: RegExp;
 
   constructor() {
     this.INSTAGRAM_HOSTNAME = 'https://www.instagram.com/';
-    this.SHARED_DATA_TEG_EXP = /^[\w\W]*<script type="text\/javascript">window._sharedData = ({[\w\W]*});<\/script>[\w\W]*$/g;
+    this.SHARED_DATA_TAG_EXP = /^[\w\W]*<script type="text\/javascript">window._sharedData = ({[\w\W]*});<\/script>[\w\W]*$/g;
   }
 
   private buildUrl(query: string): RequestInfo {
     return `${this.INSTAGRAM_HOSTNAME}${query}`;
   }
 
-  private parseJSON<T>(content: string): T {
+  private parseJSON<T>(content: string, useRegExp: boolean): T {
     try {
-      const parsedData = content.replace(this.SHARED_DATA_TEG_EXP, '$1');
-      return JSON.parse(parsedData);
+      let data = content;
+
+      if (useRegExp) {
+        data = content.replace(this.SHARED_DATA_TAG_EXP, '$1');
+      }
+
+      return JSON.parse(data);
     } catch (error) {
       console.error(`Nanogram: failure during parsing JSON.\nError message: ${error.message}`);
     }
   }
 
-  private async HTTP<T>(request: RequestInfo): Promise<T | undefined> {
+  private async HTTP<T>(request: RequestInfo, useRegExp = true): Promise<T | undefined> {
     const requestOptions: RequestInit = {
       method: 'GET',
       redirect: 'follow',
@@ -46,7 +51,7 @@ export default class Nanogram {
     });
 
     if (response) {
-      return this.parseJSON(response);
+      return this.parseJSON(response, useRegExp);
     }
 
     return;
@@ -71,14 +76,9 @@ export default class Nanogram {
     const url = this.buildUrl(username);
     const response = await this.HTTP<IUserProfileResponse>(url);
 
-    const profile = response?.entry_data?.ProfilePage[0]?.graphql?.user;
+    const profile = response?.entry_data?.ProfilePage[0]?.graphql?.user || null;
 
-    if (profile) {
-      result.profile = profile;
-      result.ok = true;
-    }
-
-    return result;
+    return { ...result, ...{ profile, ok: Boolean(profile) } };
   }
 
   public async getMediaByTag(tag: string): Promise<ITagsResult> {
@@ -94,14 +94,9 @@ export default class Nanogram {
 
     const url = this.buildUrl(`explore/tags/${tag}`);
     const response = await this.HTTP<ITagsResponse>(url);
-    const hashtag = response?.entry_data?.TagPage[0]?.graphql.hashtag;
+    const hashtag = response?.entry_data?.TagPage[0]?.graphql.hashtag || null;
 
-    if (hashtag) {
-      result.tag = hashtag;
-      result.ok = true;
-    }
-
-    return result;
+    return { ...result, ...{ tag: hashtag, ok: Boolean(hashtag) } };
   }
 
   public async getMediaByLocation(locationId: number, placeName: string): Promise<ILocationResult> {
@@ -117,14 +112,9 @@ export default class Nanogram {
 
     const url = this.buildUrl(`explore/locations/${locationId}/${placeName}`);
     const response = await this.HTTP<ILocationResponse>(url);
-    const location = response?.entry_data?.LocationsPage[0]?.graphql?.location;
+    const location = response?.entry_data?.LocationsPage[0]?.graphql?.location || null;
 
-    if (location) {
-      result.location = location;
-      result.ok = true;
-    }
-
-    return result;
+    return { ...result, ...{ location, ok: Boolean(location) } };
   }
 
   public async getCountries(): Promise<ILocationDirectoryResult> {
@@ -135,14 +125,9 @@ export default class Nanogram {
 
     const url = this.buildUrl(`explore/locations/`);
     const response = await this.HTTP<ILocationDirectoryResponse>(url);
-    const countryList = response?.entry_data?.LocationsDirectoryPage[0]?.country_list;
+    const countryList = response?.entry_data?.LocationsDirectoryPage[0]?.country_list || null;
 
-    if (countryList) {
-      result.country_list = countryList;
-      result.ok = true;
-    }
-
-    return result;
+    return { ...result, ...{ country_list: countryList, ok: Boolean(countryList) } };
   }
 
   public async getCitiesByCountryId(countryId: string): Promise<ICitiesResult> {
@@ -159,19 +144,9 @@ export default class Nanogram {
 
     const url = this.buildUrl(`explore/locations/${countryId}`);
     const response = await this.HTTP<ICitiesResponse>(url);
-    const { city_list, country_info } = { ...response?.entry_data?.LocationsDirectoryPage[0] };
+    const { city_list = null, country_info = null } = { ...response?.entry_data?.LocationsDirectoryPage[0] };
 
-    if (city_list) {
-      result.city_list = city_list;
-      result.ok = true;
-    }
-
-    if (country_info) {
-      result.country_info = country_info;
-      result.ok = true;
-    }
-
-    return result;
+    return { ...result, ...{ country_info, city_list, ok: Boolean(country_info || city_list) } };
   }
 
   public async getPlacesByCityId(cityId: string): Promise<IPlacesResult> {
@@ -191,24 +166,14 @@ export default class Nanogram {
 
     const url = this.buildUrl(`explore/locations/${cityId}`);
     const response = await this.HTTP<IPlacesResponse>(url);
-    const { city_info, country_info, location_list } = { ...response?.entry_data?.LocationsDirectoryPage[0] };
+    const { city_info = null, country_info = null, location_list = null } = {
+      ...response?.entry_data?.LocationsDirectoryPage[0],
+    };
 
-    if (city_info) {
-      result.place.city_info = city_info;
-      result.ok = true;
-    }
-
-    if (country_info) {
-      result.place.country_info = country_info;
-      result.ok = true;
-    }
-
-    if (location_list) {
-      result.place.location_list = location_list;
-      result.ok = true;
-    }
-
-    return result;
+    return {
+      ...result,
+      ...{ place: { city_info, country_info, location_list }, ok: Boolean(city_info || country_info || location_list) },
+    };
   }
 
   public async getMediaByPlaceId(placeId: number): Promise<IPlaceResult> {
@@ -224,14 +189,9 @@ export default class Nanogram {
 
     const url = this.buildUrl(`explore/locations/${placeId}`);
     const response = await this.HTTP<IPlaceResponse>(url);
-    const location = response?.entry_data?.LocationsPage[0]?.graphql.location;
+    const location = response?.entry_data?.LocationsPage[0]?.graphql.location || null;
 
-    if (location) {
-      result.location = location;
-      result.ok = true;
-    }
-
-    return result;
+    return { ...result, ...{ location, ok: Boolean(location) } };
   }
 
   public async getMediaBySearchQuery(query: string): Promise<ISearchResult> {
@@ -250,23 +210,8 @@ export default class Nanogram {
     }
 
     const url = this.buildUrl(`web/search/topsearch/?context=blended&query=${query}&include_reel=true`);
-    const { users, hashtags, places } = await this.HTTP<ISearchResponse>(url);
+    const { users = null, hashtags = null, places = null } = await this.HTTP<ISearchResponse>(url, false);
 
-    if (users) {
-      result.media.users = users;
-      result.ok = true;
-    }
-
-    if (hashtags) {
-      result.media.hashtags = hashtags;
-      result.ok = true;
-    }
-
-    if (places) {
-      result.media.places = places;
-      result.ok = true;
-    }
-
-    return result;
+    return { ...result, ...{ media: { users, hashtags, places }, ok: Boolean(users || hashtags || places) } };
   }
 }

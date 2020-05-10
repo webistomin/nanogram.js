@@ -2874,13 +2874,14 @@ img {
 				<img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/nanogram.js">
 				<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
 				<img alt="npm type definitions" src="https://img.shields.io/npm/types/nanogram.js">
-				<a href="https://bundlephobia.com/result?p=nanogram.js@1.0.0">
+				<a href="https://bundlephobia.com/result?p=nanogram.js@1.0.1">
 					<img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js">
 				</a>
 			</p>
 			<p align="center">
-				<a href="https://www.npmjs.com/package/nanogram.js"><img alt="npm" src="https://img.shields.io/npm/v/nanogram.js"></a>
-				<a href="https://www.npmjs.com/package/nanogram.js"><img alt="downloads" src="https://img.shields.io/npm/dm/nanogram.js"></a>
+				<a href="https://www.npmjs.com/package/nanogram.js"><img alt="npm" src="https://img.shields.io/npm/v/nanogram.js" /></a>
+				<a href="https://www.npmjs.com/package/nanogram.js"><img alt="downloads" src="https://img.shields.io/npm/dm/nanogram.js" /></a>
+				<a href="https://www.jsdelivr.com/package/npm/nanogram.js"><img alt="jsdeliver" src="https://data.jsdelivr.com/v1/package/npm/nanogram.js/badge?style=rounded" /></a>
 				<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 				<img src="https://img.shields.io/badge/all_contributors-1-orange.svg" alt="contributors">
 				<!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -2900,7 +2901,7 @@ img {
 				<h2>Key Features ✨</h2>
 			</a>
 			<ul>
-				<li><strong>Small.</strong> 2.2KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size.</li>
+				<li><strong>Small.</strong> 1.99KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size.</li>
 				<li><strong>No dependencies.</strong></li>
 				<li>No need for the <strong>access token</strong> secret.</li>
 				<li><strong>Easy to use.</strong></li>
@@ -2935,9 +2936,22 @@ img {
 				<h3>via CDN</h3>
 			</a>
 			<p>Add script right before closing <code>&lt;/body&gt;</code> tag</p>
-			<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/nanogram.js@1.0.0/dist/nanogram.iife.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+			<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/nanogram.js@1.0.1/dist/nanogram.iife.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 or
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/nanogram.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+			<p><em>Hint:</em> for a better performance add <a href="https://css-tricks.com/using-relpreconnect-to-establish-network-connections-early-and-increase-performance/">preconnect</a> link in the head of your document. </p>
+			<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- for unkpg cdn --&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preconnect"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://unpkg.com"</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- for jsdelivr cdn --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"preconnect"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.jsdelivr.net"</span>&gt;</span>  
+
+
+  <span class="hljs-comment">&lt;!-- dns-prefetch only for IE11 --&gt;</span> 
+  <span class="hljs-comment">&lt;!--    &lt;link rel="dns-prefetch" href="https://unpkg.com"&gt; --&gt;</span>
+  <span class="hljs-comment">&lt;!--    &lt;link rel="dns-prefetch" href="https://cdn.jsdelivr.net"&gt; --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code></pre>
 			<a href="#how-to-use-🤔" id="how-to-use-🤔" style="color: inherit; text-decoration: none;">
 				<h2>How to use 🤔</h2>
 			</a>
@@ -2962,7 +2976,7 @@ or
 			<pre><code class="language-js">instagramParser.getMediaByUsername(<span class="hljs-string">'instagram'</span>).then(<span class="hljs-function">(<span class="hljs-params">media</span>) =&gt;</span> {
   <span class="hljs-built_in">console</span>.log(media);
 });</code></pre>
-			<p><em>Note:</em> get content from <a href="https://www.instagram.com/instagram/">userpage</a></p>
+			<p><em>Note:</em> get content from <a href="https://www.instagram.com/instagram/">user page</a>. 12 photos is the maximum for this method.</p>
 			<p><strong>Get media content by providing instagram tag</strong></p>
 			<pre><code class="language-js">instagramParser.getMediaByTag(<span class="hljs-string">'sunset'</span>).then(<span class="hljs-function">(<span class="hljs-params">media</span>) =&gt;</span> {
   <span class="hljs-built_in">console</span>.log(media);
@@ -3011,6 +3025,10 @@ or
 			<details>
 				<summary>Vanilla.js (ES5)</summary>
 				<a href="https://github.com/webistomin/nanogram.js/blob/master/example/es5/index.html">See example</a>
+			</details>
+			<details>
+				<summary>Node.js</summary>
+				<a href="https://github.com/webistomin/nanogram.js/blob/master/example/node/index.js">See example</a>
 			</details>
 			<a href="#browsers-support-🌎" id="browsers-support-🌎" style="color: inherit; text-decoration: none;">
 				<h2>Browsers support 🌎</h2>

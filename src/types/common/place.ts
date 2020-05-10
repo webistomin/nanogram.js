@@ -105,5 +105,5 @@ export interface IPlaceLocationToTopPosts {
     thumbnail_src: string;
     thumbnail_resources: IThumbnail[];
     is_video: boolean;
-  }
+  };
 }

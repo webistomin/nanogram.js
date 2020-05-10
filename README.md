@@ -21,7 +21,7 @@
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/nanogram.js">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
   <img alt="npm type definitions" src="https://img.shields.io/npm/types/nanogram.js">
-  <a href="https://bundlephobia.com/result?p=nanogram.js@1.0.0">
+  <a href="https://bundlephobia.com/result?p=nanogram.js@1.0.1">
   <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js">
   </a>
 </p>
@@ -49,7 +49,7 @@
 
 ## Key Features ✨
 
-* **Small.** 2.2KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size.
+* **Small.** 1.99KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size.
 * **No dependencies.**
 * No need for the **access token** secret.
 * **Easy to use.**
@@ -83,9 +83,26 @@ $ yarn add nanogram.js
 Add script right before closing `</body>` tag
 
 ```html
-<script src="https://unpkg.com/nanogram.js@1.0.0/dist/nanogram.iife.js"></script>
+<script src="https://unpkg.com/nanogram.js@1.0.1/dist/nanogram.iife.js"></script>
 or
 <script src="https://cdn.jsdelivr.net/npm/nanogram.js"></script>
+```
+
+_Hint:_ for a better performance add [preconnect](https://css-tricks.com/using-relpreconnect-to-establish-network-connections-early-and-increase-performance/) link in the head of your document. 
+
+```html 
+<head>
+  <!-- for unkpg cdn --> 
+  <link rel="preconnect" href="https://unpkg.com">
+
+  <!-- for jsdelivr cdn -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">  
+
+
+  <!-- dns-prefetch only for IE11 --> 
+  <!--	<link rel="dns-prefetch" href="https://unpkg.com"> -->
+  <!--	<link rel="dns-prefetch" href="https://cdn.jsdelivr.net"> -->
+</head>
 ```
 
 ## How to use 🤔
@@ -122,7 +139,7 @@ instagramParser.getMediaByUsername('instagram').then((media) => {
 });
 ```
 
-_Note:_ get content from [userpage](https://www.instagram.com/instagram/)
+_Note:_ get content from [user page](https://www.instagram.com/instagram/). 12 photos is the maximum for this method.
 
 **Get media content by providing instagram tag**
 

@@ -544,7 +544,8 @@ export const USER_PAGE_RESPONSE: IUserProfileResponse = {
                       edges: [
                         {
                           node: {
-                            text: 'Make your bed. Hug your mom. Then #TakeABreak with actor Noah Centineo (@ncentineo).',
+                            text:
+                              'Make your bed. Hug your mom. Then #TakeABreak with actor Noah Centineo (@ncentineo).',
                           },
                         },
                       ],
@@ -2497,7 +2498,7 @@ export const USER_PAGE_RESPONSE: IUserProfileResponse = {
             },
           },
         },
-      }
+      },
     ],
   },
 };

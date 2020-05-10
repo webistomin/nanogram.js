@@ -8,7 +8,7 @@ import { IPlaceResult } from './types/place-page';
 import { ISearchResult } from './types/search-page';
 export default class Nanogram {
     private readonly INSTAGRAM_HOSTNAME;
-    private readonly SHARED_DATA_TEG_EXP;
+    private readonly SHARED_DATA_TAG_EXP;
     constructor();
     private buildUrl;
     private parseJSON;

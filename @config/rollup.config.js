@@ -47,7 +47,6 @@ const baseConfig = {
           comments: false,
         },
       }),
-      banner(() => BANNER_TEXT),
     ],
     babel: {
       exclude: 'node_modules/**',
@@ -104,6 +103,7 @@ if (!argv.format || argv.format === 'es') {
       commonjs({
         include: 'node_modules/**',
       }),
+      banner(() => BANNER_TEXT),
     ],
   };
   buildFormats.push(esConfig);
@@ -130,6 +130,7 @@ if (!argv.format || argv.format === 'cjs') {
       commonjs({
         include: 'node_modules/**',
       }),
+      banner(() => BANNER_TEXT),
     ],
   };
   buildFormats.push(cjsConfig);
