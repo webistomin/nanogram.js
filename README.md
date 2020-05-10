@@ -22,7 +22,7 @@
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
   <img alt="npm type definitions" src="https://img.shields.io/npm/types/nanogram.js">
   <a href="https://bundlephobia.com/result?p=nanogram.js@1.0.1">
-  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js">
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js/1.0.1">
   </a>
 </p>
 
@@ -49,7 +49,7 @@
 
 ## Key Features ✨
 
-* **Small.** 1.99KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size.
+* **Small.** ~ 2.31KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size.
 * **No dependencies.**
 * No need for the **access token** secret.
 * **Easy to use.**
