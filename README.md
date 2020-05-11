@@ -8,6 +8,8 @@
 
 <h4 align="center">An easy-to-use and simple Instagram package that allow you to fetch media content <strong>without API</strong> and <strong>access token</strong>.</h4>
 
+<h5 align="center">⭐️ Star me on GitHub — it helps!</h5>
+
 
 <p align="center">
   <a href="https://travis-ci.org/webistomin/nanogram.js">
