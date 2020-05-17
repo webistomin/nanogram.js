@@ -143,6 +143,8 @@ instagramParser.getMediaByUsername('instagram').then((media) => {
 
 _Note:_ get content from [user page](https://www.instagram.com/instagram/). 12 photos is the maximum for this method.
 
+---
+
 **Get media content by providing instagram tag**
 
 ```js
