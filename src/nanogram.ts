@@ -12,14 +12,26 @@ export default class Nanogram {
   private readonly SHARED_DATA_TAG_EXP: RegExp;
 
   constructor() {
+    /*
+     * Instagram base url
+     */
     this.INSTAGRAM_HOSTNAME = 'https://www.instagram.com/';
+    /*
+     * Instagram RegExp to parse <script type="text/javascript">window._sharedData = {...}</script>
+     */
     this.SHARED_DATA_TAG_EXP = /^[\w\W]*<script type="text\/javascript">window._sharedData = ({[\w\W]*});<\/script>[\w\W]*$/g;
   }
 
+  /*
+   * Add query to instagram base url
+   */
   private buildUrl(query: string): RequestInfo {
     return `${this.INSTAGRAM_HOSTNAME}${query}`;
   }
 
+  /*
+   * Get javascript object from response
+   */
   private parseJSON<T>(content: string, useRegExp: boolean): T {
     try {
       let data = content;
@@ -34,6 +46,9 @@ export default class Nanogram {
     }
   }
 
+  /*
+   * Make fetch call to instagram
+   */
   private async HTTP<T>(request: RequestInfo, useRegExp = true): Promise<T | undefined> {
     const requestOptions: RequestInit = {
       method: 'GET',
@@ -57,11 +72,21 @@ export default class Nanogram {
     return;
   }
 
+  /*
+   * Build error string from arguments
+   */
   private static logError(params: string[]): void {
     const message = `Nanogram: please provide a valid ${params.join(' and ')}`;
     console.error(message);
   }
 
+  /*
+   * Get content from
+   * https://www.instagram.com/{username}/
+   *
+   * Example:
+   * https://www.instagram.com/instagram/
+   */
   public async getMediaByUsername(username: string): Promise<IUserProfileResult> {
     const result: IUserProfileResult = {
       profile: null,
@@ -81,6 +106,13 @@ export default class Nanogram {
     return { ...result, ...{ profile, ok: Boolean(profile) } };
   }
 
+  /*
+   * Get content from
+   * https://www.instagram.com/explore/tags/{tag}/
+   *
+   * Example:
+   * https://www.instagram.com/explore/tags/sunset/
+   */
   public async getMediaByTag(tag: string): Promise<ITagsResult> {
     const result: ITagsResult = {
       tag: null,
@@ -99,6 +131,13 @@ export default class Nanogram {
     return { ...result, ...{ tag: hashtag, ok: Boolean(hashtag) } };
   }
 
+  /*
+   * Get content from
+   * https://www.instagram.com/explore/locations/{locationId}/{placeName}
+   *
+   * Example:
+   * https://www.instagram.com/explore/locations/6264386/highbridge-park
+   */
   public async getMediaByLocation(locationId: number, placeName: string): Promise<ILocationResult> {
     const result: ILocationResult = {
       location: null,
@@ -117,6 +156,13 @@ export default class Nanogram {
     return { ...result, ...{ location, ok: Boolean(location) } };
   }
 
+  /*
+   * Get content from
+   * https://www.instagram.com/explore/locations/
+   *
+   * Example:
+   * https://www.instagram.com/explore/locations/
+   */
   public async getCountries(): Promise<ILocationDirectoryResult> {
     const result: ILocationDirectoryResult = {
       country_list: null,
@@ -130,6 +176,13 @@ export default class Nanogram {
     return { ...result, ...{ country_list: countryList, ok: Boolean(countryList) } };
   }
 
+  /*
+   * Get content from
+   * https://www.instagram.com/explore/locations/{countryId}/
+   *
+   * Example:
+   * https://www.instagram.com/explore/locations/US/
+   */
   public async getCitiesByCountryId(countryId: string): Promise<ICitiesResult> {
     const result: ICitiesResult = {
       city_list: null,
@@ -149,6 +202,13 @@ export default class Nanogram {
     return { ...result, ...{ country_info, city_list, ok: Boolean(country_info || city_list) } };
   }
 
+  /*
+   * Get content from
+   * https://www.instagram.com/explore/locations/{cityId}/
+   *
+   * Example:
+   * https://www.instagram.com/explore/locations/c2728325/
+   */
   public async getPlacesByCityId(cityId: string): Promise<IPlacesResult> {
     const result: IPlacesResult = {
       place: {
@@ -176,6 +236,13 @@ export default class Nanogram {
     };
   }
 
+  /*
+   * Get content from
+   * https://www.instagram.com/explore/locations/{placeId}/
+   *
+   * Example:
+   * https://www.instagram.com/explore/locations/2999512/
+   */
   public async getMediaByPlaceId(placeId: number): Promise<IPlaceResult> {
     const result: IPlaceResult = {
       location: null,
@@ -194,6 +261,13 @@ export default class Nanogram {
     return { ...result, ...{ location, ok: Boolean(location) } };
   }
 
+  /*
+   * Get content from
+   * https://www.instagram.com/web/search/topsearch/?context=blended&query={query}&include_reel=true
+   *
+   * Example:
+   * https://www.instagram.com/web/search/topsearch/?context=blended&query=sunset&include_reel=true
+   */
   public async getMediaBySearchQuery(query: string): Promise<ISearchResult> {
     const result: ISearchResult = {
       media: {
