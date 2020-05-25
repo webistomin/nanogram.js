@@ -1,6 +1,6 @@
 {
   "name": "nanogram.js",
-  "version": "1.0.1",
+  "version": "1.0.2-beta.1",
   "description": "An easy-to-use and simple Instagram package that allow you to fetch media content without API and access token.",
   "reveal": true,
   "keywords": [
@@ -10,15 +10,15 @@
     "instafeed",
     "instagram-api"
   ],
-  "main": "dist/nanogram.cjs.js",
-  "module": "dist/nanogram.esm.js",
+  "main": "./dist/nanogram.cjs.js",
+  "module": "./dist/nanogram.esm.js",
   "browser": {
-    "dist/nanogram.js": "dist/nanogram.iife.js",
-    "dist/nanogram.esm.js": "dist/nanogram.esm.js"
+    "dist/nanogram.js": "./dist/nanogram.iife.js",
+    "dist/nanogram.esm.js": "./dist/nanogram.esm.js"
   },
-  "unpkg": "dist/nanogram.iife.js",
-  "jsdelivr": "dist/nanogram.iife.js",
-  "typings": "dist/nanogram.d.ts",
+  "unpkg": "./dist/nanogram.iife.js",
+  "jsdelivr": "./dist/nanogram.iife.js",
+  "typings": "./dist/nanogram.d.ts",
   "files": [
     "dist/*",
     "src/*"
