@@ -23,7 +23,7 @@
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/nanogram.js">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
   <img alt="npm type definitions" src="https://img.shields.io/npm/types/nanogram.js">
-  <a href="https://bundlephobia.com/result?p=nanogram.js@1.0.1">
+  <a href="https://bundlephobia.com/result?p=nanogram.js@1.0.2">
   <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js/1.0.1">
   </a>
 </p>
@@ -85,7 +85,7 @@ $ yarn add nanogram.js
 Add script right before closing `</body>` tag
 
 ```html
-<script src="https://unpkg.com/nanogram.js@1.0.1/dist/nanogram.iife.js"></script>
+<script src="https://unpkg.com/nanogram.js@1.0.2/dist/nanogram.iife.js"></script>
 or
 <script src="https://cdn.jsdelivr.net/npm/nanogram.js"></script>
 ```

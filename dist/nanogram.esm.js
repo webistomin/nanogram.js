@@ -2,7 +2,7 @@
 *
 * nanogram.js
 *
-* @version 1.0.1
+* @version 1.0.2
 * @author webistomin
 * @email: webistomin@gmail.com
 * @license: MIT

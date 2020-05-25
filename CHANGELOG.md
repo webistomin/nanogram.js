@@ -7,3 +7,8 @@
 - Remove test folder from npm package
 - Add node.js example
 - Update README.md
+
+## 1.0.2 (25.05.2020)
+- Fix [issue#14](https://github.com/webistomin/nanogram.js/issues/14)
+- Remove some devDependencies
+- Update devDependencies
