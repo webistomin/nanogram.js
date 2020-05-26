@@ -95,7 +95,7 @@
     "scriptlint": "^2.1.1",
     "size-limit": "^4.4.5",
     "ts-jest": "^25.3.1",
-    "tslib": "^1.11.1",
+    "tslib": "^2.0.0",
     "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
   },
