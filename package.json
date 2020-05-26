@@ -61,7 +61,7 @@
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-angular": "^8.3.4",
     "@ls-lint/ls-lint": "^1.8.0",
-    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-commonjs": "^12.0.0",
     "@rollup/plugin-inject": "^4.0.1",
     "@rollup/plugin-json": "^4.0.2",
     "@rollup/plugin-node-resolve": "^8.0.0",
