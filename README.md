@@ -111,14 +111,14 @@ _Hint:_ for a better performance add [preconnect](https://css-tricks.com/using-r
 
 ### 1. Initialize Nanogram.js
 
-**Option A: Using Webpack or Rollup:**
+**Option A: Using ES 2015:**
 ```js
 import Nanogram from 'nanogram.js';
 
 const instagramParser = new Nanogram();
 ```
 
-**Option B: Using Node.js:**
+**Option B: Using CommonJS:**
 ```js
 const Nanogram = require('nanogram.js');
 
