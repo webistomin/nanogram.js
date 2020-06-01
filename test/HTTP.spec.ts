@@ -17,7 +17,14 @@ describe('Nanogram library', () => {
     });
 
     it("print error to console if can't parse content from string", async () => {
-      fetchMock.mockOnce('the next call to fetch will always return this as the body');
+      fetchMock.mockResponseOnce(
+        JSON.stringify({
+          ok: false,
+        }),
+        {
+          status: 404,
+        }
+      );
       const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
       await lib['HTTP'](URL);
       expect(consoleSpy).toHaveBeenCalled();
