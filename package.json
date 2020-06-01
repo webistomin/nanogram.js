@@ -38,7 +38,7 @@
     "other:typedoc": "typedoc --out docs --target es6 --theme minimal --mode file src",
     "prebuild": "rimraf dist",
     "start": "npm run dev",
-    "test": "jest --config jest.config.js --coverage",
+    "test": "jest --config jest.config.js --coverage --silent",
     "test:watch": "jest --config jest.config.js --coverage --watch"
   },
   "repository": {
