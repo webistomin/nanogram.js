@@ -43,6 +43,7 @@
   <a href="#documentation-">Documentation</a> •
   <a href="#installation-">Installation</a> •
   <a href="#how-to-use-">How To Use</a> •
+  <a href="#caveats-">Caveats</a> •
   <a href="#examples-">Examples</a> •
   <a href="#browsers-support-">Browsers support</a> •
   <a href="#license-">License</a>  •
@@ -228,6 +229,22 @@ instagramParser.getMediaBySearchQuery('sunset').then((media) => {
 _Note:_ get content from searchbar on the top of the page
 
 ---
+
+## Caveats 💣
+
+<details>
+    <summary>How to get next page? There are only 12 photos</summary>
+    <br/>
+    12 photos is the maximum. I think there is no way to load more content.
+Use instafeed.js with access_token to load more items.
+</details>
+
+<details>
+    <summary>Nanogram stopped working (Cannot read property '0' of undefined)</summary>
+    <br/>
+     Perhaps you made a large number of requests in a short period of time. There is a limit.
+      Usually, the duration of a temporary Instagram ban ranges from few hours to 24-48 hours. The duration of ban also depends on your follow up actions. If you would continue doing the wrong actions, the ban may prolong.
+</details>
 
 ## Examples ☺
 
