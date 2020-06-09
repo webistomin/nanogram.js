@@ -67,7 +67,7 @@
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@size-limit/preset-small-lib": "^4.4.5",
     "@size-limit/time": "^4.4.5",
-    "@types/jest": "^25.2.3",
+    "@types/jest": "^26.0.0",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
     "babel-jest": "^26.0.1",
