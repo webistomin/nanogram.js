@@ -81,7 +81,7 @@ $ npm install nanogram.js --save
 $ yarn add nanogram.js
 ```
 
-#### via CDN
+### via CDN
 
 Add script right before closing `</body>` tag
 
