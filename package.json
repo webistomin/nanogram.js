@@ -59,7 +59,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-angular": "^8.3.4",
+    "@commitlint/config-angular": "^9.0.1",
     "@ls-lint/ls-lint": "^1.8.0",
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-inject": "^4.0.1",
