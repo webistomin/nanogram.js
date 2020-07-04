@@ -52,10 +52,10 @@
 
 ## Key Features ✨
 
-* **Small.** ~ 2.31KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size.
-* **No dependencies.**
-* No need for the **access token** secret.
-* **Easy to use.**
+* **Small.** ~ 2.31KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size
+* **No dependencies**
+* No need for the **access token** secret
+* **Easy to use**
 * **Typescript** support
 * **Tree shakeable**
 
