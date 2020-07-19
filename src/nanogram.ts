@@ -49,11 +49,7 @@ export default class Nanogram {
   /*
    * Make fetch call to instagram
    */
-  private async HTTP<T>(request: RequestInfo, useRegExp = true): Promise<T | undefined> {
-    if (typeof request === 'object') {
-      throw new Error('Not implemented');
-    }
-
+  private async HTTP<T>(request: string, useRegExp = true): Promise<T | undefined> {
     const xhrrequest = (method: string, url: string): Promise<XMLHttpRequest> => {
       return new Promise(function (resolve, reject) {
         const xhr = new XMLHttpRequest();
