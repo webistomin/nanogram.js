@@ -1,7 +1,6 @@
 import Nanogram from '../src/nanogram';
-import fetchMock from 'jest-fetch-mock';
+import xhrmock from 'xhr-mock';
 import { USER_PAGE_INVALID_CONTENT, USER_PAGE_VALID_CONTENT, USER_PAGE_RESPONSE } from './__mocks__/getMediaByUsername';
-fetchMock.enableMocks();
 
 describe('Nanogram library', () => {
   describe('getMediaByUsername method', () => {
@@ -10,36 +9,54 @@ describe('Nanogram library', () => {
     const URL = `https://www.instagram.com/${USERNAME}`;
 
     beforeEach(() => {
-      fetchMock.resetMocks();
+      xhrmock.setup();
       lib = new Nanogram();
     });
 
     afterEach(() => {
+      xhrmock.teardown();
       jest.clearAllMocks();
     });
 
     it('fetch correct URL', async () => {
-      fetchMock.mockResponseOnce(JSON.stringify({}));
+      expect.assertions(1);
+
+      xhrmock.get(URL, (req, res) => {
+        expect(req.url().toString()).toEqual(URL);
+        return res.status(200).body(JSON.stringify({}));
+      });
+
       await lib.getMediaByUsername(USERNAME);
-      expect(fetchMock.mock.calls[0][0]).toEqual(URL);
     });
 
     it('return correct value if everything is correct', async () => {
-      fetchMock.mockResponseOnce(JSON.stringify(USER_PAGE_RESPONSE));
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify(USER_PAGE_RESPONSE),
+      });
+
       await lib.getMediaByUsername(USERNAME).then((res) => {
         expect(res).toEqual(USER_PAGE_VALID_CONTENT);
       });
     });
 
     it('return default value if API returns nothing', async () => {
-      fetchMock.mockResponseOnce(JSON.stringify({}));
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify({}),
+      });
+
       await lib.getMediaByUsername(USERNAME).then((res) => {
         expect(res).toEqual(USER_PAGE_INVALID_CONTENT);
       });
     });
 
     it('return default value if search query is invalid', async () => {
-      fetchMock.mockResponseOnce(JSON.stringify({}));
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify({}),
+      });
+
       await lib.getMediaByUsername(undefined as string).then((res) => {
         expect(res).toEqual(USER_PAGE_INVALID_CONTENT);
       });

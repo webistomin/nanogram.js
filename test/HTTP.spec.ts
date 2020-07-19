@@ -1,6 +1,5 @@
 import Nanogram from '../src/nanogram';
-import fetchMock from 'jest-fetch-mock';
-fetchMock.enableMocks();
+import xhrmock from 'xhr-mock';
 
 describe('Nanogram library', () => {
   describe('HTTP method', () => {
@@ -8,23 +7,23 @@ describe('Nanogram library', () => {
     const URL = 'https://www.instagram.com/instagram';
 
     beforeEach(() => {
-      fetchMock.resetMocks();
+      xhrmock.setup();
       lib = new Nanogram();
     });
 
     afterEach(() => {
+      xhrmock.teardown();
       jest.clearAllMocks();
     });
 
     it("print error to console if can't parse content from string", async () => {
-      fetchMock.mockResponseOnce(
-        JSON.stringify({
+      xhrmock.get(URL, {
+        status: 404,
+        body: JSON.stringify({
           ok: false,
         }),
-        {
-          status: 404,
-        }
-      );
+      });
+
       const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
       await lib['HTTP'](URL);
       expect(consoleSpy).toHaveBeenCalled();

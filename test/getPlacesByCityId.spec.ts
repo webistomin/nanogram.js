@@ -1,11 +1,10 @@
 import Nanogram from '../src/nanogram';
-import fetchMock from 'jest-fetch-mock';
+import xhrmock from 'xhr-mock';
 import {
   PLACES_PAGE_RESPONSE,
   PLACES_PAGE_INVALID_CONTENT,
   PLACES_PAGE_VALID_CONTENT,
 } from './__mocks__/getPlacesByCityId';
-fetchMock.enableMocks();
 
 describe('Nanogram library', () => {
   describe('getPlacesByCityId method', () => {
@@ -14,36 +13,54 @@ describe('Nanogram library', () => {
     const URL = `https://www.instagram.com/explore/locations/${CITY_ID}`;
 
     beforeEach(() => {
-      fetchMock.resetMocks();
+      xhrmock.setup();
       lib = new Nanogram();
     });
 
     afterEach(() => {
+      xhrmock.teardown();
       jest.clearAllMocks();
     });
 
     it('fetch correct URL', async () => {
-      fetchMock.mockResponseOnce(JSON.stringify({}));
+      expect.assertions(1);
+
+      xhrmock.get(URL, (req, res) => {
+        expect(req.url().toString()).toEqual(URL);
+        return res.status(200).body(JSON.stringify({}));
+      });
+
       await lib.getPlacesByCityId(CITY_ID);
-      expect(fetchMock.mock.calls[0][0]).toEqual(URL);
     });
 
     it('return correct value if everything is correct', async () => {
-      fetchMock.mockResponseOnce(JSON.stringify(PLACES_PAGE_RESPONSE));
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify(PLACES_PAGE_RESPONSE),
+      });
+
       await lib.getPlacesByCityId(CITY_ID).then((res) => {
         expect(res).toEqual(PLACES_PAGE_VALID_CONTENT);
       });
     });
 
     it('return default value if API returns nothing', async () => {
-      fetchMock.mockResponseOnce(JSON.stringify({}));
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify({}),
+      });
+
       await lib.getPlacesByCityId(CITY_ID).then((res) => {
         expect(res).toEqual(PLACES_PAGE_INVALID_CONTENT);
       });
     });
 
     it('return default value if search query is invalid', async () => {
-      fetchMock.mockResponseOnce(JSON.stringify({}));
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify({}),
+      });
+
       await lib.getPlacesByCityId(undefined as string).then((res) => {
         expect(res).toEqual(PLACES_PAGE_INVALID_CONTENT);
       });

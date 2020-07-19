@@ -1,13 +1,10 @@
 import Nanogram from '../src/nanogram';
-import fetchMock from 'jest-fetch-mock';
-fetchMock.enableMocks();
 
 describe('Nanogram library', () => {
   describe('parseJSON method', () => {
     let lib: Nanogram = null;
 
     beforeEach(() => {
-      fetchMock.resetMocks();
       lib = new Nanogram();
     });
 
