@@ -25,7 +25,7 @@ export default class Nanogram {
   /*
    * Add query to instagram base url
    */
-  private buildUrl(query: string): RequestInfo {
+  private buildUrl(query: string): string {
     return `${this.INSTAGRAM_HOSTNAME}${query}`;
   }
 
@@ -49,15 +49,20 @@ export default class Nanogram {
   /*
    * Make fetch call to instagram
    */
-  private async HTTP<T>(request: RequestInfo, useRegExp = true): Promise<T | undefined> {
-    const requestOptions: RequestInit = {
-      method: 'GET',
-      redirect: 'follow',
+  private async HTTP<T>(request: string, useRegExp = true): Promise<T | undefined> {
+    const xhrrequest = (method: string, url: string): Promise<XMLHttpRequest> => {
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.onload = (): void => resolve(xhr);
+        xhr.onerror = reject;
+        xhr.send();
+      });
     };
 
-    const response = await fetch(request, requestOptions).then((response: Response) => {
-      if (response.ok) {
-        return response.text();
+    const response = await xhrrequest('GET', request).then((response: XMLHttpRequest) => {
+      if (response.status >= 200 && response.status < 400) {
+        return response.responseText;
       } else {
         console.error(
           'Nanogram: error during request.\nProbably making too many requests to the Instagram application.\nAlso check method parameters.'

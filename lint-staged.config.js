@@ -1,3 +1,3 @@
 module.exports = {
-  'src/**/*.ts': ['other:eslint:write', 'other:prettier:write', 'npx scriptlint', 'git add'],
+  'src/**/*.ts': ['npm run other:eslint:write', 'npm run other:prettier:write', 'npx scriptlint', 'git add'],
 };

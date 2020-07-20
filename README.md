@@ -262,13 +262,12 @@ Use instafeed.js with access_token to load more items.
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>iOS Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/yandex/yandex_48x48.png" alt="Yandex" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Yandex |
 | --------- | --------- | --------- | --------- | --------- | --------- | --------- |
-| IE11*, Edge 12+| 40+ | 42+ | 10.1+| 10.3+ | 29+| 15.6+
+| IE11, Edge 12+| 40+ | 42+ | 10.1+| 10.3+ | 29+| 15.6+
 
-`*` – For IE11 you need to install **fetch** polyfill. Because of how `fetch()` works, you’ll also need a **Promise** polyfill.
 
 If you want maximum browser compatibility, please use polyfills.
 
-See caniuse for [fetch](https://caniuse.com/#search=fetch) and [promise](https://caniuse.com/#search=promise).
+See caniuse for [promise](https://caniuse.com/#search=promise).
 
 ### Browsers polyfills
 
@@ -280,11 +279,11 @@ Here's an example of using [polyfill.io](https://polyfill.io/v3/url-builder/) to
 <script src="https://polyfill.io/v3/polyfill.min.js?features=fetch%2CPromise"></script>
 ```
 
-Alternatively, you can install packages like [es6-promise](https://github.com/stefanpenner/es6-promise) and [whatwg-fetch](https://github.com/github/fetch).
+Alternatively, you can install packages like [es6-promise](https://github.com/stefanpenner/es6-promise).
 
 ### Node.js
 
-Node.js doesn't have a built-in implementation of the `Fetch API`, but you can use any library with a compatible interface, such [node-fetch](https://github.com/node-fetch/node-fetch).
+Node.js doesn't have a built-in implementation of the `XHR API`, but you can use any library with a compatible interface, such [xmlhttprequest](https://www.npmjs.com/package/xmlhttprequest).
 
 ## License 📄
 
