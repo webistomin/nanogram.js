@@ -15,6 +15,17 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "yusufkhan07",
+      "name": "Yousuf Khan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/24753161?v=4",
+      "profile": "https://github.com/yusufkhan07",
+      "contributions": [
+        "code",
+        "test",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
