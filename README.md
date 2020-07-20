@@ -285,6 +285,8 @@ Alternatively, you can install packages like [es6-promise](https://github.com/st
 
 Node.js doesn't have a built-in implementation of the `XHR API`, but you can use any library with a compatible interface, such [xmlhttprequest](https://www.npmjs.com/package/xmlhttprequest).
 
+If you are using version **less than 2.0.0** you need `Fetch API` instead of `XHR API`. Such [node-fetch](https://github.com/node-fetch/node-fetch).
+
 ## License 📄
 
 ### [MIT](https://github.com/webistomin/nanogram.js/blob/master/LICENSE)
