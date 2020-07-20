@@ -33,7 +33,7 @@
 <a href="https://www.npmjs.com/package/nanogram.js"><img alt="downloads" src="https://img.shields.io/npm/dm/nanogram.js" /></a>
   <a href="https://www.jsdelivr.com/package/npm/nanogram.js"><img alt="jsdeliver" src="https://data.jsdelivr.com/v1/package/npm/nanogram.js/badge?style=rounded" /></a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<img src="https://img.shields.io/badge/all_contributors-1-orange.svg" alt="contributors"> 
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 </p>
 
@@ -304,6 +304,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://webistom.in/en"><img src="https://avatars0.githubusercontent.com/u/30475699?v=4" width="100px;" alt=""/><br /><sub><b>Alexey Istomin</b></sub></a><br /><a href="#infra-webistomin" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/webistomin/nanogram.js/commits?author=webistomin" title="Code">💻</a> <a href="#ideas-webistomin" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/yusufkhan07"><img src="https://avatars1.githubusercontent.com/u/24753161?v=4" width="100px;" alt=""/><br /><sub><b>Yousuf Khan</b></sub></a><br /><a href="https://github.com/webistomin/nanogram.js/commits?author=yusufkhan07" title="Code">💻</a> <a href="https://github.com/webistomin/nanogram.js/commits?author=yusufkhan07" title="Tests">⚠️</a> <a href="https://github.com/webistomin/nanogram.js/issues?q=author%3Ayusufkhan07" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
