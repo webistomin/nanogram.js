@@ -10,7 +10,6 @@
 
 <h5 align="center">⭐️ Star me on GitHub — it helps!</h5>
 
-
 <p align="center">
   <a href="https://travis-ci.org/webistomin/nanogram.js">
     <img src="https://travis-ci.org/webistomin/nanogram.js.svg?branch=master"
@@ -23,8 +22,8 @@
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/nanogram.js">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
   <img alt="npm type definitions" src="https://img.shields.io/npm/types/nanogram.js">
-  <a href="https://bundlephobia.com/result?p=nanogram.js@1.0.2">
-  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js/1.0.2">
+  <a href="https://bundlephobia.com/result?p=nanogram.js@2.0.0">
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js/2.0.0">
   </a>
 </p>
 
@@ -32,7 +31,7 @@
 <a href="https://www.npmjs.com/package/nanogram.js"><img alt="npm" src="https://img.shields.io/npm/v/nanogram.js" /></a>
 <a href="https://www.npmjs.com/package/nanogram.js"><img alt="downloads" src="https://img.shields.io/npm/dm/nanogram.js" /></a>
   <a href="https://www.jsdelivr.com/package/npm/nanogram.js"><img alt="jsdeliver" src="https://data.jsdelivr.com/v1/package/npm/nanogram.js/badge?style=rounded" /></a>
-<a href="#contributors-"><img alt="contributors" src="https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square" /></a>
+<a href="#contributors-"><img alt="contributors" src="https://img.shields.io/badge/all_contributors-2-orange.svg" /></a>
 </p>
 
 <p align="center">
@@ -50,7 +49,7 @@
 
 ## Key Features ✨
 
-* **Small.** ~ 2.31KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size
+* **Small.** ~ 2.4KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size
 * **No dependencies**
 * No need for the **access token** secret
 * **Easy to use**
@@ -84,9 +83,9 @@ $ yarn add nanogram.js
 Add script right before closing `</body>` tag
 
 ```html
-<script src="https://unpkg.com/nanogram.js@1.0.2/dist/nanogram.iife.js"></script>
+<script src="https://unpkg.com/nanogram.js@2.0.0/dist/nanogram.iife.js"></script>
 or
-<script src="https://cdn.jsdelivr.net/npm/nanogram.js@1.0.2/dist/nanogram.iife.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nanogram.js@2.0.0/dist/nanogram.iife.min.js"></script>
 ```
 
 _Hint:_ for a better performance add [preconnect](https://css-tricks.com/using-relpreconnect-to-establish-network-connections-early-and-increase-performance/) link in the head of your document. 
@@ -264,6 +263,8 @@ Use instafeed.js with access_token to load more items.
 
 `*` – For IE11 you need to install a **Promise** polyfill.
 
+If you are using version **less than 2.0.0** you will also need polyfill for **Fetch API**.
+
 If you want maximum browser compatibility, please use polyfills.
 
 See caniuse for [promise](https://caniuse.com/#search=promise).
@@ -275,8 +276,7 @@ If you want to send a polyfill only to browsers that need it, there's a handy se
 Here's an example of using [polyfill.io](https://polyfill.io/v3/url-builder/) to polyfill only the `Promise` feature, so if we put this right before closing `</body>` tag of `index.html` and `Nanogram.js` script, Polyfill.io will read the user agent and use that information to determine if the browser requires a polyfill for the feature or features listed. Since I'm using Chrome it will send back an empty response since my browser doesn't need it, pretty slick.
 
 ```html
-<script src="https://polyfill.io/v3/polyfill.min.js?features=Promise
-"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=Promise"></script>
 ```
 
 Alternatively, you can install packages like [es6-promise](https://github.com/stefanpenner/es6-promise).

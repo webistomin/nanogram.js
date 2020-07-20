@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const Nanogram = require('nanogram.js');
 
 // For versions of node earlier than 12.x, use this globalThis polyfill:
@@ -14,8 +14,8 @@ const Nanogram = require('nanogram.js');
   delete Object.prototype.__magic__;
 }());
 
-if (!globalThis.fetch) {
-  globalThis.fetch = fetch;
+if (!globalThis.XMLHttpRequest) {
+  globalThis.XMLHttpRequest = XMLHttpRequest;
 }
 
 const instagramParser = new Nanogram();

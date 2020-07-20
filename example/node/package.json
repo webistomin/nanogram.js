@@ -11,7 +11,7 @@
   "author": "webistomin",
   "license": "MIT",
   "dependencies": {
-    "nanogram.js": "^1.0.2",
-    "node-fetch": "^2.6.0"
+    "nanogram.js": "^2.0.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
