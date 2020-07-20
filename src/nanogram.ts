@@ -51,7 +51,7 @@ export default class Nanogram {
    */
   private async HTTP<T>(request: string, useRegExp = true): Promise<T | undefined> {
     const xhrrequest = (method: string, url: string): Promise<XMLHttpRequest> => {
-      return new Promise(function (resolve, reject) {
+      return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.open(method, url);
         xhr.onload = (): void => resolve(xhr);
@@ -60,7 +60,6 @@ export default class Nanogram {
       });
     };
 
-    // redirect: 'follow',
     const response = await xhrrequest('GET', request).then((response: XMLHttpRequest) => {
       if (response.status >= 200 && response.status < 400) {
         return response.responseText;
