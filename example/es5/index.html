@@ -67,7 +67,9 @@
     preloader.classList.add('preloader--loading');
     // Get content from https://www.instagram.com/instagram/
     return lib.getMediaByUsername('instagram').then(function(response) {
-      console.table(response.profile);
+      if (console.table) {
+        console.table(response.profile);
+      }
 
       // Get photos
       var photos = response.profile.edge_owner_to_timeline_media.edges;
