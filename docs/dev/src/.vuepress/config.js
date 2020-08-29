@@ -22,6 +22,8 @@ module.exports = {
     ['script', { src: 'https://cdn.jsdelivr.net/npm/nanogram.js@2.0.0/dist/nanogram.iife.min.js' }]
   ],
 
+  dest: '../dist',
+
   /**
    * Theme configuration, here is the default theme configuration for VuePress.
    *

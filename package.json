@@ -31,8 +31,6 @@
     "build:es": "cross-env NODE_ENV=production rollup --config @config/rollup.config.js --format es",
     "build:iife": "cross-env NODE_ENV=production rollup --config @config/rollup.config.js --format iife",
     "dev": "rollup -c @config/rollup.config.js -w",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
     "lint": "run-s other:eslint:write other:prettier:write",
     "other:eslint:write": "eslint --ext .js,.ts {src,test}/* --fix --max-warnings 0",
     "other:prettier:write": "prettier --write \"{src,test}/**/*.{js,ts}\"",
