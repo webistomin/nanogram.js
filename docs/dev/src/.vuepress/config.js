@@ -24,6 +24,8 @@ module.exports = {
 
   dest: '../dist',
 
+  base: '/nanogram.js/',
+
   /**
    * Theme configuration, here is the default theme configuration for VuePress.
    *
