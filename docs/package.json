@@ -1,0 +1,19 @@
+{
+  "name": "nanogram.js",
+  "version": "0.0.1",
+  "description": "An easy-to-use and simple Instagram package that allow you to fetch media content without API and access token.",
+  "main": "index.js",
+  "authors": {
+    "name": "webistomin",
+    "email": "webistomin@gmail.com"
+  },
+  "repository": "https://github.com/webistomin/nanogram.js/nanogram.js",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
