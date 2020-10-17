@@ -24,4 +24,7 @@
 - Add named export for cjs bundle
 - Update devDependencies
 
+## 2.0.2 (27.10.2020)
+- Add sideEffect: false to package.json
+
 

@@ -19,7 +19,7 @@ module.exports = {
     ['meta', { name: 'theme-color', content: '#af2ca2' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/nanogram.js@2.0.1/dist/nanogram.iife.min.js' }]
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/nanogram.js@2.0.2/dist/nanogram.iife.min.js' }]
   ],
 
   dest: '../dist',
