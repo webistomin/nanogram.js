@@ -85,7 +85,7 @@ Add script right before closing `</body>` tag
 ```html
 <script src="https://unpkg.com/nanogram.js@2.0.2/dist/nanogram.iife.js"></script>
 or
-<script src="https://cdn.jsdelivr.net/npm/nanogram.js@2.0.2/dist/nanogram.iife.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nanogram.js@2.0.2/dist/nanogram.iife.js"></script>
 ```
 
 _Hint:_ for a better performance add [preconnect](https://css-tricks.com/using-relpreconnect-to-establish-network-connections-early-and-increase-performance/) link in the head of your document. 
