@@ -1,7 +1,7 @@
 {
   "name": "nanogram.js",
   "version": "0.0.1",
-  "description": "An easy-to-use and simple Instagram package that allow you to fetch media content without API and access token.",
+  "description": "An easy-to-use and simple Instagram package allow you to fetch media content without API and access token.",
   "main": "index.js",
   "authors": {
     "name": "webistomin",

@@ -16,7 +16,7 @@
 <div id="preloader"></div>
 
 <script src="https://polyfill.io/v3/polyfill.min.js?features=Promise"></script>
-<script src="https://cdn.jsdelivr.net/npm/nanogram.js@2.0.0/dist/nanogram.iife.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nanogram.js@2.0.1/dist/nanogram.iife.min.js"></script>
 <script>
   // Initialize library
   const lib = new Nanogram();

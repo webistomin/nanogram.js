@@ -40,9 +40,9 @@ export default class Nanogram {
         data = content.replace(this.SHARED_DATA_TAG_EXP, '$1');
       }
 
-      return JSON.parse(data);
+      return JSON.parse(data) as T;
     } catch (error) {
-      console.error(`Nanogram: failure during parsing JSON.\nError message: ${error.message}`);
+      console.error(`Nanogram: failure during parsing JSON.\nError message: ${(<Error>error).message}`);
     }
   }
 
@@ -65,7 +65,11 @@ export default class Nanogram {
         return response.responseText;
       } else {
         console.error(
-          'Nanogram: error during request.\nProbably making too many requests to the Instagram application.\nAlso check method parameters.'
+          [
+            'Nanogram: error during request',
+            'Probably making too many requests to the Instagram application.',
+            'Also check method parameters',
+          ].join('\n')
         );
       }
     });

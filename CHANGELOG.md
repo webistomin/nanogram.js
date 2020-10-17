@@ -20,4 +20,8 @@
 - Fix [issue#91](https://github.com/webistomin/nanogram.js/issues/91)
 - Fetch replaced by XHR. Now you don't need polyfill for Fetch API. If you have any errors – open an issue.
 
+## 2.0.1 (27.10.2020)
+- Add named export for cjs bundle
+- Update devDependencies
+
 

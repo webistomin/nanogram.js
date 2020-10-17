@@ -1,4 +1,4 @@
-<!-- An easy-to-use and simple Instagram package that allows you to fetch media content without API and access token -->
+<!-- An easy-to-use and simple Instagram package allows you to fetch media content without API and access token -->
 
 <p align="center">
   <img width="50%" src="https://raw.githubusercontent.com/webistomin/nanogram.js/260d58af351d84606a75b32160f349c9a444691d/assets/logo.svg" alt="Nanogram">
@@ -6,7 +6,7 @@
 
 ---
 
-<h4 align="center">An easy-to-use and simple Instagram package that allows you to fetch media content <strong>without API</strong> and <strong>access token</strong>.</h4>
+<h4 align="center">An easy-to-use and simple Instagram package allows you to fetch media content <strong>without API</strong> and <strong>access token</strong>.</h4>
 
 <h5 align="center">⭐️ Star me on GitHub — it helps!</h5>
 
@@ -22,8 +22,8 @@
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/nanogram.js">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
   <img alt="npm type definitions" src="https://img.shields.io/npm/types/nanogram.js">
-  <a href="https://bundlephobia.com/result?p=nanogram.js@2.0.0">
-  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js/2.0.0">
+  <a href="https://bundlephobia.com/result?p=nanogram.js@2.0.1">
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js/2.0.1">
   </a>
 </p>
 
@@ -83,9 +83,9 @@ $ yarn add nanogram.js
 Add script right before closing `</body>` tag
 
 ```html
-<script src="https://unpkg.com/nanogram.js@2.0.0/dist/nanogram.iife.js"></script>
+<script src="https://unpkg.com/nanogram.js@2.0.1/dist/nanogram.iife.js"></script>
 or
-<script src="https://cdn.jsdelivr.net/npm/nanogram.js@2.0.0/dist/nanogram.iife.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nanogram.js@2.0.1/dist/nanogram.iife.min.js"></script>
 ```
 
 _Hint:_ for a better performance add [preconnect](https://css-tricks.com/using-relpreconnect-to-establish-network-connections-early-and-increase-performance/) link in the head of your document. 

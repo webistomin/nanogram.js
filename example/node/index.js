@@ -1,5 +1,5 @@
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const Nanogram = require('nanogram.js');
+const Nanogram = require('nanogram.js').default;
 
 // For versions of node earlier than 12.x, use this globalThis polyfill:
 (function() {

@@ -14,11 +14,7 @@ import minimist from 'minimist';
 import * as pkg from '../package.json';
 
 // Get browserslist config and remove ie from es build targets
-const esbrowserslist = fs
-  .readFileSync(path.resolve('.', '.browserslistrc'))
-  .toString()
-  .split('\n')
-  .filter((entry) => entry && !entry.startsWith('ie'));
+const esbrowserslist = fs.readFileSync(path.resolve('.', '.browserslistrc')).toString().split('\n');
 
 const argv = minimist(process.argv.slice(2));
 
@@ -51,6 +47,14 @@ const baseConfig = {
     babel: {
       exclude: 'node_modules/**',
       extensions: ['.js', '.ts'],
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            targets: esbrowserslist,
+          },
+        ],
+      ],
     },
   },
   watch: {
@@ -86,17 +90,7 @@ if (!argv.format || argv.format === 'es') {
     },
     plugins: [
       ...baseConfig.plugins.common,
-      babel({
-        ...baseConfig.plugins.babel,
-        presets: [
-          [
-            '@babel/preset-env',
-            {
-              targets: esbrowserslist,
-            },
-          ],
-        ],
-      }),
+      babel(baseConfig.plugins.babel),
       resolve({
         extensions: ['.mjs', '.js', '.json', '.node', '.ts'],
       }),
@@ -118,7 +112,7 @@ if (!argv.format || argv.format === 'cjs') {
       compact: true,
       file: pkg.main,
       format: 'cjs',
-      // exports: 'named',
+      exports: 'named',
       globals,
     },
     plugins: [

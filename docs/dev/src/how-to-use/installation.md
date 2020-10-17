@@ -17,9 +17,9 @@ $ yarn add nanogram.js
 Add script right before closing `</body>` tag
 
 ```html
-<script src="https://unpkg.com/nanogram.js@2.0.0/dist/nanogram.iife.js"></script>
+<script src="https://unpkg.com/nanogram.js@2.0.1/dist/nanogram.iife.js"></script>
 or
-<script src="https://cdn.jsdelivr.net/npm/nanogram.js@2.0.0/dist/nanogram.iife.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nanogram.js@2.0.1/dist/nanogram.iife.min.js"></script>
 ```
 
 ::: tip Hint
