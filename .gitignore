@@ -37,4 +37,4 @@ stats.html
 # dotenv environment variables file
 .env
 
-.now
+.vercel
