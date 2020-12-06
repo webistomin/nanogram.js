@@ -1,57 +1,73 @@
+/**
+ * Base instagram url for every http request
+ */
 export const INSTAGRAM_HOSTNAME = 'https://www.instagram.com/';
-export const SHARED_DATA_TAG_EXP = /^[\w\W]*<script type="text\/javascript">window._sharedData = ({[\w\W]*});<\/script>[\w\W]*$/g;
 
+/**
+ * RegExp to parse
+ * <script type="text/javascript">window._sharedData = {}</script>
+ * from HTML response
+ */
+export const SHARED_DATA_REG_EXP = /^[\w\W]*<script type="text\/javascript">window._sharedData = ({[\w\W]*});<\/script>[\w\W]*$/g;
+
+/**
+ * Append a query to the base instagram url
+ */
 export const buildURL = (query: string): string => {
   return `${INSTAGRAM_HOSTNAME}${query}`;
 };
 
-export const logError = (params: string[]): void => {
-  const message = `Nanogram: please provide a valid ${params.join(' and ')}`;
-  console.error(message);
+/**
+ * Log error to the user console.
+ * Used in every function which requires parameters
+ */
+export const logError = (messages: string[]): void => {
+  const errors = messages.map((message) => [message, '\n']);
+  errors.unshift(['[nanogram.js]', '\n']);
+  console.error(errors.join(''));
 };
 
+/**
+ * Parse JSON from HTTP response
+ */
 export const parseJSON = <T>(content: string, useRegExp: boolean): T => {
   try {
     let data = content;
 
     if (useRegExp) {
-      data = content.replace(SHARED_DATA_TAG_EXP, '$1');
+      data = content.replace(SHARED_DATA_REG_EXP, '$1');
     }
 
     return JSON.parse(data) as T;
   } catch (error) {
-    console.error(`Nanogram: failure during parsing JSON.\nError message: ${(<Error>error).message}`);
+    logError(['failure during parsing JSON.', `Error message: ${(<Error>error).message}`]);
   }
 };
 
-export const HTTP = async <T>(request: string, useRegExp = true): Promise<T | undefined> => {
-  const xhrrequest = (method: string, url: string): Promise<XMLHttpRequest> => {
-    return new Promise((resolve, reject) => {
-      const xhr = new XMLHttpRequest();
-      xhr.open(method, url);
-      xhr.onload = (): void => resolve(xhr);
-      xhr.onerror = reject;
-      xhr.send();
-    });
-  };
+/**
+ * Promisified XMLHttpRequest
+ */
+const xhrRequest = (method: string, url: string): Promise<XMLHttpRequest> => {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.onload = (): void => resolve(xhr);
+    xhr.onerror = reject;
+    xhr.send();
+  });
+};
 
-  const response = await xhrrequest('GET', request).then((response: XMLHttpRequest) => {
-    if (response.status >= 200 && response.status < 400) {
-      return response.responseText;
+/**
+ * Module for making HTTP requests
+ */
+export const HTTP = async <T>(url: string, useRegExp = true): Promise<T | undefined> => {
+  return xhrRequest('GET', url).then((response) => {
+    const responseText = response.responseText;
+
+    if (response.status >= 200 && response.status < 400 && responseText) {
+      return parseJSON(responseText, useRegExp);
     } else {
-      console.error(
-        [
-          'Nanogram: error during request',
-          'Probably making too many requests to the Instagram application.',
-          'Also check method parameters',
-        ].join('\n')
-      );
+      logError(['Probably making too many requests to the Instagram application.', 'Also check method parameters']);
     }
   });
-
-  if (response) {
-    return parseJSON(response, useRegExp);
-  }
-
-  return;
 };
