@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script src="../dist/nanogram.iife.js"></script>
+<script>
+  const lib = Nanogram
+  try {
+    lib.getMediaByPostId('CHp6ScBhTA4fdgdfgdfgdfgdf').then((result) => {
+      console.log(result)
+    })
+  } catch (error) {
+    console.log('error', 'here')
+  }
+</script>
+</body>
+</html>

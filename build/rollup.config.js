@@ -31,7 +31,7 @@ const BANNER_TEXT = `/**
 **/\n\n`;
 
 const baseConfig = {
-  input: `src/${LIBRARY_NAME}.ts`,
+  input: `src/index.ts`,
   plugins: {
     common: [
       json(),

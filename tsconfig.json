@@ -28,6 +28,6 @@
     ]
   },
   "include": [
-    "src/nanogram.ts"
+    "src/index.ts"
   ]
 }
