@@ -1,5 +1,5 @@
-import { HTTP, buildURL } from '../utils';
 import { IPostResponse, IPostResult } from '../types/post-page';
+import { HTTP, buildURL, NETWORK_BAN_MESSAGE } from '../utils';
 
 export const getMediaByPostId = async (postId: string): Promise<IPostResult> => {
   const result: IPostResult = {
@@ -9,9 +9,17 @@ export const getMediaByPostId = async (postId: string): Promise<IPostResult> => 
 
   const url = buildURL(`p/${postId}`);
   const response = await HTTP<IPostResponse>(url);
-  const post = response?.entry_data;
+  const content = response?.entry_data?.PostPage;
 
-  return { ...result, ...{ post, ok: Boolean(post) } };
+  if (content) {
+    const { shortcode_media = null } = { ...content?.[0]?.graphql };
+    result.post = shortcode_media;
+    result.ok = true;
+  } else {
+    throw new Error(NETWORK_BAN_MESSAGE);
+  }
+
+  return result;
 };
 
 export default getMediaByPostId;
