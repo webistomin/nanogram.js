@@ -1,4 +1,4 @@
-import { logError, HTTP, buildURL } from '../utils';
+import { HTTP, buildURL } from '../utils';
 import { ITagsResponse, ITagsResult } from '../types/tags-page';
 
 export const getMediaByTag = async (tag: string): Promise<ITagsResult> => {
@@ -6,11 +6,6 @@ export const getMediaByTag = async (tag: string): Promise<ITagsResult> => {
     tag: null,
     ok: false,
   };
-
-  if (!tag) {
-    logError(['tag']);
-    return result;
-  }
 
   const url = buildURL(`explore/tags/${tag}`);
   const response = await HTTP<ITagsResponse>(url);

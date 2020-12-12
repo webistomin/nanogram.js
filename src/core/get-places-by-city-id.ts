@@ -1,4 +1,4 @@
-import { logError, HTTP, buildURL } from '../utils';
+import { HTTP, buildURL } from '../utils';
 import { IPlacesResponse, IPlacesResult } from '../types/places-page';
 
 export const getPlacesByCityId = async (cityId: string): Promise<IPlacesResult> => {
@@ -10,11 +10,6 @@ export const getPlacesByCityId = async (cityId: string): Promise<IPlacesResult> 
     },
     ok: false,
   };
-
-  if (!cityId) {
-    logError(['city id']);
-    return result;
-  }
 
   const url = buildURL(`explore/locations/${cityId}`);
   const response = await HTTP<IPlacesResponse>(url);

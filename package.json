@@ -32,14 +32,14 @@
     "build:cjs": "cross-env NODE_ENV=production rollup --config config/rollup.config.js --format cjs",
     "build:esm": "cross-env NODE_ENV=production rollup --config config/rollup.config.js --format es",
     "build:iife": "cross-env NODE_ENV=production rollup --config config/rollup.config.js --format iife",
-    "build:size": "run-s prebuild config check-limit",
+    "build:size": "run-s prebuild build check-size",
     "lint": "run-s eslint:write prettier:write",
     "eslint:write": "eslint --ext .js,.ts {src,test}/* --fix --max-warnings 0",
     "prettier:write": "prettier --write \"{src,test}/**/*.{js,ts}\"",
     "test": "jest --config jest.config.js --coverage --silent",
     "test:watch": "jest --config jest.config.js --coverage --watch",
-    "treeshake": "agadoo",
-    "check-limit": "size-limit"
+    "tree-shake": "agadoo",
+    "check-size": "size-limit"
   },
   "repository": {
     "type": "git",

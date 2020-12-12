@@ -1,5 +1,5 @@
 import { ICitiesResponse, ICitiesResult } from '../types/cities-page';
-import { logError, HTTP, buildURL } from '../utils';
+import { HTTP, buildURL } from '../utils';
 
 export const getCitiesByCountryId = async (countryId: string): Promise<ICitiesResult> => {
   const result: ICitiesResult = {
@@ -7,11 +7,6 @@ export const getCitiesByCountryId = async (countryId: string): Promise<ICitiesRe
     country_info: null,
     ok: false,
   };
-
-  if (!countryId) {
-    logError(['country id']);
-    return result;
-  }
 
   const url = buildURL(`explore/locations/${countryId}`);
   const response = await HTTP<ICitiesResponse>(url);

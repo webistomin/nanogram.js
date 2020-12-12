@@ -1,16 +1,11 @@
 import { IPlaceResponse, IPlaceResult } from '../types/place-page';
-import { logError, HTTP, buildURL } from '../utils';
+import { HTTP, buildURL } from '../utils';
 
 export const getMediaByPlaceId = async (placeId: number): Promise<IPlaceResult> => {
   const result: IPlaceResult = {
     location: null,
     ok: false,
   };
-
-  if (!placeId) {
-    logError(['place id']);
-    return result;
-  }
 
   const url = buildURL(`explore/locations/${placeId}`);
   const response = await HTTP<IPlaceResponse>(url);
