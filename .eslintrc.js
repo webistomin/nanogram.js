@@ -1,32 +1,37 @@
 module.exports = {
   root: true,
-  env: {
-    node: true,
-    browser: true
-  },
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier",
-    "prettier/@typescript-eslint"
-  ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2020,
-    parser: "babel-eslint",
-    project: "./tsconfig.json",
-    sourceType: "module",
+    sourceType: 'module',
+    project: './tsconfig.json',
     createDefaultProgram: true,
   },
-  plugins: [
-    "@typescript-eslint",
-    "prettier"
-  ],
+  env: {
+    node: true,
+    browser: true,
+  },
+  extends: ['eslint:recommended', 'prettier'],
+  plugins: ['prettier'],
   rules: {
-    "prettier/prettier": ["warn"],
-    "@typescript-eslint/interface-name-prefix": 0,
-    "@typescript-eslint/camelcase": 0
-  }
+    'prettier/prettier': ['warn'],
+  },
+  overrides: [
+    {
+      files: ['*.ts'],
+      extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'prettier',
+        'prettier/@typescript-eslint',
+      ],
+      plugins: ['@typescript-eslint', 'prettier'],
+      rules: {
+        '@typescript-eslint/interface-name-prefix': 0,
+        '@typescript-eslint/camelcase': 0,
+      },
+    },
+  ],
 };
