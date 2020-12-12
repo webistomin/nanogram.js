@@ -1,5 +1,5 @@
-import { HTTP, buildURL } from '../utils';
 import { ITagsResponse, ITagsResult } from '../types/tags-page';
+import { HTTP, buildURL, NETWORK_BAN_MESSAGE } from '../utils';
 
 export const getMediaByTag = async (tag: string): Promise<ITagsResult> => {
   const result: ITagsResult = {
@@ -9,9 +9,17 @@ export const getMediaByTag = async (tag: string): Promise<ITagsResult> => {
 
   const url = buildURL(`explore/tags/${tag}`);
   const response = await HTTP<ITagsResponse>(url);
-  const hashtag = response?.entry_data?.TagPage[0]?.graphql.hashtag || null;
+  const content = response?.entry_data?.TagPage;
 
-  return { ...result, ...{ tag: hashtag, ok: Boolean(hashtag) } };
+  if (content) {
+    const { hashtag = null } = { ...content?.[0]?.graphql };
+    result.tag = hashtag;
+    result.ok = true;
+  } else {
+    throw new Error(NETWORK_BAN_MESSAGE);
+  }
+
+  return result;
 };
 
 export default getMediaByTag;

@@ -11,6 +11,14 @@ export const INSTAGRAM_HOSTNAME = 'https://www.instagram.com/';
 export const SHARED_DATA_REG_EXP = /^[\w\W]*<script type="text\/javascript">window._sharedData = ({[\w\W]*});<\/script>[\w\W]*$/g;
 
 /**
+ * Message for network ban
+ */
+export const NETWORK_BAN_MESSAGE = [
+  '[nanogram.js] It looks like your network has been temporary banned because of too many requests.',
+  'See ...',
+].join('\n');
+
+/**
  * Append a query to the base instagram url
  */
 export const buildURL = (query: string): string => {
@@ -18,30 +26,16 @@ export const buildURL = (query: string): string => {
 };
 
 /**
- * Log error to the user console.
- * Used in every function which requires parameters
- */
-export const logError = (messages: string[]): void => {
-  const errors = messages.map((message) => [message, '\n']);
-  errors.unshift(['[nanogram.js]', '\n']);
-  console.error(errors.join(''));
-};
-
-/**
  * Parse JSON from HTTP response
  */
 export const parseJSON = <T>(content: string, useRegExp: boolean): T => {
-  try {
-    let data = content;
+  let data = content;
 
-    if (useRegExp) {
-      data = content.replace(SHARED_DATA_REG_EXP, '$1');
-    }
-
-    return JSON.parse(data) as T;
-  } catch (error) {
-    logError(['failure during parsing JSON.', `Error message: ${(<Error>error).message}`]);
+  if (useRegExp) {
+    data = content.replace(SHARED_DATA_REG_EXP, '$1');
   }
+
+  return JSON.parse(data) as T;
 };
 
 /**
@@ -60,14 +54,13 @@ const xhrRequest = (method: string, url: string): Promise<XMLHttpRequest> => {
 /**
  * Module for making HTTP requests
  */
-export const HTTP = async <T>(url: string, useRegExp = true): Promise<T | undefined> => {
-  return xhrRequest('GET', url).then((response) => {
-    const responseText = response.responseText;
+export const HTTP = async <T>(url: string, useRegExp = true): Promise<T | never> => {
+  const response = await xhrRequest('GET', url);
+  const { responseText, status, responseURL } = response;
 
-    if (response.status >= 200 && response.status < 400 && responseText) {
-      return parseJSON(responseText, useRegExp);
-    } else {
-      logError(['Probably making too many requests to the Instagram application.', 'Also check method parameters']);
-    }
-  });
+  if (status >= 200 && status < 400) {
+    return parseJSON(responseText, useRegExp);
+  } else {
+    throw new Error(`${status} for ${responseURL}`);
+  }
 };

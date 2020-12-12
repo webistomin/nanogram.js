@@ -22,7 +22,7 @@
     "outDir": "dist",
     "sourceMap": true,
     "strict": true,
-    "target": "es5",
+    "target": "ES5",
     "typeRoots": [
       "node_modules/@types"
     ],

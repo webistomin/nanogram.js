@@ -7,15 +7,25 @@
 <body>
 
 <script src="../dist/nanogram.iife.js"></script>
+<!--<script>-->
+<!--  const lib = Nanogram-->
+<!--  lib.getCitiesByCountryId('US').then((result) => {-->
+<!--    console.log(result)-->
+<!--  }).catch((error) => {-->
+<!--    console.log('suka', error)-->
+<!--  })-->
+<!--</script>-->
 <script>
   const lib = Nanogram
-  try {
-    lib.getMediaByPostId('CHp6ScBhTA4fdgdfgdfgdfgdf').then((result) => {
-      console.log(result)
-    })
-  } catch (error) {
-    console.log('error', 'here')
+  const test = async () => {
+    try {
+      const response = await lib.getCitiesByCountryId('US')
+      console.log(response)
+    } catch (error) {
+      console.log('suka2', error)
+    }
   }
+  test()
 </script>
 </body>
 </html>

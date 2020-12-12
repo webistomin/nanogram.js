@@ -1,5 +1,5 @@
 import { ILocationDirectoryResponse, ILocationDirectoryResult } from '../types/location-directory-page';
-import { buildURL, HTTP } from '../utils';
+import { buildURL, HTTP, NETWORK_BAN_MESSAGE } from '../utils';
 
 export const getCountries = async (): Promise<ILocationDirectoryResult> => {
   const result: ILocationDirectoryResult = {
@@ -9,9 +9,17 @@ export const getCountries = async (): Promise<ILocationDirectoryResult> => {
 
   const url = buildURL(`explore/locations/`);
   const response = await HTTP<ILocationDirectoryResponse>(url);
-  const countryList = response?.entry_data?.LocationsDirectoryPage[0]?.country_list || null;
+  const content = response?.entry_data?.LocationsDirectoryPage;
 
-  return { ...result, ...{ country_list: countryList, ok: Boolean(countryList) } };
+  if (content) {
+    const { country_list = null } = { ...content?.[0] };
+    result.country_list = country_list;
+    result.ok = true;
+  } else {
+    throw new Error(NETWORK_BAN_MESSAGE);
+  }
+
+  return result;
 };
 
 export default getCountries;

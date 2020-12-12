@@ -1,5 +1,5 @@
 import { IUserProfileResponse, IUserProfileResult } from '../types/user-profile-page';
-import { HTTP, buildURL } from '../utils';
+import { HTTP, buildURL, NETWORK_BAN_MESSAGE } from '../utils';
 
 export const getMediaByUsername = async (username: string): Promise<IUserProfileResult> => {
   const result: IUserProfileResult = {
@@ -9,10 +9,17 @@ export const getMediaByUsername = async (username: string): Promise<IUserProfile
 
   const url = buildURL(username);
   const response = await HTTP<IUserProfileResponse>(url);
+  const content = response?.entry_data?.ProfilePage;
 
-  const profile = response?.entry_data?.ProfilePage[0]?.graphql?.user || null;
+  if (content) {
+    const { user = null } = { ...content?.[0]?.graphql };
+    result.profile = user;
+    result.ok = true;
+  } else {
+    throw new Error(NETWORK_BAN_MESSAGE);
+  }
 
-  return { ...result, ...{ profile, ok: Boolean(profile) } };
+  return result;
 };
 
 export default getMediaByUsername;

@@ -1,5 +1,5 @@
 import { ILocationResponse, ILocationResult } from '../types/location-page';
-import { HTTP, buildURL } from '../utils';
+import { HTTP, buildURL, NETWORK_BAN_MESSAGE } from '../utils';
 
 export const getMediaByLocation = async (locationId: number, placeName: string): Promise<ILocationResult> => {
   const result: ILocationResult = {
@@ -9,9 +9,17 @@ export const getMediaByLocation = async (locationId: number, placeName: string):
 
   const url = buildURL(`explore/locations/${locationId}/${placeName}`);
   const response = await HTTP<ILocationResponse>(url);
-  const location = response?.entry_data?.LocationsPage[0]?.graphql?.location || null;
+  const content = response?.entry_data?.LocationsPage;
 
-  return { ...result, ...{ location, ok: Boolean(location) } };
+  if (content) {
+    const { location = null } = { ...content?.[0]?.graphql };
+    result.location = location;
+    result.ok = true;
+  } else {
+    throw new Error(NETWORK_BAN_MESSAGE);
+  }
+
+  return result;
 };
 
 export default getMediaByLocation;

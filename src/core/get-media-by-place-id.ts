@@ -1,5 +1,5 @@
 import { IPlaceResponse, IPlaceResult } from '../types/place-page';
-import { HTTP, buildURL } from '../utils';
+import { HTTP, buildURL, NETWORK_BAN_MESSAGE } from '../utils';
 
 export const getMediaByPlaceId = async (placeId: number): Promise<IPlaceResult> => {
   const result: IPlaceResult = {
@@ -9,9 +9,17 @@ export const getMediaByPlaceId = async (placeId: number): Promise<IPlaceResult> 
 
   const url = buildURL(`explore/locations/${placeId}`);
   const response = await HTTP<IPlaceResponse>(url);
-  const location = response?.entry_data?.LocationsPage[0]?.graphql.location || null;
+  const content = response?.entry_data?.LocationsPage;
 
-  return { ...result, ...{ location, ok: Boolean(location) } };
+  if (content) {
+    const { location = null } = { ...content?.[0]?.graphql };
+    result.location = location;
+    result.ok = true;
+  } else {
+    throw new Error(NETWORK_BAN_MESSAGE);
+  }
+
+  return result;
 };
 
 export default getMediaByPlaceId;
