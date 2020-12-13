@@ -1,3 +1,3 @@
 export interface IEdgeRelatedProfiles {
-  edges: unknown[];
+  edges?: unknown[];
 }

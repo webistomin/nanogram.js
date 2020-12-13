@@ -6,10 +6,10 @@
 <body>
 <script src="../dist/nanogram.iife.js"></script>
 <script>
-  const lib = Nanogram
+  const lib = window.Nanogram
   const request = async () => {
     try {
-      const response = await lib.getMediaByUsername('rockone_tattoo')
+      const response = await lib.getMediaByPlaceId(2999512)
       console.log(response)
     } catch (error) {
       console.log(error)

@@ -10,12 +10,12 @@ import { IDashInfo } from './dash-info';
 import { INodeOwner } from './node-owner';
 
 export interface IEdgeFelixVideoTimeline {
-  count: number;
-  page_info: {
+  count?: number;
+  page_info?: {
     has_next_page: boolean;
     end_cursor: string | null;
   };
-  edges: IEdgeFelixVideoTimelineNode[];
+  edges?: IEdgeFelixVideoTimelineNode[];
 }
 
 export interface IEdgeFelixVideoTimelineNode {

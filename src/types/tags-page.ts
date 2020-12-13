@@ -1,4 +1,5 @@
-import { IThumbnail } from './common/thumbnail';
+import { IEdgeHashtagToMedia } from './common/edge-hashtag-to-media';
+import { IEdgeHashtagRelatedTags } from './common/edge-hashtag-related-tags';
 
 export interface ITagsResponse {
   entry_data: {
@@ -16,76 +17,12 @@ export interface ITagsContent {
       is_following: boolean;
       is_top_media_only: boolean;
       profile_pic_url: string;
-      edge_hashtag_to_media: {
-        count: number;
-        page_info: {
-          has_next_page: boolean;
-          end_cursor: string | null;
-        };
-        edges: IHashtagContent[];
-      };
-      edge_hashtag_to_top_posts: {
-        edges: IHashtagContent[];
-      };
-      edge_hashtag_to_content_advisory: {
-        count: number;
-        edges: IHashtagContent[];
-      };
-      edge_hashtag_to_related_tags: {
-        edges: IRelatedTagContent[];
-      };
-      edge_hashtag_to_null_state?: {
-        edges: any;
-      };
+      edge_hashtag_to_media: IEdgeHashtagToMedia;
+      edge_hashtag_to_top_posts: IEdgeHashtagToMedia;
+      edge_hashtag_to_content_advisory: IEdgeHashtagToMedia;
+      edge_hashtag_to_related_tags: IEdgeHashtagRelatedTags;
+      edge_hashtag_to_null_state?: unknown;
     };
-  };
-}
-
-export interface IHashtagContent {
-  node: {
-    comments_disabled?: boolean;
-    __typename: string;
-    id: string;
-    edge_media_to_caption: {
-      edges: IMediaToCaption[];
-    };
-    shortcode: string;
-    edge_media_to_comment: {
-      count: number;
-    };
-    taken_at_timestamp: DOMTimeStamp;
-    dimensions: {
-      width: number;
-      height: number;
-    };
-    display_url: string;
-    edge_liked_by: {
-      count: number;
-    };
-    edge_media_preview_like: {
-      count: number;
-    };
-    owner: {
-      id: string;
-    };
-    thumbnail_src: string;
-    thumbnail_resources: IThumbnail[];
-    is_video: boolean;
-    product_type?: string;
-    accessibility_caption: string;
-    video_view_count?: number;
-  };
-}
-
-export interface IMediaToCaption {
-  node: {
-    text: string;
-  };
-}
-
-export interface IRelatedTagContent {
-  node: {
-    name: string;
   };
 }
 

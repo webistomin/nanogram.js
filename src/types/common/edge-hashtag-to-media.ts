@@ -6,18 +6,19 @@ import { IEdgeLikedBy } from './edge-liked-by';
 import { IEdgeMediaPreviewLike } from './edge-media-preview-like';
 import { INodeOwner } from './node-owner';
 
-export interface IEdgeLocationToMedia {
+export interface IEdgeHashtagToMedia {
   count?: number;
   page_info?: {
     has_next_page: boolean;
     end_cursor: string | null;
   };
-  edges?: EdgeLocationToMediaNode[];
+  edges?: IEdgeHashtagToMediaNode[];
 }
 
-export interface EdgeLocationToMediaNode {
+export interface IEdgeHashtagToMediaNode {
   node: {
     comments_disabled?: boolean;
+    __typename: string;
     id: string;
     edge_media_to_caption: IEdgeMediaToCaption;
     shortcode: string;
@@ -31,7 +32,8 @@ export interface EdgeLocationToMediaNode {
     thumbnail_src: string;
     thumbnail_resources: IThumbnail[];
     is_video: boolean;
-    accessibility_caption?: string | null;
+    product_type?: string;
+    accessibility_caption: string;
     video_view_count?: number;
   };
 }

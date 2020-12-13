@@ -1,7 +1,7 @@
 import { INodeOwner } from './node-owner';
 
 export interface IEdgeMediaToTaggedUser {
-  edges: IEdgeMediaToTaggedUserNode[];
+  edges?: IEdgeMediaToTaggedUserNode[];
 }
 
 export interface IEdgeMediaToTaggedUserNode {

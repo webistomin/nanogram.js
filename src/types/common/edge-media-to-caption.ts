@@ -1,5 +1,5 @@
 export interface IEdgeMediaToCaption {
-  edges: IEdgeMediaToCaptionNode[];
+  edges?: IEdgeMediaToCaptionNode[];
 }
 
 export interface IEdgeMediaToCaptionNode {

@@ -1,5 +1,5 @@
 export interface IEdgeMediaPreviewLike {
-  count: number;
+  count?: number;
   edges?: IEdgeMediaPreviewLikeNode[];
 }
 

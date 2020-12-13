@@ -1,7 +1,7 @@
 import { INodeOwner } from './node-owner';
 
 export interface IEdgeMediaToComment {
-  count: number;
+  count?: number;
   edges?: IEdgeMediaToCommentNode[];
 }
 

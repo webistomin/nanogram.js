@@ -12,12 +12,12 @@ import { ISharingFrictionInfo } from './sharing-friction-info';
 import { IDashInfo } from './dash-info';
 
 export interface IEdgeOwnerToTimelineMedia {
-  count: number;
-  page_info: {
+  count?: number;
+  page_info?: {
     has_next_page: boolean;
     end_cursor: string | null;
   };
-  edges: IEdgeOwnerToTimelineMediaNode[];
+  edges?: IEdgeOwnerToTimelineMediaNode[];
 }
 
 export interface IEdgeOwnerToTimelineMediaNode {

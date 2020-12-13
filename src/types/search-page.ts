@@ -1,5 +1,3 @@
-import { IPlace } from './common/place';
-
 export interface ISearchResponse {
   users?: ISearchUsers[];
   places?: ISearchPlaces[];
@@ -18,17 +16,28 @@ export interface ISearchUsers {
     full_name: string;
     is_private: boolean;
     profile_pic_url: string;
-    profile_pic_id: string;
+    profile_pic_id?: string;
     is_verified: boolean;
     has_anonymous_profile_picture: boolean;
     mutual_followers_count: number;
     latest_reel_media: number;
+    account_badges?: unknown;
   };
 }
 
 export interface ISearchPlaces {
   place: {
-    location: IPlace;
+    location: {
+      pk: string;
+      short_name: string;
+      facebook_places_id: number;
+      external_source: string;
+      name: string;
+      address: string;
+      city: string;
+      lng?: number;
+      lat?: number;
+    };
     title: string;
     subtitle: string;
     media_bundles: [];

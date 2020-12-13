@@ -7,7 +7,7 @@ import { IGatingInfo } from './gating-info';
 import { IDashInfo } from './dash-info';
 
 export interface IEdgeSidecarToChildren {
-  edges: IEdgeSidecarToChildrenNode[];
+  edges?: IEdgeSidecarToChildrenNode[];
 }
 
 export interface IEdgeSidecarToChildrenNode {

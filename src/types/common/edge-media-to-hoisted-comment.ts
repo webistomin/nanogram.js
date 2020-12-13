@@ -1,5 +1,5 @@
 export interface IEdgeMediaToHoistedComment {
-  edges: IEdgeMediaToHoistedCommentNode[];
+  edges?: IEdgeMediaToHoistedCommentNode[];
 }
 
 export interface IEdgeMediaToHoistedCommentNode {
