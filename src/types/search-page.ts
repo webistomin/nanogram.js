@@ -1,3 +1,5 @@
+import { IPlace } from './common/place';
+
 export interface ISearchResponse {
   users?: ISearchUsers[];
   places?: ISearchPlaces[];
@@ -26,17 +28,7 @@ export interface ISearchUsers {
 
 export interface ISearchPlaces {
   place: {
-    location: {
-      pk: string;
-      name: string;
-      address: string;
-      city: string;
-      short_name: string;
-      external_source: string;
-      facebook_places_id: number;
-      lng?: number;
-      lat?: number;
-    };
+    location: IPlace;
     title: string;
     subtitle: string;
     media_bundles: [];

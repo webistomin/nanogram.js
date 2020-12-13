@@ -1,6 +1,13 @@
 import { IPlacesResponse, IPlacesResult } from '../types/places-page';
 import { HTTP, buildURL, NETWORK_BAN_MESSAGE } from '../utils';
 
+/**
+ * Get content from
+ * https://www.instagram.com/explore/locations/{cityId}/
+ *
+ * @example
+ * https://www.instagram.com/explore/locations/c2728325/
+ */
 export const getPlacesByCityId = async (cityId: string): Promise<IPlacesResult> => {
   const result: IPlacesResult = {
     place: {

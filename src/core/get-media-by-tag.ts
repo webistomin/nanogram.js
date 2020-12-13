@@ -1,6 +1,13 @@
 import { ITagsResponse, ITagsResult } from '../types/tags-page';
 import { HTTP, buildURL, NETWORK_BAN_MESSAGE } from '../utils';
 
+/**
+ * Get content from
+ * https://www.instagram.com/explore/tags/{tag}/
+ *
+ * @example
+ * https://www.instagram.com/explore/tags/sunset/
+ */
 export const getMediaByTag = async (tag: string): Promise<ITagsResult> => {
   const result: ITagsResult = {
     tag: null,

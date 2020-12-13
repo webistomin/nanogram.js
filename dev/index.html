@@ -2,30 +2,20 @@
 <html lang="ru" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
 </head>
 <body>
-
 <script src="../dist/nanogram.iife.js"></script>
-<!--<script>-->
-<!--  const lib = Nanogram-->
-<!--  lib.getCitiesByCountryId('US').then((result) => {-->
-<!--    console.log(result)-->
-<!--  }).catch((error) => {-->
-<!--    console.log('suka', error)-->
-<!--  })-->
-<!--</script>-->
 <script>
   const lib = Nanogram
-  const test = async () => {
+  const request = async () => {
     try {
-      const response = await lib.getMediaByPostId('B8wueRnnuqK')
+      const response = await lib.getMediaByUsername('rockone_tattoo')
       console.log(response)
     } catch (error) {
-      console.log('suka2', error)
+      console.log(error)
     }
   }
-  test()
+  request()
 </script>
 </body>
 </html>
