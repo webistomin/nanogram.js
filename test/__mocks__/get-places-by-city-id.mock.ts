@@ -29,6 +29,12 @@ export const PLACES_PAGE_RESPONSE: IPlacesResponse = {
   },
 };
 
+export const PLACES_PAGE_RESPONSE_EMPTY: unknown = {
+  entry_data: {
+    LocationsDirectoryPage: [],
+  },
+};
+
 export const PLACES_PAGE_VALID_CONTENT: IPlacesResult = {
   place: {
     city_info: {
@@ -58,5 +64,5 @@ export const PLACES_PAGE_INVALID_CONTENT: IPlacesResult = {
     city_info: null,
     location_list: null,
   },
-  ok: false,
+  ok: true,
 };

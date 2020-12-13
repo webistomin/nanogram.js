@@ -1,5 +1,10 @@
 import xhrmock from 'xhr-mock';
-import { USER_PAGE_VALID_CONTENT, USER_PAGE_RESPONSE } from '../__mocks__/get-media-by-username.mock';
+import {
+  USER_PAGE_VALID_CONTENT,
+  USER_PAGE_RESPONSE,
+  USER_PAGE_RESPONSE_EMPTY,
+  USER_PAGE_INVALID_CONTENT,
+} from '../__mocks__/get-media-by-username.mock';
 import { getMediaByUsername } from '../../src';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 
@@ -35,6 +40,16 @@ describe('[nanogram.js] - core', () => {
 
       const result = await getMediaByUsername(USERNAME);
       expect(result).toEqual(USER_PAGE_VALID_CONTENT);
+    });
+
+    it('return default value if response is empty', async () => {
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify(USER_PAGE_RESPONSE_EMPTY),
+      });
+
+      const result = await getMediaByUsername(USERNAME);
+      expect(result).toEqual(USER_PAGE_INVALID_CONTENT);
     });
 
     it('throw error if has network ban', async () => {

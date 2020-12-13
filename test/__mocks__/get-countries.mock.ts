@@ -18,6 +18,12 @@ export const COUNTRIES_PAGE_RESPONSE: ILocationDirectoryResponse = {
   },
 };
 
+export const COUNTRIES_PAGE_RESPONSE_EMPTY: unknown = {
+  entry_data: {
+    LocationsDirectoryPage: [],
+  },
+};
+
 export const COUNTRIES_PAGE_VALID_CONTENT: ILocationDirectoryResult = {
   country_list: [
     {
@@ -31,5 +37,5 @@ export const COUNTRIES_PAGE_VALID_CONTENT: ILocationDirectoryResult = {
 
 export const COUNTRIES_PAGE_INVALID_CONTENT: ILocationDirectoryResult = {
   country_list: null,
-  ok: false,
+  ok: true,
 };

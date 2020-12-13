@@ -1,6 +1,11 @@
 import xhrmock from 'xhr-mock';
 import { getCountries } from '../../src';
-import { COUNTRIES_PAGE_RESPONSE, COUNTRIES_PAGE_VALID_CONTENT } from '../__mocks__/get-countries.mock';
+import {
+  COUNTRIES_PAGE_INVALID_CONTENT,
+  COUNTRIES_PAGE_RESPONSE,
+  COUNTRIES_PAGE_RESPONSE_EMPTY,
+  COUNTRIES_PAGE_VALID_CONTENT,
+} from '../__mocks__/get-countries.mock';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 
 describe('[nanogram.js] - core', () => {
@@ -34,6 +39,16 @@ describe('[nanogram.js] - core', () => {
 
       const result = await getCountries();
       expect(result).toEqual(COUNTRIES_PAGE_VALID_CONTENT);
+    });
+
+    it('return default value if response is empty', async () => {
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify(COUNTRIES_PAGE_RESPONSE_EMPTY),
+      });
+
+      const result = await getCountries();
+      expect(result).toEqual(COUNTRIES_PAGE_INVALID_CONTENT);
     });
 
     it('throw error if has network ban', async () => {

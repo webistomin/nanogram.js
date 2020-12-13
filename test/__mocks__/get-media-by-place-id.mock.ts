@@ -178,6 +178,12 @@ export const PLACE_PAGE_RESPONSE: IPlaceResponse = {
   },
 };
 
+export const PLACE_PAGE_RESPONSE_EMPTY: unknown = {
+  entry_data: {
+    LocationsPage: [],
+  },
+};
+
 export const PlACE_PAGE_VALID_CONTENT: IPlaceResult = {
   location: {
     id: '',
@@ -347,5 +353,5 @@ export const PlACE_PAGE_VALID_CONTENT: IPlaceResult = {
 
 export const PlACE_PAGE_INVALID_CONTENT: IPlaceResult = {
   location: null,
-  ok: false,
+  ok: true,
 };

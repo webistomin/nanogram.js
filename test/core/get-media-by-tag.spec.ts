@@ -1,5 +1,10 @@
 import xhrmock from 'xhr-mock';
-import { TAG_PAGE_RESPONSE, TAG_PAGE_VALID_CONTENT } from '../__mocks__/get-media-by-tag.mock';
+import {
+  TAG_PAGE_INVALID_CONTENT,
+  TAG_PAGE_RESPONSE,
+  TAG_PAGE_RESPONSE_EMPTY,
+  TAG_PAGE_VALID_CONTENT,
+} from '../__mocks__/get-media-by-tag.mock';
 import { getMediaByTag } from '../../src';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 
@@ -35,6 +40,16 @@ describe('[nanogram.js] - core', () => {
 
       const result = await getMediaByTag(TAG);
       expect(result).toEqual(TAG_PAGE_VALID_CONTENT);
+    });
+
+    it('return default value if response is empty', async () => {
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify(TAG_PAGE_RESPONSE_EMPTY),
+      });
+
+      const result = await getMediaByTag(TAG);
+      expect(result).toEqual(TAG_PAGE_INVALID_CONTENT);
     });
 
     it('throw error if has network ban', async () => {

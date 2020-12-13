@@ -1,5 +1,10 @@
 import xhrmock from 'xhr-mock';
-import { POST_PAGE_RESPONSE, POST_PAGE_VALID_CONTENT } from '../__mocks__/get-media-by-post-id.mock';
+import {
+  POST_PAGE_INVALID_CONTENT,
+  POST_PAGE_RESPONSE,
+  POST_PAGE_RESPONSE_EMPTY,
+  POST_PAGE_VALID_CONTENT,
+} from '../__mocks__/get-media-by-post-id.mock';
 import { getMediaByPostId } from '../../src';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 
@@ -35,6 +40,16 @@ describe('[nanogram.js] - core', () => {
 
       const result = await getMediaByPostId(POST_ID);
       expect(result).toEqual(POST_PAGE_VALID_CONTENT);
+    });
+
+    it('return default value if response is empty', async () => {
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify(POST_PAGE_RESPONSE_EMPTY),
+      });
+
+      const result = await getMediaByPostId(POST_ID);
+      expect(result).toEqual(POST_PAGE_INVALID_CONTENT);
     });
 
     it('throw error if has network ban', async () => {

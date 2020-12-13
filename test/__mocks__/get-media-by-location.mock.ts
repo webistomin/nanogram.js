@@ -180,6 +180,12 @@ export const LOCATION_PAGE_RESPONSE: ILocationResponse = {
   },
 };
 
+export const LOCATION_PAGE_RESPONSE_EMPTY: unknown = {
+  entry_data: {
+    LocationsPage: [],
+  },
+};
+
 export const LOCATION_PAGE_VALID_CONTENT: ILocationResult = {
   location: {
     id: '',
@@ -355,5 +361,5 @@ export const LOCATION_PAGE_VALID_CONTENT: ILocationResult = {
 
 export const LOCATION_PAGE_INVALID_CONTENT: ILocationResult = {
   location: null,
-  ok: false,
+  ok: true,
 };

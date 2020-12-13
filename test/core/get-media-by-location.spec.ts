@@ -1,5 +1,10 @@
 import xhrmock from 'xhr-mock';
-import { LOCATION_PAGE_RESPONSE, LOCATION_PAGE_VALID_CONTENT } from '../__mocks__/get-media-by-location.mock';
+import {
+  LOCATION_PAGE_INVALID_CONTENT,
+  LOCATION_PAGE_RESPONSE,
+  LOCATION_PAGE_RESPONSE_EMPTY,
+  LOCATION_PAGE_VALID_CONTENT,
+} from '../__mocks__/get-media-by-location.mock';
 import { getMediaByLocation } from '../../src';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 
@@ -36,6 +41,16 @@ describe('[nanogram.js] - core', () => {
 
       const result = await getMediaByLocation(LOCATION_ID, PLACE_NAME);
       expect(result).toEqual(LOCATION_PAGE_VALID_CONTENT);
+    });
+
+    it('return default value if response is empty', async () => {
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify(LOCATION_PAGE_RESPONSE_EMPTY),
+      });
+
+      const result = await getMediaByLocation(LOCATION_ID, PLACE_NAME);
+      expect(result).toEqual(LOCATION_PAGE_INVALID_CONTENT);
     });
 
     it('throw error if has network ban', async () => {

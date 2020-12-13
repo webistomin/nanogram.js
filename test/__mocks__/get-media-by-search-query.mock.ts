@@ -58,11 +58,15 @@ export const SEARCH_PAGE_VALID_CONTENT: ISearchResult = {
   ok: true,
 };
 
+export const SEARCH_PAGE_EMPTY_CONTENT: unknown = {
+  media: {},
+};
+
 export const SEARCH_PAGE_INVALID_CONTENT: ISearchResult = {
   media: {
     users: null,
     hashtags: null,
     places: null,
   },
-  ok: false,
+  ok: true,
 };

@@ -1,5 +1,10 @@
 import xhrmock from 'xhr-mock';
-import { PLACES_PAGE_RESPONSE, PLACES_PAGE_VALID_CONTENT } from '../__mocks__/get-places-by-city-id.mock';
+import {
+  PLACES_PAGE_INVALID_CONTENT,
+  PLACES_PAGE_RESPONSE,
+  PLACES_PAGE_RESPONSE_EMPTY,
+  PLACES_PAGE_VALID_CONTENT,
+} from '../__mocks__/get-places-by-city-id.mock';
 import { getPlacesByCityId } from '../../src';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 
@@ -35,6 +40,16 @@ describe('[nanogram.js] - core', () => {
 
       const result = await getPlacesByCityId(CITY_ID);
       expect(result).toEqual(PLACES_PAGE_VALID_CONTENT);
+    });
+
+    it('return default value if response is empty', async () => {
+      xhrmock.get(URL, {
+        status: 200,
+        body: JSON.stringify(PLACES_PAGE_RESPONSE_EMPTY),
+      });
+
+      const result = await getPlacesByCityId(CITY_ID);
+      expect(result).toEqual(PLACES_PAGE_INVALID_CONTENT);
     });
 
     it('throw error if has network ban', async () => {

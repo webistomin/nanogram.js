@@ -68,6 +68,12 @@ export const POST_PAGE_RESPONSE: IPostResponse = {
   },
 };
 
+export const POST_PAGE_RESPONSE_EMPTY: unknown = {
+  entry_data: {
+    PostPage: [],
+  },
+};
+
 export const POST_PAGE_VALID_CONTENT: IPostResult = {
   post: {
     __typename: '',
@@ -126,5 +132,10 @@ export const POST_PAGE_VALID_CONTENT: IPostResult = {
     is_ad: false,
     edge_web_media_to_related_media: {},
   },
+  ok: true,
+};
+
+export const POST_PAGE_INVALID_CONTENT: IPostResult = {
+  post: null,
   ok: true,
 };

@@ -223,6 +223,12 @@ export const TAG_PAGE_RESPONSE: ITagsResponse = {
   },
 };
 
+export const TAG_PAGE_RESPONSE_EMPTY: unknown = {
+  entry_data: {
+    TagPage: [],
+  },
+};
+
 export const TAG_PAGE_VALID_CONTENT: ITagsResult = {
   tag: {
     id: '',
@@ -441,5 +447,5 @@ export const TAG_PAGE_VALID_CONTENT: ITagsResult = {
 
 export const TAG_PAGE_INVALID_CONTENT: ITagsResult = {
   tag: null,
-  ok: false,
+  ok: true,
 };

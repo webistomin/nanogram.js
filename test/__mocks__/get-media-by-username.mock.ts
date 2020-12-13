@@ -250,6 +250,12 @@ export const USER_PAGE_RESPONSE: IUserProfileResponse = {
   },
 };
 
+export const USER_PAGE_RESPONSE_EMPTY: unknown = {
+  entry_data: {
+    ProfilePage: [],
+  },
+};
+
 export const USER_PAGE_VALID_CONTENT: IUserProfileResult = {
   profile: {
     biography: '',
@@ -491,5 +497,5 @@ export const USER_PAGE_VALID_CONTENT: IUserProfileResult = {
 
 export const USER_PAGE_INVALID_CONTENT: IUserProfileResult = {
   profile: null,
-  ok: false,
+  ok: true,
 };

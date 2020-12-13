@@ -24,6 +24,12 @@ export const CITIES_PAGE_RESPONSE: ICitiesResponse = {
   },
 };
 
+export const CITIES_PAGE_RESPONSE_EMPTY: unknown = {
+  entry_data: {
+    LocationsDirectoryPage: [],
+  },
+};
+
 export const CITIES_PAGE_VALID_CONTENT: ICitiesResult = {
   country_info: {
     id: '',
@@ -43,5 +49,5 @@ export const CITIES_PAGE_VALID_CONTENT: ICitiesResult = {
 export const CITIES_PAGE_INVALID_CONTENT: ICitiesResult = {
   country_info: null,
   city_list: null,
-  ok: false,
+  ok: true,
 };
