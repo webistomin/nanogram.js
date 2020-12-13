@@ -6,94 +6,79 @@ export interface IPostResponse {
 
 export interface IPostContent {
   graphql: {
-    shortcode_media: {
-      accessibility_caption: string;
-      caption_is_edited: boolean;
-      commenting_disabled_for_viewer: boolean;
-      comments_disabled: boolean;
-      dimensions: {
-        height: number;
-        width: number;
-      };
-      display_resources: [];
-      display_url: string;
-      edge_media_preview_comment: {
-        count: number;
-        edges: IPostEdgeMediaPreviewComment[];
-      };
-      edge_media_preview_like: {
-        count: number;
-        edges: IPostEdgeMediaPreviewLike[];
-      };
-      edge_media_to_caption: {
-        edges: IPostEdgeMediaToCaption[];
-      };
-      edge_media_to_hoisted_comment: {
-        edges: IPostEdgeMediaToHoistedComment[];
-      };
-      edge_media_to_parent_comment: IPostEdgeMediaToParentComment;
-      edge_media_to_sponsor_user: {
-        edges: any;
-      };
-      edge_media_to_tagged_user: {
-        edges: any;
-      };
-      edge_related_profiles: {
-        edges: any;
-      };
-      edge_web_media_to_related_media: {
-        edges: any;
-      };
-      fact_check_information: null;
-      fact_check_overall_rating: null;
-      gating_info: null;
-      has_ranked_comments: boolean;
-      id: string;
-      is_ad: boolean;
-      is_video: boolean;
-      location: null;
-      media_overlay_info: null;
-      media_preview: null;
-      owner: {
-        id: string;
-        is_verified: boolean;
-        profile_pic_url: string;
-        username: string;
-        blocked_by_viewer: boolean;
-      };
-      sensitivity_friction_info: null;
-      sharing_friction_info: {
-        should_have_sharing_friction: boolean;
-        bloks_app_url: null;
-      };
-      shortcode: string;
-      taken_at_timestamp: DOMTimeStamp;
-      tracking_token: string;
-      viewer_can_reshare: boolean;
-      viewer_has_liked: boolean;
-      viewer_has_saved: boolean;
-      viewer_has_saved_to_collection: boolean;
-      viewer_in_photo_of_you: boolean;
-    };
+    shortcode_media: IPostContentShortcodeMedia;
   };
 }
 
-export interface IPostEdgeMediaPreviewComment {
-  node: {
-    created_at: DOMTimeStamp;
-    did_report_as_spam: boolean;
-    edge_liked_by: {
-      count: number;
-    };
-    id: string;
-    is_restricted_pending: boolean;
-    owner: {
-      id: string;
-      is_verified: boolean;
-      profile_pic_url: string;
-      username: string;
-    };
-  };
+export interface IPostContentShortcodeMedia {
+  __typename: string;
+  id: string;
+  shortcode: string;
+  edge_media_to_comment?: IPostEdgeMediaToComment;
+  thumbnail_src?: string;
+  dimensions: IPostDimensions;
+  gating_info?: IPostGatingInfo | null;
+  fact_check_information?: any;
+  fact_check_overall_rating?: any;
+  media_preview: string | null;
+  display_url: string;
+  display_resources: IPostDisplayResources[];
+  accessibility_caption?: string;
+  is_video: boolean;
+  should_log_client_event?: boolean;
+  tracking_token: string;
+  edge_media_to_tagged_user?: IPostEdgeMediaToCaption;
+  edge_media_to_caption: IPostEdgeMediaToCaption;
+  caption_is_edited: boolean;
+  has_ranked_comments: boolean;
+  edge_media_to_parent_comment?: IPostEdgeMediaToParentComment;
+  edge_media_to_hoisted_comment?: IPostEdgeMediaToHoistedComment;
+  edge_media_preview_comment?: IPostEdgeMediaToComment;
+  comments_disabled: boolean;
+  commenting_disabled_for_viewer: boolean;
+  taken_at_timestamp: number;
+  edge_media_preview_like: IPostEdgeMediaPreviewLike;
+  edge_media_to_sponsor_user: IPostEdgeMediaToCaption;
+  location: string | null;
+  viewer_has_liked: boolean;
+  viewer_has_saved: boolean;
+  viewer_has_saved_to_collection: boolean;
+  viewer_in_photo_of_you: boolean;
+  viewer_can_reshare: boolean;
+  owner: IPostShortcodeMediaOwner;
+  is_ad: boolean;
+  edge_web_media_to_related_media: IPostEdgeMediaToCaption;
+  edge_sidecar_to_children?: IPostEdgeSidecarToChildren;
+  dash_info?: IPostDashInfo;
+  video_url?: string;
+  video_view_count?: number;
+  encoding_status?: string | null;
+  is_published?: boolean;
+  product_type?: string;
+  title?: string | null;
+  video_duration?: number;
+}
+
+export interface IPostDimensions {
+  height: number;
+  width: number;
+}
+
+export interface IPostGatingInfo {
+  buttons: string[];
+  description: string;
+  gating_type: string;
+  title: string;
+}
+
+export interface IPostEdgeMediaToComment {
+  count: number;
+}
+
+export interface IPostDisplayResources {
+  src: string;
+  config_width: number;
+  config_height: number;
 }
 
 export interface IPostEdgeMediaPreviewLike {
@@ -105,9 +90,11 @@ export interface IPostEdgeMediaPreviewLike {
 }
 
 export interface IPostEdgeMediaToCaption {
-  node: {
-    text: string;
-  };
+  edges: Array<{
+    node: {
+      text: string;
+    };
+  }>;
 }
 
 export interface IPostEdgeMediaToHoistedComment {
@@ -133,6 +120,71 @@ export interface IPostEdgeMediaToParentComment {
   count: number;
   page_info: any;
   edges: any;
+}
+
+export interface IPostEdgeMediaToComment {
+  count: number;
+  edges: Array<{
+    node: IPostCommentNode;
+  }>;
+}
+
+export interface IPostCommentNode {
+  id: string;
+  text: string;
+  created_at: number;
+  did_report_as_spam: boolean;
+  owner: IPostCommentNodeOwner;
+  viewer_has_liked: boolean;
+  edge_liked_by: IPostEdgeMediaToComment;
+}
+
+export interface IPostCommentNodeOwner {
+  id: string;
+  is_verified: boolean;
+  profile_pic_url: string;
+  username: string;
+}
+
+export interface IPostShortcodeMediaOwner {
+  id: string;
+  is_verified: boolean;
+  profile_pic_url: string;
+  username: string;
+  blocked_by_viewer: boolean;
+  followed_by_viewer: boolean;
+  full_name: string;
+  has_blocked_viewer: boolean;
+  is_private: boolean;
+  is_unpublished: boolean;
+  requested_by_viewer: boolean;
+}
+
+export interface IPostDashInfo {
+  is_dash_eligible: boolean;
+  video_dash_manifest: any;
+  number_of_qualities: number;
+}
+
+export interface IPostEdgeSidecarToChildren {
+  edges: Array<{
+    node: {
+      __typename: string;
+      id: string;
+      shortcode?: string;
+      dimensions: IPostDimensions;
+      gating_info?: any;
+      fact_check_information?: any;
+      media_preview?: string | null;
+      display_url: string;
+      display_resources: IPostDisplayResources[];
+      accessibility_caption?: string | null;
+      is_video: boolean;
+      video_url?: string;
+      tracking_token: string;
+      edge_media_to_tagged_user: IPostEdgeMediaToCaption;
+    };
+  }>;
 }
 
 export interface IPostResult {
