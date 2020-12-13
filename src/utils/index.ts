@@ -29,13 +29,17 @@ export const buildURL = (query: string): string => {
  * Parse JSON from HTTP response
  */
 export const parseJSON = <T>(content: string, useRegExp: boolean): T => {
-  let data = content;
+  try {
+    let data = content;
 
-  if (useRegExp) {
-    data = content.replace(SHARED_DATA_REG_EXP, '$1');
+    if (useRegExp) {
+      data = content.replace(SHARED_DATA_REG_EXP, '$1');
+    }
+
+    return JSON.parse(data) as T;
+  } catch (error) {
+    throw new Error(error);
   }
-
-  return JSON.parse(data) as T;
 };
 
 /**

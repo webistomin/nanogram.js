@@ -47,6 +47,7 @@ export const USER_PAGE_RESPONSE: IUserProfileResponse = {
             requested_by_viewer: false,
             username: '',
             connected_fb_page: null,
+            edge_related_profiles: {},
             edge_felix_video_timeline: {
               count: 222,
               page_info: {
@@ -74,6 +75,7 @@ export const USER_PAGE_RESPONSE: IUserProfileResponse = {
                     },
                     is_video: true,
                     accessibility_caption: null,
+                    edge_media_to_tagged_user: {},
                     edge_media_to_caption: {
                       edges: [
                         {
@@ -166,6 +168,7 @@ export const USER_PAGE_RESPONSE: IUserProfileResponse = {
                     },
                     is_video: false,
                     accessibility_caption: '',
+                    edge_media_to_tagged_user: {},
                     edge_media_to_caption: {
                       edges: [
                         {
@@ -286,6 +289,7 @@ export const USER_PAGE_VALID_CONTENT: IUserProfileResult = {
     requested_by_viewer: false,
     username: '',
     connected_fb_page: null,
+    edge_related_profiles: {},
     edge_felix_video_timeline: {
       count: 222,
       page_info: {
@@ -313,6 +317,7 @@ export const USER_PAGE_VALID_CONTENT: IUserProfileResult = {
             },
             is_video: true,
             accessibility_caption: null,
+            edge_media_to_tagged_user: {},
             edge_media_to_caption: {
               edges: [
                 {
@@ -405,6 +410,7 @@ export const USER_PAGE_VALID_CONTENT: IUserProfileResult = {
             },
             is_video: false,
             accessibility_caption: '',
+            edge_media_to_tagged_user: {},
             edge_media_to_caption: {
               edges: [
                 {
