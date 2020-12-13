@@ -7,11 +7,12 @@ import {
 } from '../__mocks__/get-media-by-post-id.mock';
 import { getMediaByPostId } from '../../src';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
+import { buildHTML } from '../helpers/build-html';
 
 describe('[nanogram.js] - core', () => {
   describe('getMediaByPostId method', () => {
     const POST_ID = 'CIrIDMtDwn4';
-    const URL = `https://www.instagram.com/p/${POST_ID}`;
+    const URL = `https://www.instagram.com/p/${POST_ID}/`;
 
     beforeEach(() => {
       xhrmock.setup();
@@ -26,7 +27,7 @@ describe('[nanogram.js] - core', () => {
 
       xhrmock.get(URL, (req, res) => {
         expect(req.url().toString()).toEqual(URL);
-        return res.status(200).body(JSON.stringify(POST_PAGE_RESPONSE));
+        return res.status(200).body(buildHTML(JSON.stringify(POST_PAGE_RESPONSE)));
       });
 
       await getMediaByPostId(POST_ID);
@@ -35,7 +36,7 @@ describe('[nanogram.js] - core', () => {
     it('return correct value if everything is OK', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify(POST_PAGE_RESPONSE),
+        body: buildHTML(JSON.stringify(POST_PAGE_RESPONSE)),
       });
 
       const result = await getMediaByPostId(POST_ID);
@@ -45,7 +46,7 @@ describe('[nanogram.js] - core', () => {
     it('return default value if response is empty', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify(POST_PAGE_RESPONSE_EMPTY),
+        body: buildHTML(JSON.stringify(POST_PAGE_RESPONSE_EMPTY)),
       });
 
       const result = await getMediaByPostId(POST_ID);
@@ -55,7 +56,7 @@ describe('[nanogram.js] - core', () => {
     it('throw error if has network ban', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify({}),
+        body: buildHTML(JSON.stringify({})),
       });
 
       try {

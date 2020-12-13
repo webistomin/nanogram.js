@@ -55,7 +55,6 @@ export const PLACES_PAGE_VALID_CONTENT: IPlacesResult = {
       },
     ],
   },
-  ok: true,
 };
 
 export const PLACES_PAGE_INVALID_CONTENT: IPlacesResult = {
@@ -64,5 +63,4 @@ export const PLACES_PAGE_INVALID_CONTENT: IPlacesResult = {
     city_info: null,
     location_list: null,
   },
-  ok: true,
 };

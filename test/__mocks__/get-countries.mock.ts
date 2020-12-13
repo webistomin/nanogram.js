@@ -32,10 +32,8 @@ export const COUNTRIES_PAGE_VALID_CONTENT: ILocationDirectoryResult = {
       slug: 'united-states',
     },
   ],
-  ok: true,
 };
 
 export const COUNTRIES_PAGE_INVALID_CONTENT: ILocationDirectoryResult = {
   country_list: null,
-  ok: true,
 };

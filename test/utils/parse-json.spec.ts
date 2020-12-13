@@ -1,18 +1,18 @@
 import { parseJSON } from '../../src/utils';
+import { buildHTML } from '../helpers/build-html';
 
 describe('[nanogram.js] - utils', () => {
   describe('parseJSON method', () => {
     it('parse js object from valid string', () => {
-      const VALID_RESPONSE =
-        '<script type="text/javascript">window._sharedData = {"config":{"hello":"world"}};</script>';
+      const VALID_RESPONSE = buildHTML(JSON.stringify({ config: { hello: 'world' } }));
       const result = parseJSON(VALID_RESPONSE, true);
       expect(result).toEqual({ config: { hello: 'world' } });
     });
 
     it('parse js object from valid string without RegExp', () => {
-      const VALID_RESPONSE = '{ "hello": "world" }';
+      const VALID_RESPONSE = JSON.stringify({ config: { hello: 'world' } });
       const result = parseJSON(VALID_RESPONSE, false);
-      expect(result).toEqual({ hello: 'world' });
+      expect(result).toEqual({ config: { hello: 'world' } });
     });
 
     it('throw error if data is invalid', () => {

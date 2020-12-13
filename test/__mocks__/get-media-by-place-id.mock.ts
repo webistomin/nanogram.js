@@ -348,10 +348,8 @@ export const PlACE_PAGE_VALID_CONTENT: IPlaceResult = {
       },
     },
   },
-  ok: true,
 };
 
 export const PlACE_PAGE_INVALID_CONTENT: IPlaceResult = {
   location: null,
-  ok: true,
 };

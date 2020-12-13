@@ -66,5 +66,4 @@ export interface IUserProfileContent {
 
 export interface IUserProfileResult {
   profile: IUserProfileContent['graphql']['user'] | null;
-  ok: boolean;
 }

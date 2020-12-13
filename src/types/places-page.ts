@@ -23,5 +23,4 @@ export interface IPlacesResult {
     city_info: ICity | null;
     location_list: ILocation[] | null;
   };
-  ok: boolean;
 }

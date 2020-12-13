@@ -28,5 +28,4 @@ export interface ITagsContent {
 
 export interface ITagsResult {
   tag: ITagsContent['graphql']['hashtag'] | null;
-  ok: boolean;
 }

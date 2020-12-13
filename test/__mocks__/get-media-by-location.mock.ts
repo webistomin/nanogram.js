@@ -356,10 +356,8 @@ export const LOCATION_PAGE_VALID_CONTENT: ILocationResult = {
       },
     },
   },
-  ok: true,
 };
 
 export const LOCATION_PAGE_INVALID_CONTENT: ILocationResult = {
   location: null,
-  ok: true,
 };

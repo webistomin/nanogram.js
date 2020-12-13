@@ -7,6 +7,7 @@ import {
   COUNTRIES_PAGE_VALID_CONTENT,
 } from '../__mocks__/get-countries.mock';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
+import { buildHTML } from '../helpers/build-html';
 
 describe('[nanogram.js] - core', () => {
   describe('getCountries method', () => {
@@ -25,7 +26,7 @@ describe('[nanogram.js] - core', () => {
 
       xhrmock.get(URL, (req, res) => {
         expect(req.url().toString()).toEqual(URL);
-        return res.status(200).body(JSON.stringify(COUNTRIES_PAGE_RESPONSE));
+        return res.status(200).body(buildHTML(JSON.stringify(COUNTRIES_PAGE_RESPONSE)));
       });
 
       await getCountries();
@@ -34,7 +35,7 @@ describe('[nanogram.js] - core', () => {
     it('return correct value if everything is OK', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify(COUNTRIES_PAGE_RESPONSE),
+        body: buildHTML(JSON.stringify(COUNTRIES_PAGE_RESPONSE)),
       });
 
       const result = await getCountries();
@@ -44,7 +45,7 @@ describe('[nanogram.js] - core', () => {
     it('return default value if response is empty', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify(COUNTRIES_PAGE_RESPONSE_EMPTY),
+        body: buildHTML(JSON.stringify(COUNTRIES_PAGE_RESPONSE_EMPTY)),
       });
 
       const result = await getCountries();
@@ -54,7 +55,7 @@ describe('[nanogram.js] - core', () => {
     it('throw error if has network ban', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify({}),
+        body: buildHTML(JSON.stringify({})),
       });
 
       try {

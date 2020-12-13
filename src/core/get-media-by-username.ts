@@ -11,17 +11,15 @@ import { HTTP, buildURL, NETWORK_BAN_MESSAGE } from '../utils';
 export const getMediaByUsername = async (username: string): Promise<IUserProfileResult> => {
   const result: IUserProfileResult = {
     profile: null,
-    ok: false,
   };
 
-  const url = buildURL(username);
+  const url = buildURL(`${username}/`);
   const response = await HTTP<IUserProfileResponse>(url);
   const content = response?.entry_data?.ProfilePage;
 
   if (content) {
     const { user = null } = { ...content?.[0]?.graphql };
     result.profile = user;
-    result.ok = true;
   } else {
     throw new Error(NETWORK_BAN_MESSAGE);
   }

@@ -18,5 +18,4 @@ export interface ILocationContent {
 
 export interface ILocationResult {
   location: ILocationContent['graphql']['location'] | null;
-  ok: boolean;
 }

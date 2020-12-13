@@ -132,10 +132,8 @@ export const POST_PAGE_VALID_CONTENT: IPostResult = {
     is_ad: false,
     edge_web_media_to_related_media: {},
   },
-  ok: true,
 };
 
 export const POST_PAGE_INVALID_CONTENT: IPostResult = {
   post: null,
-  ok: true,
 };

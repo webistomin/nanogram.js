@@ -11,7 +11,6 @@ import { buildURL, HTTP, NETWORK_BAN_MESSAGE } from '../utils';
 export const getCountries = async (): Promise<ILocationDirectoryResult> => {
   const result: ILocationDirectoryResult = {
     country_list: null,
-    ok: false,
   };
 
   const url = buildURL(`explore/locations/`);
@@ -21,7 +20,6 @@ export const getCountries = async (): Promise<ILocationDirectoryResult> => {
   if (content) {
     const { country_list = null } = { ...content?.[0] };
     result.country_list = country_list;
-    result.ok = true;
   } else {
     throw new Error(NETWORK_BAN_MESSAGE);
   }

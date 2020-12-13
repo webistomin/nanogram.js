@@ -15,7 +15,6 @@ export const getMediaBySearchQuery = async (query: string): Promise<ISearchResul
       hashtags: null,
       places: null,
     },
-    ok: false,
   };
 
   const url = buildURL(`web/search/topsearch/?context=blended&query=${query}&include_reel=true`);
@@ -26,7 +25,6 @@ export const getMediaBySearchQuery = async (query: string): Promise<ISearchResul
     result.media.users = users;
     result.media.hashtags = hashtags;
     result.media.places = places;
-    result.ok = true;
   } else {
     throw new Error(NETWORK_BAN_MESSAGE);
   }

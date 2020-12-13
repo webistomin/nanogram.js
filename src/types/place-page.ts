@@ -18,5 +18,4 @@ export interface IPlaceContent {
 
 export interface IPlaceResult {
   location: IPlaceContent['graphql']['location'] | null;
-  ok: boolean;
 }

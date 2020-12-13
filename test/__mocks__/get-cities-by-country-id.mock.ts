@@ -43,11 +43,9 @@ export const CITIES_PAGE_VALID_CONTENT: ICitiesResult = {
       slug: 'midtown-east-united-states',
     },
   ],
-  ok: true,
 };
 
 export const CITIES_PAGE_INVALID_CONTENT: ICitiesResult = {
   country_info: null,
   city_list: null,
-  ok: true,
 };

@@ -7,11 +7,12 @@ import {
   CITIES_PAGE_RESPONSE_EMPTY,
   CITIES_PAGE_VALID_CONTENT,
 } from '../__mocks__/get-cities-by-country-id.mock';
+import { buildHTML } from '../helpers/build-html';
 
 describe('[nanogram.js] - core', () => {
   describe('getCitiesByCountryId method', () => {
     const COUNTRY_ID = 'US';
-    const URL = `https://www.instagram.com/explore/locations/${COUNTRY_ID}`;
+    const URL = `https://www.instagram.com/explore/locations/${COUNTRY_ID}/`;
 
     beforeEach(() => {
       xhrmock.setup();
@@ -26,7 +27,7 @@ describe('[nanogram.js] - core', () => {
 
       xhrmock.get(URL, (req, res) => {
         expect(req.url().toString()).toEqual(URL);
-        return res.status(200).body(JSON.stringify(CITIES_PAGE_RESPONSE));
+        return res.status(200).body(buildHTML(JSON.stringify(CITIES_PAGE_RESPONSE)));
       });
 
       await getCitiesByCountryId(COUNTRY_ID);
@@ -35,7 +36,7 @@ describe('[nanogram.js] - core', () => {
     it('return correct value if everything is OK', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify(CITIES_PAGE_RESPONSE),
+        body: buildHTML(JSON.stringify(CITIES_PAGE_RESPONSE)),
       });
 
       const result = await getCitiesByCountryId(COUNTRY_ID);
@@ -45,7 +46,7 @@ describe('[nanogram.js] - core', () => {
     it('return default value if response is empty', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify(CITIES_PAGE_RESPONSE_EMPTY),
+        body: buildHTML(JSON.stringify(CITIES_PAGE_RESPONSE_EMPTY)),
       });
 
       const result = await getCitiesByCountryId(COUNTRY_ID);
@@ -55,7 +56,7 @@ describe('[nanogram.js] - core', () => {
     it('throw error if has network ban', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify({}),
+        body: buildHTML(JSON.stringify({})),
       });
 
       try {

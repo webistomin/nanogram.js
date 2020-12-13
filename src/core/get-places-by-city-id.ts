@@ -15,10 +15,9 @@ export const getPlacesByCityId = async (cityId: string): Promise<IPlacesResult> 
       country_info: null,
       location_list: null,
     },
-    ok: false,
   };
 
-  const url = buildURL(`explore/locations/${cityId}`);
+  const url = buildURL(`explore/locations/${cityId}/`);
   const response = await HTTP<IPlacesResponse>(url);
   const content = response?.entry_data?.LocationsDirectoryPage;
 
@@ -27,7 +26,6 @@ export const getPlacesByCityId = async (cityId: string): Promise<IPlacesResult> 
     result.place.city_info = city_info;
     result.place.country_info = country_info;
     result.place.location_list = location_list;
-    result.ok = true;
   } else {
     throw new Error(NETWORK_BAN_MESSAGE);
   }

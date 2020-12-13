@@ -55,7 +55,6 @@ export const SEARCH_PAGE_VALID_CONTENT: ISearchResult = {
       },
     ],
   },
-  ok: true,
 };
 
 export const SEARCH_PAGE_EMPTY_CONTENT: unknown = {
@@ -68,5 +67,4 @@ export const SEARCH_PAGE_INVALID_CONTENT: ISearchResult = {
     hashtags: null,
     places: null,
   },
-  ok: true,
 };

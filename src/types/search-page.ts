@@ -64,5 +64,4 @@ export interface ISearchResult {
     places: ISearchResponse['places'] | null;
     hashtags: ISearchResponse['hashtags'] | null;
   };
-  ok: boolean;
 }

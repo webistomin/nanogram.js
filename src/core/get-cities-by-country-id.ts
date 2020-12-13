@@ -12,10 +12,9 @@ export const getCitiesByCountryId = async (countryId: string): Promise<ICitiesRe
   const result: ICitiesResult = {
     city_list: null,
     country_info: null,
-    ok: false,
   };
 
-  const url = buildURL(`explore/locations/${countryId}`);
+  const url = buildURL(`explore/locations/${countryId}/`);
   const response = await HTTP<ICitiesResponse>(url);
   const content = response?.entry_data?.LocationsDirectoryPage;
 
@@ -23,7 +22,6 @@ export const getCitiesByCountryId = async (countryId: string): Promise<ICitiesRe
     const { city_list = null, country_info = null } = { ...content?.[0] };
     result.city_list = city_list;
     result.country_info = country_info;
-    result.ok = true;
   } else {
     throw new Error(NETWORK_BAN_MESSAGE);
   }

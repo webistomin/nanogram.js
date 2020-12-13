@@ -492,10 +492,8 @@ export const USER_PAGE_VALID_CONTENT: IUserProfileResult = {
       edges: [],
     },
   },
-  ok: true,
 };
 
 export const USER_PAGE_INVALID_CONTENT: IUserProfileResult = {
   profile: null,
-  ok: true,
 };

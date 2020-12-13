@@ -101,5 +101,4 @@ export interface IPostShortcodeMediaOwner {
 
 export interface IPostResult {
   post: IPostContent['graphql']['shortcode_media'];
-  ok: boolean;
 }

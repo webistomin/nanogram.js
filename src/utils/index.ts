@@ -8,7 +8,7 @@ export const INSTAGRAM_HOSTNAME = 'https://www.instagram.com/';
  * <script type="text/javascript">window._sharedData = {}</script>
  * from HTML response
  */
-export const SHARED_DATA_REG_EXP = /^[\w\W]*<script type="text\/javascript">window._sharedData = ({[\w\W]*});<\/script>[\w\W]*$/g;
+export const SHARED_DATA_REG_EXP = /<script type="text\/javascript">window._sharedData = (.*);<\/script>/;
 
 /**
  * Message for network ban
@@ -33,7 +33,7 @@ export const parseJSON = <T>(content: string, useRegExp: boolean): T => {
     let data = content;
 
     if (useRegExp) {
-      data = content.replace(SHARED_DATA_REG_EXP, '$1');
+      data = SHARED_DATA_REG_EXP.exec(content)[1];
     }
 
     return JSON.parse(data) as T;

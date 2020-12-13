@@ -7,11 +7,12 @@ import {
 } from '../__mocks__/get-media-by-username.mock';
 import { getMediaByUsername } from '../../src';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
+import { buildHTML } from '../helpers/build-html';
 
 describe('[nanogram.js] - core', () => {
   describe('getMediaByUsername method', () => {
     const USERNAME = 'instagram';
-    const URL = `https://www.instagram.com/${USERNAME}`;
+    const URL = `https://www.instagram.com/${USERNAME}/`;
 
     beforeEach(() => {
       xhrmock.setup();
@@ -26,7 +27,7 @@ describe('[nanogram.js] - core', () => {
 
       xhrmock.get(URL, (req, res) => {
         expect(req.url().toString()).toEqual(URL);
-        return res.status(200).body(JSON.stringify(USER_PAGE_RESPONSE));
+        return res.status(200).body(buildHTML(JSON.stringify(USER_PAGE_RESPONSE)));
       });
 
       await getMediaByUsername(USERNAME);
@@ -35,7 +36,7 @@ describe('[nanogram.js] - core', () => {
     it('return correct value if everything is correct', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify(USER_PAGE_RESPONSE),
+        body: buildHTML(JSON.stringify(USER_PAGE_RESPONSE)),
       });
 
       const result = await getMediaByUsername(USERNAME);
@@ -45,7 +46,7 @@ describe('[nanogram.js] - core', () => {
     it('return default value if response is empty', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify(USER_PAGE_RESPONSE_EMPTY),
+        body: buildHTML(JSON.stringify(USER_PAGE_RESPONSE_EMPTY)),
       });
 
       const result = await getMediaByUsername(USERNAME);
@@ -55,7 +56,7 @@ describe('[nanogram.js] - core', () => {
     it('throw error if has network ban', async () => {
       xhrmock.get(URL, {
         status: 200,
-        body: JSON.stringify({}),
+        body: buildHTML(JSON.stringify({})),
       });
 
       try {

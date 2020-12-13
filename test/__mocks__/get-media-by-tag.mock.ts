@@ -442,10 +442,8 @@ export const TAG_PAGE_VALID_CONTENT: ITagsResult = {
       edges: [],
     },
   },
-  ok: true,
 };
 
 export const TAG_PAGE_INVALID_CONTENT: ITagsResult = {
   tag: null,
-  ok: true,
 };

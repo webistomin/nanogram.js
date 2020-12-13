@@ -11,17 +11,15 @@ import { HTTP, buildURL, NETWORK_BAN_MESSAGE } from '../utils';
 export const getMediaByPlaceId = async (placeId: number): Promise<IPlaceResult> => {
   const result: IPlaceResult = {
     location: null,
-    ok: false,
   };
 
-  const url = buildURL(`explore/locations/${placeId}`);
+  const url = buildURL(`explore/locations/${placeId}/`);
   const response = await HTTP<IPlaceResponse>(url);
   const content = response?.entry_data?.LocationsPage;
 
   if (content) {
     const { location = null } = { ...content?.[0]?.graphql };
     result.location = location;
-    result.ok = true;
   } else {
     throw new Error(NETWORK_BAN_MESSAGE);
   }
