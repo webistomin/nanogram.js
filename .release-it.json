@@ -1,6 +1,7 @@
 {
   "git": {
-    "commitMessage": "build(nanogram.js): release v${version}"
+    "commitMessage": "build(nanogram.js): release v${version}",
+    "requireCleanWorkingDir": false
   },
   "github": {
     "release": true
