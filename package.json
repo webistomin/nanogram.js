@@ -38,7 +38,8 @@
     "prettier:write": "prettier --write \"{src,test}/**/*.{js,ts}\"",
     "test": "jest --config jest.config.js --coverage --silent",
     "tree-shake": "agadoo",
-    "check-size": "size-limit"
+    "check-size": "size-limit",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -94,6 +95,7 @@
     "minimist": "^1.2.5",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
+    "release-it": "^14.2.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.34.2",
     "rollup-plugin-banner2": "^1.0.0",
