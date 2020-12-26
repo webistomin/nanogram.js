@@ -16,11 +16,12 @@ export interface ISearchUsers {
     full_name: string;
     is_private: boolean;
     profile_pic_url: string;
-    profile_pic_id: string;
+    profile_pic_id?: string;
     is_verified: boolean;
     has_anonymous_profile_picture: boolean;
     mutual_followers_count: number;
     latest_reel_media: number;
+    account_badges?: unknown;
   };
 }
 
@@ -28,12 +29,12 @@ export interface ISearchPlaces {
   place: {
     location: {
       pk: string;
+      short_name: string;
+      facebook_places_id: number;
+      external_source: string;
       name: string;
       address: string;
       city: string;
-      short_name: string;
-      external_source: string;
-      facebook_places_id: number;
       lng?: number;
       lat?: number;
     };
@@ -63,5 +64,4 @@ export interface ISearchResult {
     places: ISearchResponse['places'] | null;
     hashtags: ISearchResponse['hashtags'] | null;
   };
-  ok: boolean;
 }
