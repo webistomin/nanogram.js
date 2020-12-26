@@ -37,7 +37,6 @@
     "eslint:write": "eslint --ext .js,.ts {src,test}/* --fix --max-warnings 0",
     "prettier:write": "prettier --write \"{src,test}/**/*.{js,ts}\"",
     "test": "jest --config jest.config.js --coverage --silent",
-    "test:watch": "jest --config jest.config.js --coverage --watch",
     "tree-shake": "agadoo",
     "check-size": "size-limit"
   },

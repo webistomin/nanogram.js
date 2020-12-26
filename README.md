@@ -22,8 +22,8 @@
   <img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/nanogram.js">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/nanogram.js">
   <img alt="npm type definitions" src="https://img.shields.io/npm/types/nanogram.js">
-  <a href="https://bundlephobia.com/result?p=nanogram.js@2.0.2">
-  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js/2.0.2">
+  <a href="https://bundlephobia.com/result?p=nanogram.js@3.0.0">
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/nanogram.js/3.0.0">
   </a>
 </p>
 
@@ -41,7 +41,6 @@
   <a href="#installation-">Installation</a> •
   <a href="#how-to-use-">How To Use</a> •
   <a href="#caveats-">Caveats</a> •
-  <a href="#examples-">Examples</a> •
   <a href="#browsers-support-">Browsers support</a> •
   <a href="#license-">License</a>  •
   <a href="#contributing-">Contributing</a>
@@ -49,7 +48,7 @@
 
 ## Key Features ✨
 
-* **Small.** ~ 2.4KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size
+* **Small.** ~ 2KB (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size
 * **No dependencies**
 * No need for the **access token** secret
 * **Easy to use**
@@ -83,9 +82,9 @@ $ yarn add nanogram.js
 Add script right before closing `</body>` tag
 
 ```html
-<script src="https://unpkg.com/nanogram.js@2.0.2/dist/nanogram.iife.js"></script>
+<script src="https://unpkg.com/nanogram.js@3.0.0/dist/nanogram.iife.js"></script>
 or
-<script src="https://cdn.jsdelivr.net/npm/nanogram.js@2.0.2/dist/nanogram.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nanogram.js@3.0.0/dist/nanogram.iife.js"></script>
 ```
 
 _Hint:_ for a better performance add [preconnect](https://css-tricks.com/using-relpreconnect-to-establish-network-connections-early-and-increase-performance/) link in the head of your document. 
@@ -107,34 +106,34 @@ _Hint:_ for a better performance add [preconnect](https://css-tricks.com/using-r
 
 ## How to use 🤔
 
-### 1. Initialize Nanogram.js
+### **Get media content by providing instagram username**
 
-**Option A: Using ES 2015:**
+#### ES2015
+
 ```js
-import Nanogram from 'nanogram.js';
+import { getMediaByUsername } from 'nanogram.js'
 
-const instagramParser = new Nanogram();
+getMediaByUsername('instagram').then((media) => {
+  console.log(media);
+});
 ```
 
-**Option B: Using CommonJS:**
-```js
-const Nanogram = require('nanogram.js');
+#### CommonJS
 
-const instagramParser = new Nanogram();
+```js
+const getMediaByUsername = require('nanogram.js').getMediaByUsername;
+
+getMediaByUsername('instagram').then((media) => {
+  console.log(media);
+});
 ```
 
-**Option C: Using CDN:**
-```js
-/* Nanogram is available from global namespace */
-const instagramParser = new Nanogram();
-```
-
-### 2. Get your data
-
-**Get media content by providing instagram username**
+#### IIFE
 
 ```js
-instagramParser.getMediaByUsername('instagram').then((media) => {
+const getMediaByUsername = window.Nanogram.getMediaByUsername
+
+getMediaByUsername('instagram').then((media) => {
   console.log(media);
 });
 ```
@@ -143,10 +142,70 @@ _Note:_ get content from [user page](https://www.instagram.com/instagram/). 12 p
 
 ---
 
-**Get media content by providing instagram tag**
+### **Get media content by providing instagram post id**
+
+#### ES2015
 
 ```js
-instagramParser.getMediaByTag('sunset').then((media) => {
+import { getMediaByPostId } from 'nanogram.js'
+
+getMediaByPostId('CIrIDMtDwn4').then((media) => {
+  console.log(media);
+});
+```
+
+#### CommonJS
+
+```js
+const getMediaByPostId = require('nanogram.js').getMediaByPostId;
+
+getMediaByPostId('CIrIDMtDwn4').then((media) => {
+  console.log(media);
+});
+```
+
+#### IIFE
+
+```js
+const getMediaByPostId = window.Nanogram.getMediaByPostId
+
+getMediaByPostId('CIrIDMtDwn4').then((media) => {
+  console.log(media);
+});
+```
+
+_Note_: get content from [post page](https://www.instagram.com/p/CIrIDMtDwn4/)
+
+---
+
+### **Get media content by providing instagram tag**
+
+#### ES2015
+
+```js
+import { getMediaByTag } from 'nanogram.js'
+
+getMediaByUsername('sunset').then((media) => {
+  console.log(media);
+});
+```
+
+#### CommonJS
+
+```js
+const getMediaByTag = require('nanogram.js').getMediaByTag;
+
+getMediaByUsername('sunset').then((media) => {
+  console.log(media);
+});
+```
+
+#### IIFE
+
+```js
+const getMediaByTag = window.Nanogram.getMediaByTag
+
+getMediaByTag('sunset').then((media) => {
   console.log(media);
 });
 ```
@@ -155,10 +214,34 @@ _Note:_ get content from [tag page](https://www.instagram.com/explore/tags/sunse
 
 ---
 
-**Get media content by providing location id and place name**
+### **Get media content by providing location id and place name**
+
+#### ES2015
 
 ```js
-instagramParser.getMediaByLocation(6264386, 'highbridge-park').then((media) => {
+import { getMediaByLocation } from 'nanogram.js'
+
+getMediaByLocation(6264386, 'highbridge-park').then((media) => {
+  console.log(media);
+});
+```
+
+#### CommonJS
+
+```js
+const getMediaByLocation = require('nanogram.js').getMediaByLocation;
+
+getMediaByLocation(6264386, 'highbridge-park').then((media) => {
+  console.log(media);
+});
+```
+
+#### IIFE
+
+```js
+const getMediaByLocation = window.Nanogram.getMediaByLocation
+
+getMediaByLocation(6264386, 'highbridge-park').then((media) => {
   console.log(media);
 });
 ```
@@ -167,11 +250,35 @@ _Note:_ get content from [location page](https://www.instagram.com/explore/locat
 
 ---
 
-**Get all available countries**
+### **Get all available countries**
+
+#### ES2015
 
 ```js
-instagramParser.getCountries().then((countries) => {
-  console.log(countries);
+import { getCountries } from 'nanogram.js'
+
+getCountries().then((media) => {
+  console.log(media);
+});
+```
+
+#### CommonJS
+
+```js
+const getCountries = require('nanogram.js').getCountries;
+
+getCountries().then((media) => {
+  console.log(media);
+});
+```
+
+#### IIFE
+
+```js
+const getCountries = window.Nanogram.getCountries
+
+getCountries().then((media) => {
+  console.log(media);
 });
 ```
 
@@ -179,11 +286,35 @@ _Note:_ get countries from [location page](https://www.instagram.com/explore/loc
 
 ---
 
-**Get all cities by providing country id**
+### **Get all cities by providing country id**
+
+#### ES2015
 
 ```js
-instagramParser.getCitiesByCountryId('US').then((cities) => {
-  console.log(cities);
+import { getCitiesByCountryId } from 'nanogram.js'
+
+getCitiesByCountryId('US').then((media) => {
+  console.log(media);
+});
+```
+
+#### CommonJS
+
+```js
+const getCitiesByCountryId = require('nanogram.js').getCitiesByCountryId;
+
+getCitiesByCountryId('US').then((media) => {
+  console.log(media);
+});
+```
+
+#### IIFE
+
+```js
+const getCitiesByCountryId = window.Nanogram.getCitiesByCountryId
+
+getCitiesByCountryId('US').then((media) => {
+  console.log(media);
 });
 ```
 
@@ -191,11 +322,35 @@ _Note:_ get cities from [country page](https://www.instagram.com/explore/locatio
 
 ---
 
-**Get all places by providing city id**
+### **Get all places by providing city id**
+
+#### ES2015
 
 ```js
-instagramParser.getPlacesByCityId('c2728325').then((places) => {
-  console.log(places);
+import { getPlacesByCityId } from 'nanogram.js'
+
+getPlacesByCityId('c2728325').then((media) => {
+  console.log(media);
+});
+```
+
+#### CommonJS
+
+```js
+const getPlacesByCityId = require('nanogram.js').getPlacesByCityId;
+
+getPlacesByCityId('c2728325').then((media) => {
+  console.log(media);
+});
+```
+
+#### IIFE
+
+```js
+const getPlacesByCityId = window.Nanogram.getPlacesByCityId
+
+getPlacesByCityId('c2728325').then((media) => {
+  console.log(media);
 });
 ```
 
@@ -203,10 +358,34 @@ _Note:_ get places from [city page](https://www.instagram.com/explore/locations/
 
 ---
 
-**Get media content by providing place id**
+### **Get media content by providing place id**
+
+#### ES2015
 
 ```js
-instagramParser.getMediaByPlaceId(2999512).then((media) => {
+import { getMediaByPlaceId } from 'nanogram.js'
+
+getMediaByPlaceId(2999512).then((media) => {
+  console.log(media);
+});
+```
+
+#### CommonJS
+
+```js
+const getMediaByPlaceId = require('nanogram.js').getMediaByPlaceId;
+
+getMediaByPlaceId(2999512).then((media) => {
+  console.log(media);
+});
+```
+
+#### IIFE
+
+```js
+const getMediaByPlaceId = window.Nanogram.getMediaByPlaceId
+
+getMediaByPlaceId(2999512).then((media) => {
   console.log(media);
 });
 ```
@@ -215,10 +394,34 @@ _Note:_ get content from [place page](https://www.instagram.com/explore/location
 
 ---
 
-**Get media content by providing search query**
+### **Get media content by providing search query**
+
+#### ES2015
 
 ```js
-instagramParser.getMediaBySearchQuery('sunset').then((media) => {
+import { getMediaBySearchQuery } from 'nanogram.js'
+
+getMediaBySearchQuery('sunset').then((media) => {
+  console.log(media);
+});
+```
+
+#### CommonJS
+
+```js
+const getMediaBySearchQuery = require('nanogram.js').getMediaBySearchQuery;
+
+getMediaBySearchQuery('sunset').then((media) => {
+  console.log(media);
+});
+```
+
+#### IIFE
+
+```js
+const getMediaBySearchQuery = window.Nanogram.getMediaBySearchQuery
+
+getMediaBySearchQuery('sunset').then((media) => {
   console.log(media);
 });
 ```
@@ -241,18 +444,6 @@ Use instafeed.js with access_token to load more items.
     <br/>
      Perhaps you made a large number of requests in a short period of time. There is a limit.
       Usually, the duration of a temporary Instagram ban ranges from few hours to 24-48 hours. The duration of ban also depends on your follow up actions. If you would continue doing the wrong actions, the ban may prolong.
-</details>
-
-## Examples ☺
-
-<details>
-    <summary>Vanilla.js (ES5)</summary>
-    <a href="https://github.com/webistomin/nanogram.js/blob/master/example/es5/index.html">See example</a>
-</details>
-
-<details>
-    <summary>Node.js</summary>
-    <a href="https://github.com/webistomin/nanogram.js/blob/master/example/node/index.js">See example</a>
 </details>
 
 ## Browsers support 🌎
