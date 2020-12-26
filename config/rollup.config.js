@@ -17,7 +17,7 @@ import { BANNER } from './partials/banner';
 import { GLOBALS } from './partials/globals';
 
 const BASE_CONFIG = {
-  input: 'src/index.ts',
+  input: 'src/nanogram.ts',
   plugins: {
     common: [
       json(),

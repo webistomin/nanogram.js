@@ -7,4 +7,4 @@ export { default as getMediaBySearchQuery } from './core/get-media-by-search-que
 export { default as getMediaByTag } from './core/get-media-by-tag';
 export { default as getMediaByUsername } from './core/get-media-by-username';
 export { default as getPlacesByCityId } from './core/get-places-by-city-id';
-//# sourceMappingURL=index.d.ts.map
+//# sourceMappingURL=nanogram.d.ts.map

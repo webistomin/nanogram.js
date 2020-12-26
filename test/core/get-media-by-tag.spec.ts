@@ -5,7 +5,7 @@ import {
   TAG_PAGE_RESPONSE_EMPTY,
   TAG_PAGE_VALID_CONTENT,
 } from '../__mocks__/get-media-by-tag.mock';
-import { getMediaByTag } from '../../src';
+import { getMediaByTag } from '../../src/nanogram';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 import { buildHTML } from '../helpers/build-html';
 

@@ -1,5 +1,5 @@
 import xhrmock from 'xhr-mock';
-import { getCountries } from '../../src';
+import { getCountries } from '../../src/nanogram';
 import {
   COUNTRIES_PAGE_INVALID_CONTENT,
   COUNTRIES_PAGE_RESPONSE,

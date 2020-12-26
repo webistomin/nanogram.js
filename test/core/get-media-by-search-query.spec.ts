@@ -4,7 +4,7 @@ import {
   SEARCH_PAGE_INVALID_CONTENT,
   SEARCH_PAGE_VALID_CONTENT,
 } from '../__mocks__/get-media-by-search-query.mock';
-import { getMediaBySearchQuery } from '../../src';
+import { getMediaBySearchQuery } from '../../src/nanogram';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 
 describe('[nanogram.js] - core', () => {

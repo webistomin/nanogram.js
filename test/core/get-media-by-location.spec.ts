@@ -5,7 +5,7 @@ import {
   LOCATION_PAGE_RESPONSE_EMPTY,
   LOCATION_PAGE_VALID_CONTENT,
 } from '../__mocks__/get-media-by-location.mock';
-import { getMediaByLocation } from '../../src';
+import { getMediaByLocation } from '../../src/nanogram';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 import { buildHTML } from '../helpers/build-html';
 

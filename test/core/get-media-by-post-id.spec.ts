@@ -5,7 +5,7 @@ import {
   POST_PAGE_RESPONSE_EMPTY,
   POST_PAGE_VALID_CONTENT,
 } from '../__mocks__/get-media-by-post-id.mock';
-import { getMediaByPostId } from '../../src';
+import { getMediaByPostId } from '../../src/nanogram';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 import { buildHTML } from '../helpers/build-html';
 

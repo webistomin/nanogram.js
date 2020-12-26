@@ -5,7 +5,7 @@ import {
   PLACES_PAGE_RESPONSE_EMPTY,
   PLACES_PAGE_VALID_CONTENT,
 } from '../__mocks__/get-places-by-city-id.mock';
-import { getPlacesByCityId } from '../../src';
+import { getPlacesByCityId } from '../../src/nanogram';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 import { buildHTML } from '../helpers/build-html';
 

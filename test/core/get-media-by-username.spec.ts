@@ -5,7 +5,7 @@ import {
   USER_PAGE_RESPONSE_EMPTY,
   USER_PAGE_INVALID_CONTENT,
 } from '../__mocks__/get-media-by-username.mock';
-import { getMediaByUsername } from '../../src';
+import { getMediaByUsername } from '../../src/nanogram';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 import { buildHTML } from '../helpers/build-html';
 

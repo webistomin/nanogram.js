@@ -1,5 +1,5 @@
 import xhrmock from 'xhr-mock';
-import { getCitiesByCountryId } from '../../src';
+import { getCitiesByCountryId } from '../../src/nanogram';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 import {
   CITIES_PAGE_INVALID_CONTENT,

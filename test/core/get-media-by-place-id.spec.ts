@@ -5,7 +5,7 @@ import {
   PLACE_PAGE_RESPONSE_EMPTY,
   PlACE_PAGE_VALID_CONTENT,
 } from '../__mocks__/get-media-by-place-id.mock';
-import { getMediaByPlaceId } from '../../src';
+import { getMediaByPlaceId } from '../../src/nanogram';
 import { NETWORK_BAN_MESSAGE } from '../../src/utils';
 import { buildHTML } from '../helpers/build-html';
 
