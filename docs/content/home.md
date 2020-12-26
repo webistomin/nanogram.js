@@ -12,7 +12,18 @@ features:
   details: It works without keys and access tokens
 - title: 🧘‍♀️ Flexible
   details: It returns simple JS objects. Do whatever you want
+- title: 🌓 Universal
+  details: It works both on server and client. Has IE11 support with polyfill 
 ---
+
+### Example 🧐
+
+<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="js,result" data-user="webistomin" data-slug-hash="vYNrgYL" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Instagram feed without API 📷">
+  <span>See the Pen <a href="https://codepen.io/webistomin/pen/vYNrgYL">
+  Instagram feed without API 📷</a> by Alexey Istomin (<a href="https://codepen.io/webistomin">@webistomin</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 ## Quick Setup
 
@@ -55,6 +66,8 @@ or
 
 #### Get media content by providing instagram username
 
+##### ES2015
+
 ```js
 import { getMediaByUsername } from 'nanogram.js'
 
@@ -63,12 +76,56 @@ getMediaByUsername('instagram').then((media) => {
 });
 ```
 
+##### CommonJS
+
+```js
+const getMediaByUsername = require('nanogram.js').getMediaByUsername;
+
+getMediaByUsername('instagram').then((media) => {
+  console.log(media);
+});
+```
+
+##### IIFE
+
+```js
+const getMediaByUsername = window.Nanogram.getMediaByUsername
+
+getMediaByUsername('instagram').then((media) => {
+  console.log(media);
+});
+```
+
 > _Note_: get content from [user page](https://www.instagram.com/instagram/). 12 photos is the maximum for this method.
+
+---
 
 #### Get media content by providing instagram post id
 
+##### ES2015
+
 ```js
 import { getMediaByPostId } from 'nanogram.js'
+
+getMediaByPostId('CIrIDMtDwn4').then((media) => {
+  console.log(media);
+});
+```
+
+##### CommonJS
+
+```js
+const getMediaByPostId = require('nanogram.js').getMediaByPostId;
+
+getMediaByPostId('CIrIDMtDwn4').then((media) => {
+  console.log(media);
+});
+```
+
+##### IIFE
+
+```js
+const getMediaByPostId = window.Nanogram.getMediaByPostId
 
 getMediaByPostId('CIrIDMtDwn4').then((media) => {
   console.log(media);
@@ -79,8 +136,30 @@ getMediaByPostId('CIrIDMtDwn4').then((media) => {
 
 #### Get media content by providing instagram tag
 
+##### ES2015
+
 ```js
 import { getMediaByTag } from 'nanogram.js'
+
+getMediaByUsername('sunset').then((media) => {
+  console.log(media);
+});
+```
+
+##### CommonJS
+
+```js
+const getMediaByTag = require('nanogram.js').getMediaByTag;
+
+getMediaByUsername('sunset').then((media) => {
+  console.log(media);
+});
+```
+
+##### IIFE
+
+```js
+const getMediaByTag = window.Nanogram.getMediaByTag
 
 getMediaByTag('sunset').then((media) => {
   console.log(media);
@@ -91,8 +170,30 @@ getMediaByTag('sunset').then((media) => {
 
 #### Get media content by providing location id and place name
 
+##### ES2015
+
 ```js
 import { getMediaByLocation } from 'nanogram.js'
+
+getMediaByLocation(6264386, 'highbridge-park').then((media) => {
+  console.log(media);
+});
+```
+
+##### CommonJS
+
+```js
+const getMediaByLocation = require('nanogram.js').getMediaByLocation;
+
+getMediaByLocation(6264386, 'highbridge-park').then((media) => {
+  console.log(media);
+});
+```
+
+##### IIFE
+
+```js
+const getMediaByLocation = window.Nanogram.getMediaByLocation
 
 getMediaByLocation(6264386, 'highbridge-park').then((media) => {
   console.log(media);
@@ -103,8 +204,30 @@ getMediaByLocation(6264386, 'highbridge-park').then((media) => {
 
 #### Get all available countries
 
+##### ES2015
+
 ```js
 import { getCountries } from 'nanogram.js'
+
+getCountries().then((media) => {
+  console.log(media);
+});
+```
+
+##### CommonJS
+
+```js
+const getCountries = require('nanogram.js').getCountries;
+
+getCountries().then((media) => {
+  console.log(media);
+});
+```
+
+##### IIFE
+
+```js
+const getCountries = window.Nanogram.getCountries
 
 getCountries().then((media) => {
   console.log(media);
@@ -116,8 +239,30 @@ getCountries().then((media) => {
 
 #### Get all cities by providing country id
 
+##### ES2015
+
 ```js
 import { getCitiesByCountryId } from 'nanogram.js'
+
+getCitiesByCountryId('US').then((media) => {
+  console.log(media);
+});
+```
+
+##### CommonJS
+
+```js
+const getCitiesByCountryId = require('nanogram.js').getCitiesByCountryId;
+
+getCitiesByCountryId('US').then((media) => {
+  console.log(media);
+});
+```
+
+##### IIFE
+
+```js
+const getCitiesByCountryId = window.Nanogram.getCitiesByCountryId
 
 getCitiesByCountryId('US').then((media) => {
   console.log(media);
@@ -128,8 +273,30 @@ getCitiesByCountryId('US').then((media) => {
 
 #### Get all places by providing city id
 
+##### ES2015
+
 ```js
 import { getPlacesByCityId } from 'nanogram.js'
+
+getPlacesByCityId('c2728325').then((media) => {
+  console.log(media);
+});
+```
+
+##### CommonJS
+
+```js
+const getPlacesByCityId = require('nanogram.js').getPlacesByCityId;
+
+getPlacesByCityId('c2728325').then((media) => {
+  console.log(media);
+});
+```
+
+##### IIFE
+
+```js
+const getPlacesByCityId = window.Nanogram.getPlacesByCityId
 
 getPlacesByCityId('c2728325').then((media) => {
   console.log(media);
@@ -141,8 +308,30 @@ getPlacesByCityId('c2728325').then((media) => {
 
 #### Get media content by providing place id
 
+##### ES2015
+
 ```js
 import { getMediaByPlaceId } from 'nanogram.js'
+
+getMediaByPlaceId(2999512).then((media) => {
+  console.log(media);
+});
+```
+
+##### CommonJS
+
+```js
+const getMediaByPlaceId = require('nanogram.js').getMediaByPlaceId;
+
+getMediaByPlaceId(2999512).then((media) => {
+  console.log(media);
+});
+```
+
+##### IIFE
+
+```js
+const getMediaByPlaceId = window.Nanogram.getMediaByPlaceId
 
 getMediaByPlaceId(2999512).then((media) => {
   console.log(media);
@@ -153,6 +342,8 @@ getMediaByPlaceId(2999512).then((media) => {
 
 #### Get media content by providing search query
 
+##### ES2015
+
 ```js
 import { getMediaBySearchQuery } from 'nanogram.js'
 
@@ -161,16 +352,27 @@ getMediaBySearchQuery('sunset').then((media) => {
 });
 ```
 
+##### CommonJS
+
+```js
+const getMediaBySearchQuery = require('nanogram.js').getMediaBySearchQuery;
+
+getMediaBySearchQuery('sunset').then((media) => {
+  console.log(media);
+});
+```
+
+##### IIFE
+
+```js
+const getMediaBySearchQuery = window.Nanogram.getMediaBySearchQuery
+
+getMediaBySearchQuery('sunset').then((media) => {
+  console.log(media);
+});
+```
+
 > _Note:_ get content from searchbar on the top of the page
-
-### Example 🧐
-
-<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="js,result" data-user="webistomin" data-slug-hash="vYNrgYL" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Instagram feed without API 📷">
-  <span>See the Pen <a href="https://codepen.io/webistomin/pen/vYNrgYL">
-  Instagram feed without API 📷</a> by Alexey Istomin (<a href="https://codepen.io/webistomin">@webistomin</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
 
 

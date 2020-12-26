@@ -39,5 +39,11 @@ export default Vue.extend({
       page,
     };
   },
+
+  head() {
+    return {
+      title: 'nanogram.js :: documentation'
+    }
+  }
 })
 </script>
