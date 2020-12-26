@@ -1,6 +1,6 @@
 {
   "git": {
-    "commitMessage": "build: release v${version}"
+    "commitMessage": "build(nanogram.js): release v${version}"
   },
   "github": {
     "release": true
