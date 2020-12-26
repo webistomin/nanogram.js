@@ -1,6 +1,6 @@
 {
   "name": "nanogram.js",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "An easy-to-use and simple Instagram package allows you to fetch media content without API and access token.",
   "reveal": true,
   "sideEffects": false,
