@@ -1,0 +1,1 @@
+{"version":3,"file":"node-owner.d.ts","sourceRoot":"","sources":["../../../src/types/common/node-owner.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,UAAU;IACzB,EAAE,EAAE,MAAM,CAAC;IACX,WAAW,CAAC,EAAE,OAAO,CAAC;IACtB,eAAe,CAAC,EAAE,MAAM,CAAC;IACzB,QAAQ,CAAC,EAAE,MAAM,CAAC;IAClB,SAAS,CAAC,EAAE,MAAM,CAAC;CACpB"}

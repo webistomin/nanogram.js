@@ -1,0 +1,1 @@
+{"version":3,"file":"edge-media-to-parent-comment.d.ts","sourceRoot":"","sources":["../../../src/types/common/edge-media-to-parent-comment.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,yBAAyB;IACxC,KAAK,CAAC,EAAE,MAAM,CAAC;IACf,SAAS,CAAC,EAAE;QACV,aAAa,EAAE,OAAO,CAAC;QACvB,UAAU,EAAE,MAAM,GAAG,IAAI,CAAC;KAC3B,CAAC;IACF,KAAK,EAAE,OAAO,CAAC;CAChB"}
