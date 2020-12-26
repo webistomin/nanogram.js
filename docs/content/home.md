@@ -165,7 +165,7 @@ getMediaBySearchQuery('sunset').then((media) => {
 
 ### Example 🧐
 
-<p class="codepen" data-height="500" data-theme-id="dark" data-default-tab="js,result" data-user="webistomin" data-slug-hash="vYNrgYL" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Instagram feed without API 📷">
+<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="js,result" data-user="webistomin" data-slug-hash="vYNrgYL" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Instagram feed without API 📷">
   <span>See the Pen <a href="https://codepen.io/webistomin/pen/vYNrgYL">
   Instagram feed without API 📷</a> by Alexey Istomin (<a href="https://codepen.io/webistomin">@webistomin</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>

@@ -14,22 +14,6 @@
             <p class="mt-2">{{ feature.details }}</p>
           </div>
         </div>
-
-        <div class="mt-16 grid grid-cols-2 gap-x-4">
-          <nuxt-link
-            class="block bg-orange-500 p-4 text-white rounded-lg font-bold text-center focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-accent-800"
-            to="/guide/overview"
-          >
-            📚 Getting Started
-          </nuxt-link>
-
-          <nuxt-link
-            class="block bg-purple-700 p-4 text-white rounded-lg font-bold text-center focus:outline-none focus:ring focus:ring-opacity-50 focus:ring-accent-800"
-            to="/guide/examples"
-          >
-            🧪 Examples
-          </nuxt-link>
-        </div>
       </div>
 
       <content-wrapper :document="page"></content-wrapper>
