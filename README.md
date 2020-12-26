@@ -57,11 +57,11 @@
 
 ## Demo 👀
 
-### [DEMO](https://nanogram-js.now.sh/)
+### [DEMO](https://codepen.io/webistomin/pen/vYNrgYL)
 
 ## Documentation 🔨
 
-You can read the full documentation [here](https://webistomin.github.io/nanogram.js/)
+You can read the full documentation [here](https://nanogram-js.now.sh/)
 
 ## Installation 🚀
 
