@@ -40,9 +40,9 @@ npm install nanogram.js --save
 Or use a CDN
 
 ```html
-<script src="https://unpkg.com/nanogram.js@3.0.0/dist/nanogram.iife.js"></script>
+<script src="https://unpkg.com/nanogram.js@3.0.2/dist/nanogram.iife.js"></script>
 or
-<script src="https://cdn.jsdelivr.net/npm/nanogram.js@3.0.0/dist/nanogram.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nanogram.js@3.0.2/dist/nanogram.iife.js"></script>
 ```
 
 > Hint: for a better performance add preconnect link in the head of your document.
