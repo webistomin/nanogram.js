@@ -27,4 +27,16 @@
 ## 2.0.2 (27.10.2020)
 - Add sideEffect: false to package.json
 
+## 3.0.0 (26.12.2020)
+
+- Improved tree-shaking
+- Added new method `getMediaByPostId`
+- `ok` field removed from response
+- Reduced library size
+- Fix [issue#198](https://github.com/webistomin/nanogram.js/issues/198)
+- Fix [issue#228](https://github.com/webistomin/nanogram.js/issues/228)
+
+## 3.0.1 (26.12.2020)
+
+- Fixed dist folder in npm package
 
