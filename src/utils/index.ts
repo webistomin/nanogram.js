@@ -15,7 +15,6 @@ export const SHARED_DATA_REG_EXP = /<script type="text\/javascript">window._shar
  */
 export const NETWORK_BAN_MESSAGE = [
   '[nanogram.js] It looks like your network has been temporary banned because of too many requests.',
-  'See ...',
 ].join('\n');
 
 /**
