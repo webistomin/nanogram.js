@@ -75,7 +75,7 @@
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-inject": "^4.0.2",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
     "@size-limit/preset-small-lib": "^4.9.1",
     "@size-limit/time": "^4.9.1",
     "@types/jest": "^26.0.16",
