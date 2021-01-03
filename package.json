@@ -20,6 +20,14 @@
   "unpkg": "./dist/nanogram.iife.js",
   "jsdelivr": "./dist/nanogram.iife.js",
   "typings": "./dist/nanogram.d.ts",
+  "exports": {
+    ".": {
+      "browser": "./dist/nanogram.esm.js",
+      "import": "./dist/nanogram.esm.js",
+      "require": "./dist/nanogram.cjs.js",
+      "default": "./dist/nanogram.esm.js"
+    }
+  },
   "files": [
     "dist/*",
     "src/*"
