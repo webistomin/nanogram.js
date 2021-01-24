@@ -178,6 +178,42 @@ _Note_: get content from [post page](https://www.instagram.com/p/CIrIDMtDwn4/)
 
 ---
 
+### **Get media content by providing instagram reel id**
+
+#### ES2015
+
+```js
+import { getMediaByReelId } from 'nanogram.js'
+
+getMediaByReelId('CKONdDkJaPU').then((media) => {
+  console.log(media);
+});
+```
+
+#### CommonJS
+
+```js
+const getMediaByReelId = require('nanogram.js').getMediaByReelId;
+
+getMediaByReelId('CKONdDkJaPU').then((media) => {
+  console.log(media);
+});
+```
+
+#### IIFE
+
+```js
+const getMediaByReelId = window.Nanogram.getMediaByReelId
+
+getMediaByReelId('CKONdDkJaPU').then((media) => {
+  console.log(media);
+});
+```
+
+_Note_: get content from [reel page](https://www.instagram.com/reel/CKONdDkJaPU/)
+
+---
+
 ### **Get media content by providing instagram tag**
 
 #### ES2015
@@ -185,7 +221,7 @@ _Note_: get content from [post page](https://www.instagram.com/p/CIrIDMtDwn4/)
 ```js
 import { getMediaByTag } from 'nanogram.js'
 
-getMediaByUsername('sunset').then((media) => {
+getMediaByTag('sunset').then((media) => {
   console.log(media);
 });
 ```
@@ -195,7 +231,7 @@ getMediaByUsername('sunset').then((media) => {
 ```js
 const getMediaByTag = require('nanogram.js').getMediaByTag;
 
-getMediaByUsername('sunset').then((media) => {
+getMediaByTag('sunset').then((media) => {
   console.log(media);
 });
 ```
