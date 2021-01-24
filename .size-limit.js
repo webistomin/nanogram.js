@@ -36,6 +36,12 @@ module.exports = [
   },
   {
     path: "dist/nanogram.esm.js",
+    name: "getMediaByReelId",
+    import: "{ getMediaByReelId }",
+    limit: "1.5 KB",
+  },
+  {
+    path: "dist/nanogram.esm.js",
     name: "getMediaBySearchQuery",
     import: "{ getMediaBySearchQuery }",
     limit: "1.5 KB",
