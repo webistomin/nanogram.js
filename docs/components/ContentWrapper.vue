@@ -64,5 +64,9 @@ export default {
   .nuxt-content-highlight {
     @apply my-4 text-sm;
   }
+
+  hr {
+    margin: 50px 0;
+  }
 }
 </style>

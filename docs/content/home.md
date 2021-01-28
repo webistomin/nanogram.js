@@ -134,6 +134,8 @@ getMediaByPostId('CIrIDMtDwn4').then((media) => {
 
 > _Note_: get content from [post page](https://www.instagram.com/p/CIrIDMtDwn4/).
 
+---
+
 #### Get media content by providing instagram reel id
 
 ##### ES2015
@@ -167,6 +169,8 @@ getMediaByReelId('CKONdDkJaPU').then((media) => {
 ```
 
 > _Note_: get content from [reel page](https://www.instagram.com/reel/CKONdDkJaPU/).
+
+---
 
 #### Get media content by providing instagram tag
 
@@ -202,6 +206,8 @@ getMediaByTag('sunset').then((media) => {
 
 > _Note_: get content from [tag page](https://www.instagram.com/explore/tags/sunset/)
 
+---
+
 #### Get media content by providing location id and place name
 
 ##### ES2015
@@ -235,6 +241,8 @@ getMediaByLocation(6264386, 'highbridge-park').then((media) => {
 ```
 
 > _Note:_ get content from [location page](https://www.instagram.com/explore/locations/6264386/highbridge-park)
+
+---
 
 #### Get all available countries
 
@@ -270,6 +278,7 @@ getCountries().then((media) => {
 
 > _Note:_ get countries from [location page](https://www.instagram.com/explore/locations/)
 
+---
 
 #### Get all cities by providing country id
 
@@ -305,6 +314,8 @@ getCitiesByCountryId('US').then((media) => {
 
 > _Note:_ get cities from [country page](https://www.instagram.com/explore/locations/US/)
 
+---
+
 #### Get all places by providing city id
 
 ##### ES2015
@@ -339,6 +350,7 @@ getPlacesByCityId('c2728325').then((media) => {
 
 > _Note:_ get places from [city page](https://www.instagram.com/explore/locations/c2728325/)
 
+---
 
 #### Get media content by providing place id
 
@@ -373,6 +385,8 @@ getMediaByPlaceId(2999512).then((media) => {
 ```
 
 > _Note:_ get content from [place page](https://www.instagram.com/explore/locations/2999512/)
+
+---
 
 #### Get media content by providing search query
 
