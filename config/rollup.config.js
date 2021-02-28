@@ -23,12 +23,6 @@ const BASE_CONFIG = {
       json(),
       typescript(),
       sourceMaps(),
-      terser({
-        output: {
-          ecma: 5,
-          comments: false,
-        },
-      }),
     ],
     // babel: {
     //   exclude: 'node_modules/**',
@@ -120,6 +114,12 @@ if (!ARGV.format || ARGV.format === 'iife') {
       }),
       commonjs({
         include: 'node_modules/**',
+      }),
+      terser({
+        output: {
+          ecma: 5,
+          comments: false,
+        },
       }),
     ],
   };

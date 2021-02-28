@@ -9,4 +9,483 @@
 *
 **/
 
-var n=function(){return(n=Object.assign||function(n){for(var o,t=1,r=arguments.length;t<r;t++)for(var e in o=arguments[t])Object.prototype.hasOwnProperty.call(o,e)&&(n[e]=o[e]);return n}).apply(this,arguments)};function o(n,o,t,r){return new(t||(t=Promise))((function(e,i){function l(n){try{a(r.next(n))}catch(n){i(n)}}function u(n){try{a(r.throw(n))}catch(n){i(n)}}function a(n){var o;n.done?e(n.value):(o=n.value,o instanceof t?o:new t((function(n){n(o)}))).then(l,u)}a((r=r.apply(n,o||[])).next())}))}function t(n,o){var t,r,e,i,l={label:0,sent:function(){if(1&e[0])throw e[1];return e[1]},trys:[],ops:[]};return i={next:u(0),throw:u(1),return:u(2)},"function"==typeof Symbol&&(i[Symbol.iterator]=function(){return this}),i;function u(i){return function(u){return function(i){if(t)throw new TypeError("Generator is already executing.");for(;l;)try{if(t=1,r&&(e=2&i[0]?r.return:i[0]?r.throw||((e=r.return)&&e.call(r),0):r.next)&&!(e=e.call(r,i[1])).done)return e;switch(r=0,e&&(i=[2&i[0],e.value]),i[0]){case 0:case 1:e=i;break;case 4:return l.label++,{value:i[1],done:!1};case 5:l.label++,r=i[1],i=[0];continue;case 7:i=l.ops.pop(),l.trys.pop();continue;default:if(!(e=l.trys,(e=e.length>0&&e[e.length-1])||6!==i[0]&&2!==i[0])){l=0;continue}if(3===i[0]&&(!e||i[1]>e[0]&&i[1]<e[3])){l.label=i[1];break}if(6===i[0]&&l.label<e[1]){l.label=e[1],e=i;break}if(e&&l.label<e[2]){l.label=e[2],l.ops.push(i);break}e[2]&&l.ops.pop(),l.trys.pop();continue}i=o.call(n,l)}catch(n){i=[6,n],r=0}finally{t=e=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,u])}}}var r=/<script type="text\/javascript">window._sharedData = (.*);<\/script>/,e=["[nanogram.js] It looks like your network has been temporary banned because of too many requests."].join("\n"),i=function(n){return"https://www.instagram.com/"+n},l=function(n,o){try{var t=n;return o&&(t=r.exec(n)[1]),JSON.parse(t)}catch(n){throw new Error(n)}},u=function(n,o){return new Promise((function(t,r){var e=new XMLHttpRequest;e.open(n,o),e.onload=function(){return t(e)},e.onerror=r,e.send()}))},a=function(n,r){return void 0===r&&(r=!0),o(void 0,void 0,void 0,(function(){var o,e,i,a;return t(this,(function(t){switch(t.label){case 0:return[4,u("GET",n)];case 1:if(o=t.sent(),e=o.responseText,i=o.status,a=o.responseURL,i>=200&&i<400)return[2,l(e,r)];throw new Error(i+" for "+a)}}))}))},c=function(r){return o(void 0,void 0,void 0,(function(){var o,l,u,c,s,d,v,f,h,p;return t(this,(function(t){switch(t.label){case 0:return o={city_list:null,country_info:null},l=i("explore/locations/"+r+"/"),[4,a(l)];case 1:if(u=t.sent(),!(c=null===(p=null==u?void 0:u.entry_data)||void 0===p?void 0:p.LocationsDirectoryPage))throw new Error(e);return s=n({},null==c?void 0:c[0]),d=s.city_list,v=void 0===d?null:d,f=s.country_info,h=void 0===f?null:f,o.city_list=v,o.country_info=h,[2,o]}}))}))},s=function(){return o(void 0,void 0,void 0,(function(){var o,r,l,u,c,s,d;return t(this,(function(t){switch(t.label){case 0:return o={country_list:null},r=i("explore/locations/"),[4,a(r)];case 1:if(l=t.sent(),!(u=null===(d=null==l?void 0:l.entry_data)||void 0===d?void 0:d.LocationsDirectoryPage))throw new Error(e);return c=n({},null==u?void 0:u[0]).country_list,s=void 0===c?null:c,o.country_list=s,[2,o]}}))}))},d=function(r,l){return o(void 0,void 0,void 0,(function(){var o,u,c,s,d,v,f,h;return t(this,(function(t){switch(t.label){case 0:return o={location:null},u=i("explore/locations/"+r+"/"+l+"/"),[4,a(u)];case 1:if(c=t.sent(),!(s=null===(f=null==c?void 0:c.entry_data)||void 0===f?void 0:f.LocationsPage))throw new Error(e);return d=n({},null===(h=null==s?void 0:s[0])||void 0===h?void 0:h.graphql).location,v=void 0===d?null:d,o.location=v,[2,o]}}))}))},v=function(r){return o(void 0,void 0,void 0,(function(){var o,l,u,c,s,d,v,f;return t(this,(function(t){switch(t.label){case 0:return o={location:null},l=i("explore/locations/"+r+"/"),[4,a(l)];case 1:if(u=t.sent(),!(c=null===(v=null==u?void 0:u.entry_data)||void 0===v?void 0:v.LocationsPage))throw new Error(e);return s=n({},null===(f=null==c?void 0:c[0])||void 0===f?void 0:f.graphql).location,d=void 0===s?null:s,o.location=d,[2,o]}}))}))},f=function(r){return o(void 0,void 0,void 0,(function(){var o,l,u,c,s,d,v,f;return t(this,(function(t){switch(t.label){case 0:return o={post:null},l=i("p/"+r+"/"),[4,a(l)];case 1:if(u=t.sent(),!(c=null===(v=null==u?void 0:u.entry_data)||void 0===v?void 0:v.PostPage))throw new Error(e);return s=n({},null===(f=null==c?void 0:c[0])||void 0===f?void 0:f.graphql).shortcode_media,d=void 0===s?null:s,o.post=d,[2,o]}}))}))},h=function(r){return o(void 0,void 0,void 0,(function(){var o,l,u,c,s,d,v,f;return t(this,(function(t){switch(t.label){case 0:return o={reel:null},l=i("reel/"+r+"/"),[4,a(l)];case 1:if(u=t.sent(),!(c=null===(v=null==u?void 0:u.entry_data)||void 0===v?void 0:v.PostPage))throw new Error(e);return s=n({},null===(f=null==c?void 0:c[0])||void 0===f?void 0:f.graphql).shortcode_media,d=void 0===s?null:s,o.reel=d,[2,o]}}))}))},p=function(n){return o(void 0,void 0,void 0,(function(){var o,r,l,u,c,s,d,v,f;return t(this,(function(t){switch(t.label){case 0:return o={media:{users:null,hashtags:null,places:null}},r=i("web/search/topsearch/?context=blended&query="+n+"&include_reel=true"),[4,a(r,!1)];case 1:if(!(l=t.sent()))throw new Error(e);return u=l.users,c=void 0===u?null:u,s=l.hashtags,d=void 0===s?null:s,v=l.places,f=void 0===v?null:v,o.media.users=c,o.media.hashtags=d,o.media.places=f,[2,o]}}))}))},w=function(r){return o(void 0,void 0,void 0,(function(){var o,l,u,c,s,d,v,f;return t(this,(function(t){switch(t.label){case 0:return o={tag:null},l=i("explore/tags/"+r+"/"),[4,a(l)];case 1:if(u=t.sent(),!(c=null===(v=null==u?void 0:u.entry_data)||void 0===v?void 0:v.TagPage))throw new Error(e);return s=n({},null===(f=null==c?void 0:c[0])||void 0===f?void 0:f.graphql).hashtag,d=void 0===s?null:s,o.tag=d,[2,o]}}))}))},y=function(r){return o(void 0,void 0,void 0,(function(){var o,l,u,c,s,d,v,f;return t(this,(function(t){switch(t.label){case 0:return o={profile:null},l=i(r+"/"),[4,a(l)];case 1:if(u=t.sent(),!(c=null===(v=null==u?void 0:u.entry_data)||void 0===v?void 0:v.ProfilePage))throw new Error(e);return s=n({},null===(f=null==c?void 0:c[0])||void 0===f?void 0:f.graphql).user,d=void 0===s?null:s,o.profile=d,[2,o]}}))}))},b=function(r){return o(void 0,void 0,void 0,(function(){var o,l,u,c,s,d,v,f,h,p,w,y;return t(this,(function(t){switch(t.label){case 0:return o={place:{city_info:null,country_info:null,location_list:null}},l=i("explore/locations/"+r+"/"),[4,a(l)];case 1:if(u=t.sent(),!(c=null===(y=null==u?void 0:u.entry_data)||void 0===y?void 0:y.LocationsDirectoryPage))throw new Error(e);return s=n({},null==c?void 0:c[0]),d=s.city_info,v=void 0===d?null:d,f=s.country_info,h=void 0===f?null:f,p=s.location_list,w=void 0===p?null:p,o.place.city_info=v,o.place.country_info=h,o.place.location_list=w,[2,o]}}))}))};export{c as getCitiesByCountryId,s as getCountries,d as getMediaByLocation,v as getMediaByPlaceId,f as getMediaByPostId,h as getMediaByReelId,p as getMediaBySearchQuery,w as getMediaByTag,y as getMediaByUsername,b as getPlacesByCityId};
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+/**
+ * Base instagram url for every http request
+ */
+var INSTAGRAM_HOSTNAME = 'https://www.instagram.com/';
+/**
+ * RegExp to parse
+ * <script type="text/javascript">window._sharedData = {}</script>
+ * from HTML response
+ */
+var SHARED_DATA_REG_EXP = /<script type="text\/javascript">window._sharedData = (.*);<\/script>/;
+/**
+ * Message for network ban
+ */
+var NETWORK_BAN_MESSAGE = [
+    '[nanogram.js] It looks like your network has been temporary banned because of too many requests.',
+].join('\n');
+/**
+ * Append a query to the base instagram url
+ */
+var buildURL = function (query) {
+    return "" + INSTAGRAM_HOSTNAME + query;
+};
+/**
+ * Parse JSON from HTTP response
+ */
+var parseJSON = function (content, useRegExp) {
+    try {
+        var data = content;
+        if (useRegExp) {
+            data = SHARED_DATA_REG_EXP.exec(content)[1];
+        }
+        return JSON.parse(data);
+    }
+    catch (error) {
+        throw new Error(error);
+    }
+};
+/**
+ * Promisified XMLHttpRequest
+ */
+var xhrRequest = function (method, url) {
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.onload = function () { return resolve(xhr); };
+        xhr.onerror = reject;
+        xhr.send();
+    });
+};
+/**
+ * Module for making HTTP requests
+ */
+var HTTP = function (url, useRegExp) {
+    if (useRegExp === void 0) { useRegExp = true; }
+    return __awaiter(void 0, void 0, void 0, function () {
+        var response, responseText, status, responseURL;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, xhrRequest('GET', url)];
+                case 1:
+                    response = _a.sent();
+                    responseText = response.responseText, status = response.status, responseURL = response.responseURL;
+                    if (status >= 200 && status < 400) {
+                        return [2 /*return*/, parseJSON(responseText, useRegExp)];
+                    }
+                    else {
+                        throw new Error(status + " for " + responseURL);
+                    }
+            }
+        });
+    });
+};
+
+/**
+ * Get content from
+ * https://www.instagram.com/explore/locations/{countryId}/
+ *
+ * @example
+ * https://www.instagram.com/explore/locations/US/
+ */
+var getCitiesByCountryId = function (countryId) { return __awaiter(void 0, void 0, void 0, function () {
+    var result, url, response, content, _a, _b, city_list, _c, country_info;
+    var _d;
+    return __generator(this, function (_e) {
+        switch (_e.label) {
+            case 0:
+                result = {
+                    city_list: null,
+                    country_info: null,
+                };
+                url = buildURL("explore/locations/" + countryId + "/");
+                return [4 /*yield*/, HTTP(url)];
+            case 1:
+                response = _e.sent();
+                content = (_d = response === null || response === void 0 ? void 0 : response.entry_data) === null || _d === void 0 ? void 0 : _d.LocationsDirectoryPage;
+                if (content) {
+                    _a = __assign({}, content === null || content === void 0 ? void 0 : content[0]), _b = _a.city_list, city_list = _b === void 0 ? null : _b, _c = _a.country_info, country_info = _c === void 0 ? null : _c;
+                    result.city_list = city_list;
+                    result.country_info = country_info;
+                }
+                else {
+                    throw new Error(NETWORK_BAN_MESSAGE);
+                }
+                return [2 /*return*/, result];
+        }
+    });
+}); };
+
+/**
+ * Get content from
+ * https://www.instagram.com/explore/locations/
+ *
+ * @example
+ * https://www.instagram.com/explore/locations/
+ */
+var getCountries = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var result, url, response, content, _a, country_list;
+    var _b;
+    return __generator(this, function (_c) {
+        switch (_c.label) {
+            case 0:
+                result = {
+                    country_list: null,
+                };
+                url = buildURL("explore/locations/");
+                return [4 /*yield*/, HTTP(url)];
+            case 1:
+                response = _c.sent();
+                content = (_b = response === null || response === void 0 ? void 0 : response.entry_data) === null || _b === void 0 ? void 0 : _b.LocationsDirectoryPage;
+                if (content) {
+                    _a = __assign({}, content === null || content === void 0 ? void 0 : content[0]).country_list, country_list = _a === void 0 ? null : _a;
+                    result.country_list = country_list;
+                }
+                else {
+                    throw new Error(NETWORK_BAN_MESSAGE);
+                }
+                return [2 /*return*/, result];
+        }
+    });
+}); };
+
+/**
+ * Get content from
+ * https://www.instagram.com/explore/locations/{locationId}/{placeName}
+ *
+ * @example
+ * https://www.instagram.com/explore/locations/6264386/highbridge-park
+ */
+var getMediaByLocation = function (locationId, placeName) { return __awaiter(void 0, void 0, void 0, function () {
+    var result, url, response, content, _a, location_1;
+    var _b, _c;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
+            case 0:
+                result = {
+                    location: null,
+                };
+                url = buildURL("explore/locations/" + locationId + "/" + placeName + "/");
+                return [4 /*yield*/, HTTP(url)];
+            case 1:
+                response = _d.sent();
+                content = (_b = response === null || response === void 0 ? void 0 : response.entry_data) === null || _b === void 0 ? void 0 : _b.LocationsPage;
+                if (content) {
+                    _a = __assign({}, (_c = content === null || content === void 0 ? void 0 : content[0]) === null || _c === void 0 ? void 0 : _c.graphql).location, location_1 = _a === void 0 ? null : _a;
+                    result.location = location_1;
+                }
+                else {
+                    throw new Error(NETWORK_BAN_MESSAGE);
+                }
+                return [2 /*return*/, result];
+        }
+    });
+}); };
+
+/**
+ * Get content from
+ * https://www.instagram.com/explore/locations/{placeId}/
+ *
+ * @example
+ * https://www.instagram.com/explore/locations/2999512/
+ */
+var getMediaByPlaceId = function (placeId) { return __awaiter(void 0, void 0, void 0, function () {
+    var result, url, response, content, _a, location_1;
+    var _b, _c;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
+            case 0:
+                result = {
+                    location: null,
+                };
+                url = buildURL("explore/locations/" + placeId + "/");
+                return [4 /*yield*/, HTTP(url)];
+            case 1:
+                response = _d.sent();
+                content = (_b = response === null || response === void 0 ? void 0 : response.entry_data) === null || _b === void 0 ? void 0 : _b.LocationsPage;
+                if (content) {
+                    _a = __assign({}, (_c = content === null || content === void 0 ? void 0 : content[0]) === null || _c === void 0 ? void 0 : _c.graphql).location, location_1 = _a === void 0 ? null : _a;
+                    result.location = location_1;
+                }
+                else {
+                    throw new Error(NETWORK_BAN_MESSAGE);
+                }
+                return [2 /*return*/, result];
+        }
+    });
+}); };
+
+/**
+ * Get content from
+ * https://www.instagram.com/p/{postId}/
+ *
+ * @example
+ * https://www.instagram.com/p/CIrIDMtDwn4/
+ */
+var getMediaByPostId = function (postId) { return __awaiter(void 0, void 0, void 0, function () {
+    var result, url, response, content, _a, shortcode_media;
+    var _b, _c;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
+            case 0:
+                result = {
+                    post: null,
+                };
+                url = buildURL("p/" + postId + "/");
+                return [4 /*yield*/, HTTP(url)];
+            case 1:
+                response = _d.sent();
+                content = (_b = response === null || response === void 0 ? void 0 : response.entry_data) === null || _b === void 0 ? void 0 : _b.PostPage;
+                if (content) {
+                    _a = __assign({}, (_c = content === null || content === void 0 ? void 0 : content[0]) === null || _c === void 0 ? void 0 : _c.graphql).shortcode_media, shortcode_media = _a === void 0 ? null : _a;
+                    result.post = shortcode_media;
+                }
+                else {
+                    throw new Error(NETWORK_BAN_MESSAGE);
+                }
+                return [2 /*return*/, result];
+        }
+    });
+}); };
+
+/**
+ * Get content from
+ * https://www.instagram.com/reel/{reelId}/
+ *
+ * @example
+ * https://www.instagram.com/reel/CKONdDkJaPU/
+ */
+var getMediaByReelId = function (reelId) { return __awaiter(void 0, void 0, void 0, function () {
+    var result, url, response, content, _a, shortcode_media;
+    var _b, _c;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
+            case 0:
+                result = {
+                    reel: null,
+                };
+                url = buildURL("reel/" + reelId + "/");
+                return [4 /*yield*/, HTTP(url)];
+            case 1:
+                response = _d.sent();
+                content = (_b = response === null || response === void 0 ? void 0 : response.entry_data) === null || _b === void 0 ? void 0 : _b.PostPage;
+                if (content) {
+                    _a = __assign({}, (_c = content === null || content === void 0 ? void 0 : content[0]) === null || _c === void 0 ? void 0 : _c.graphql).shortcode_media, shortcode_media = _a === void 0 ? null : _a;
+                    result.reel = shortcode_media;
+                }
+                else {
+                    throw new Error(NETWORK_BAN_MESSAGE);
+                }
+                return [2 /*return*/, result];
+        }
+    });
+}); };
+
+/**
+ * Get content from
+ * https://www.instagram.com/web/search/topsearch/?context=blended&query={query}&include_reel=true
+ *
+ * @example
+ * https://www.instagram.com/web/search/topsearch/?context=blended&query=sunset&include_reel=true
+ */
+var getMediaBySearchQuery = function (query) { return __awaiter(void 0, void 0, void 0, function () {
+    var result, url, response, _a, users, _b, hashtags, _c, places;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
+            case 0:
+                result = {
+                    media: {
+                        users: null,
+                        hashtags: null,
+                        places: null,
+                    },
+                };
+                url = buildURL("web/search/topsearch/?context=blended&query=" + query + "&include_reel=true");
+                return [4 /*yield*/, HTTP(url, false)];
+            case 1:
+                response = _d.sent();
+                if (response) {
+                    _a = response.users, users = _a === void 0 ? null : _a, _b = response.hashtags, hashtags = _b === void 0 ? null : _b, _c = response.places, places = _c === void 0 ? null : _c;
+                    result.media.users = users;
+                    result.media.hashtags = hashtags;
+                    result.media.places = places;
+                }
+                else {
+                    throw new Error(NETWORK_BAN_MESSAGE);
+                }
+                return [2 /*return*/, result];
+        }
+    });
+}); };
+
+/**
+ * Get content from
+ * https://www.instagram.com/explore/tags/{tag}/
+ *
+ * @example
+ * https://www.instagram.com/explore/tags/sunset/
+ */
+var getMediaByTag = function (tag) { return __awaiter(void 0, void 0, void 0, function () {
+    var result, url, response, content, _a, hashtag;
+    var _b, _c;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
+            case 0:
+                result = {
+                    tag: null,
+                };
+                url = buildURL("explore/tags/" + tag + "/");
+                return [4 /*yield*/, HTTP(url)];
+            case 1:
+                response = _d.sent();
+                content = (_b = response === null || response === void 0 ? void 0 : response.entry_data) === null || _b === void 0 ? void 0 : _b.TagPage;
+                if (content) {
+                    _a = __assign({}, (_c = content === null || content === void 0 ? void 0 : content[0]) === null || _c === void 0 ? void 0 : _c.graphql).hashtag, hashtag = _a === void 0 ? null : _a;
+                    result.tag = hashtag;
+                }
+                else {
+                    throw new Error(NETWORK_BAN_MESSAGE);
+                }
+                return [2 /*return*/, result];
+        }
+    });
+}); };
+
+/**
+ * Get content from
+ * https://www.instagram.com/{username}/
+ *
+ * @example:
+ * https://www.instagram.com/instagram/
+ */
+var getMediaByUsername = function (username) { return __awaiter(void 0, void 0, void 0, function () {
+    var result, url, response, content, _a, user;
+    var _b, _c;
+    return __generator(this, function (_d) {
+        switch (_d.label) {
+            case 0:
+                result = {
+                    profile: null,
+                };
+                url = buildURL(username + "/");
+                return [4 /*yield*/, HTTP(url)];
+            case 1:
+                response = _d.sent();
+                content = (_b = response === null || response === void 0 ? void 0 : response.entry_data) === null || _b === void 0 ? void 0 : _b.ProfilePage;
+                if (content) {
+                    _a = __assign({}, (_c = content === null || content === void 0 ? void 0 : content[0]) === null || _c === void 0 ? void 0 : _c.graphql).user, user = _a === void 0 ? null : _a;
+                    result.profile = user;
+                }
+                else {
+                    throw new Error(NETWORK_BAN_MESSAGE);
+                }
+                return [2 /*return*/, result];
+        }
+    });
+}); };
+
+/**
+ * Get content from
+ * https://www.instagram.com/explore/locations/{cityId}/
+ *
+ * @example
+ * https://www.instagram.com/explore/locations/c2728325/
+ */
+var getPlacesByCityId = function (cityId) { return __awaiter(void 0, void 0, void 0, function () {
+    var result, url, response, content, _a, _b, city_info, _c, country_info, _d, location_list;
+    var _e;
+    return __generator(this, function (_f) {
+        switch (_f.label) {
+            case 0:
+                result = {
+                    place: {
+                        city_info: null,
+                        country_info: null,
+                        location_list: null,
+                    },
+                };
+                url = buildURL("explore/locations/" + cityId + "/");
+                return [4 /*yield*/, HTTP(url)];
+            case 1:
+                response = _f.sent();
+                content = (_e = response === null || response === void 0 ? void 0 : response.entry_data) === null || _e === void 0 ? void 0 : _e.LocationsDirectoryPage;
+                if (content) {
+                    _a = __assign({}, content === null || content === void 0 ? void 0 : content[0]), _b = _a.city_info, city_info = _b === void 0 ? null : _b, _c = _a.country_info, country_info = _c === void 0 ? null : _c, _d = _a.location_list, location_list = _d === void 0 ? null : _d;
+                    result.place.city_info = city_info;
+                    result.place.country_info = country_info;
+                    result.place.location_list = location_list;
+                }
+                else {
+                    throw new Error(NETWORK_BAN_MESSAGE);
+                }
+                return [2 /*return*/, result];
+        }
+    });
+}); };
+
+export { getCitiesByCountryId, getCountries, getMediaByLocation, getMediaByPlaceId, getMediaByPostId, getMediaByReelId, getMediaBySearchQuery, getMediaByTag, getMediaByUsername, getPlacesByCityId };
