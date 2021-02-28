@@ -2,7 +2,7 @@
 *
 * nanogram.js
 *
-* @version 3.1.0
+* @version 3.2.0
 * @author Alexey Istomin
 * @email: webistomin@gmail.com
 * @license: MIT
