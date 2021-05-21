@@ -11,9 +11,9 @@
 <h5 align="center">⭐️ Star me on GitHub — it helps!</h5>
 
 <p align="center">
-  <a href="https://travis-ci.org/webistomin/nanogram.js">
-    <img src="https://travis-ci.org/webistomin/nanogram.js.svg?branch=master"
-         alt="Travis CI">
+  <a href="https://github.com/webistomin/posthtml-link-noreferrer/actions/workflows/ci.yml">
+    <img src="https://github.com/webistomin/posthtml-link-noreferrer/actions/workflows/ci.yml/badge.svg"
+         alt="GitGub Actions">
   </a>
   <a href="https://codecov.io/gh/webistomin/nanogram.js">
     <img src="https://codecov.io/gh/webistomin/nanogram.js/branch/master/graph/badge.svg" alt="codecoverage" />
@@ -29,8 +29,8 @@
 
 <p align="center">
 <a href="https://www.npmjs.com/package/nanogram.js"><img alt="npm" src="https://img.shields.io/npm/v/nanogram.js" /></a>
-<a href="https://www.npmjs.com/package/nanogram.js"><img alt="downloads" src="https://img.shields.io/npm/dm/nanogram.js" /></a>
-  <a href="https://www.jsdelivr.com/package/npm/nanogram.js"><img alt="jsdeliver" src="https://data.jsdelivr.com/v1/package/npm/nanogram.js/badge?style=rounded" /></a>
+<a href="https://www.npmjs.com/package/nanogram.js"><img alt="downloads" src="https://img.shields.io/npm/dt/nanogram.js" /></a>
+  <a href="https://www.jsdelivr.com/package/npm/nanogram.js"><img alt="jsdeliver" src="https://img.shields.io/jsdelivr/npm/hy/nanogram.js?style=rounded" /></a>
 <a href="#contributors-"><img alt="contributors" src="https://img.shields.io/badge/all_contributors-2-orange.svg" /></a>
 </p>
 
