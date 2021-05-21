@@ -36,6 +36,3 @@ stats.html
 
 # dotenv environment variables file
 .env
-
-# Builded
-dist
