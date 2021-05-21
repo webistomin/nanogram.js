@@ -49,7 +49,7 @@
   <a href="#contributing-">Contributing</a>
 </p>
 
-## ❗ Warning
+## Warning ❗
 
 Instagram [has introduced](https://stackoverflow.com/a/66687344/13374604) a `strict-origin-when-cross-origin` policy since February 2021. So they don't allow cross-site content access anymore. For now, I am not sure how to solve this issue.
 
