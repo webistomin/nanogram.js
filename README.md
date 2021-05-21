@@ -11,7 +11,7 @@
 <h5 align="center">⭐️ Star me on GitHub — it helps!</h5>
 
 <p align="center">
-  <a href="https://github.com/webistomin/posthtml-link-noreferrer/actions/workflows/ci.yml">
+  <a href="https://github.com/webistomin/nanogram.js/actions/workflows/ci.yml">
     <img src="https://github.com/webistomin/posthtml-link-noreferrer/actions/workflows/ci.yml/badge.svg"
          alt="GitGub Actions">
   </a>
