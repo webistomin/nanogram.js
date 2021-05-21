@@ -1,1 +1,0 @@
-{"version":3,"file":"edge-media-collections.d.ts","sourceRoot":"","sources":["../../../src/types/common/edge-media-collections.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,qBAAqB;IACpC,KAAK,CAAC,EAAE,MAAM,CAAC;IACf,SAAS,CAAC,EAAE;QACV,aAAa,EAAE,OAAO,CAAC;QACvB,UAAU,EAAE,MAAM,GAAG,IAAI,CAAC;KAC3B,CAAC;IACF,KAAK,CAAC,EAAE,OAAO,EAAE,CAAC;CACnB"}

@@ -12,20 +12,16 @@
     "instagram-api"
   ],
   "main": "./dist/nanogram.cjs.js",
-  "module": "./dist/nanogram.esm.js",
-  "browser": {
-    "dist/nanogram.js": "./dist/nanogram.iife.js",
-    "dist/nanogram.esm.js": "./dist/nanogram.esm.js"
-  },
+  "module": "./dist/esm/nanogram.js",
   "unpkg": "./dist/nanogram.iife.js",
   "jsdelivr": "./dist/nanogram.iife.js",
   "typings": "./dist/nanogram.d.ts",
   "exports": {
     ".": {
-      "browser": "./dist/nanogram.esm.js",
-      "import": "./dist/nanogram.esm.js",
+      "browser": "./dist/esm/nanogram.js",
+      "import": "./dist/esm/nanogram.js",
       "require": "./dist/nanogram.cjs.js",
-      "default": "./dist/nanogram.esm.js"
+      "default": "./dist/esm/nanogram.js"
     },
     "./": "./",
     "./package.json": "./package.json"
@@ -40,7 +36,8 @@
     "build:all": "cross-env NODE_ENV=production rollup --config config/rollup.config.js",
     "build:dts": "tsc -d --declarationDir dist --declarationMap --emitDeclarationOnly",
     "build:cjs": "cross-env NODE_ENV=production rollup --config config/rollup.config.js --format cjs",
-    "build:esm": "cross-env NODE_ENV=production rollup --config config/rollup.config.js --format es",
+    "build:es": "cross-env NODE_ENV=production rollup --config config/rollup.config.js --format es",
+    "build:esm": "cross-env NODE_ENV=production rollup --config config/rollup.config.js --format esm",
     "build:iife": "cross-env NODE_ENV=production rollup --config config/rollup.config.js --format iife",
     "build:size": "run-s prebuild build check-size",
     "lint": "run-s eslint:write prettier:write",

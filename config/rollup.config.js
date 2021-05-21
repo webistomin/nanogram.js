@@ -8,7 +8,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import babel from '@rollup/plugin-babel';
 
-import { PACKAGE_JSON } from './partials/package';
 import { BROWSERS_LIST } from './partials/browsers';
 import { EXTENSIONS } from './partials/extensions';
 import { EXTERNAL } from './partials/external';
@@ -44,13 +43,40 @@ const BASE_CONFIG = {
 
 const BUILD_FORMATS = [];
 
+if (!ARGV.format || ARGV.format === 'esm') {
+  const ES_CONFIG = {
+    ...BASE_CONFIG,
+    external: EXTERNAL,
+    output: {
+      name: capitalize(LIBRARY_NAME_SHORT),
+      dir: 'dist/esm',
+      format: 'esm',
+      exports: 'named',
+      preserveModules: true,
+    },
+    plugins: [
+      ...BASE_CONFIG.plugins.common,
+      babel(BASE_CONFIG.plugins.babel),
+      resolve({
+        extensions: ['.mjs', '.js', '.json', '.node', '.ts'],
+      }),
+      commonjs({
+        include: 'node_modules/**',
+      }),
+      banner(() => BANNER),
+    ],
+  };
+
+  BUILD_FORMATS.push(ES_CONFIG);
+}
+
 if (!ARGV.format || ARGV.format === 'es') {
   const ES_CONFIG = {
     ...BASE_CONFIG,
     external: EXTERNAL,
     output: {
       name: capitalize(LIBRARY_NAME_SHORT),
-      file: PACKAGE_JSON.module,
+      file: 'dist/nanogram.es.js',
       format: 'esm',
       exports: 'named',
     },
@@ -77,7 +103,7 @@ if (!ARGV.format || ARGV.format === 'cjs') {
     output: {
       name: capitalize(LIBRARY_NAME_SHORT),
       compact: true,
-      file: PACKAGE_JSON.main,
+      file: 'dist/nanogram.cjs.js',
       format: 'cjs',
       exports: 'named',
       globals: GLOBALS,
@@ -105,7 +131,7 @@ if (!ARGV.format || ARGV.format === 'iife') {
     output: {
       compact: true,
       name: capitalize(LIBRARY_NAME_SHORT),
-      file: PACKAGE_JSON.browser['dist/nanogram.js'],
+      file: 'dist/nanogram.iife.js',
       format: 'iife',
       globals: GLOBALS,
     },
