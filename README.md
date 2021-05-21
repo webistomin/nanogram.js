@@ -1,5 +1,7 @@
 <!-- An easy-to-use and simple Instagram package allows you to fetch media content without API and access token -->
 
+---
+
 <p align="center">
   <img width="50%" src="https://raw.githubusercontent.com/webistomin/nanogram.js/260d58af351d84606a75b32160f349c9a444691d/assets/logo.svg" alt="Nanogram">
 </p>
@@ -35,6 +37,7 @@
 </p>
 
 <p align="center">
+  <a href="#warning-">Warning</a> •
   <a href="#key-features-">Key Features</a> •
   <a href="#demo-">Demo</a> •
   <a href="#documentation-">Documentation</a> •
@@ -45,6 +48,10 @@
   <a href="#license-">License</a>  •
   <a href="#contributing-">Contributing</a>
 </p>
+
+## ❗ Warning
+
+Instagram [has introduced](https://stackoverflow.com/a/66687344/13374604) a `strict-origin-when-cross-origin` policy since February 2021. So they don't allow cross-site content access anymore. For now, I am not sure how to solve this issue.
 
 ## Key Features ✨
 
