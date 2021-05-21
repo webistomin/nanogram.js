@@ -6,11 +6,11 @@ import json from '@rollup/plugin-json';
 import banner from 'rollup-plugin-banner2';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
-// import babel from '@rollup/plugin-babel';
+import babel from '@rollup/plugin-babel';
 
 import { PACKAGE_JSON } from './partials/package';
-// import { BROWSERS_LIST } from './partials/browsers';
-// import { EXTENSIONS } from './partials/extensions';
+import { BROWSERS_LIST } from './partials/browsers';
+import { EXTENSIONS } from './partials/extensions';
 import { EXTERNAL } from './partials/external';
 import { ARGV, LIBRARY_NAME_SHORT } from './partials/consts';
 import { BANNER } from './partials/banner';
@@ -19,23 +19,26 @@ import { GLOBALS } from './partials/globals';
 const BASE_CONFIG = {
   input: 'src/nanogram.ts',
   plugins: {
-    common: [
-      json(),
-      typescript(),
-      sourceMaps(),
-    ],
-    // babel: {
-    //   exclude: 'node_modules/**',
-    //   extensions: EXTENSIONS,
-    //   presets: [
-    //     [
-    //       '@babel/preset-env',
-    //       {
-    //         targets: BROWSERS_LIST,
-    //       },
-    //     ],
-    //   ],
-    // },
+    common: [json(), typescript(), sourceMaps()],
+    babel: {
+      exclude: 'node_modules/**',
+      extensions: EXTENSIONS,
+      babelHelpers: 'bundled',
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            targets: BROWSERS_LIST,
+            exclude: ['transform-async-to-generator', 'transform-regenerator', 'transform-typeof-symbol'],
+            loose: true,
+          },
+        ],
+      ],
+      plugins: [
+        ['module:fast-async', { spec: true }],
+        ['@babel/transform-for-of', { assumeArray: true }],
+      ],
+    },
   },
 };
 
@@ -53,7 +56,7 @@ if (!ARGV.format || ARGV.format === 'es') {
     },
     plugins: [
       ...BASE_CONFIG.plugins.common,
-      // babel(BASE_CONFIG.plugins.babel),
+      babel(BASE_CONFIG.plugins.babel),
       resolve({
         extensions: ['.mjs', '.js', '.json', '.node', '.ts'],
       }),
@@ -81,7 +84,7 @@ if (!ARGV.format || ARGV.format === 'cjs') {
     },
     plugins: [
       ...BASE_CONFIG.plugins.common,
-      // babel(BASE_CONFIG.plugins.babel),
+      babel(BASE_CONFIG.plugins.babel),
       resolve({
         extensions: ['.mjs', '.js', '.json', '.node', '.ts'],
       }),
@@ -108,7 +111,7 @@ if (!ARGV.format || ARGV.format === 'iife') {
     },
     plugins: [
       ...BASE_CONFIG.plugins.common,
-      // babel(BASE_CONFIG.plugins.babel),
+      babel(BASE_CONFIG.plugins.babel),
       resolve({
         extensions: ['.mjs', '.js', '.json', '.node', '.ts'],
       }),
