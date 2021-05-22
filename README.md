@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://github.com/webistomin/nanogram.js/actions/workflows/ci.yml">
-    <img src="https://github.com/webistomin/posthtml-link-noreferrer/actions/workflows/ci.yml/badge.svg"
+    <img src="https://github.com/webistomin/nanogram.js/actions/workflows/ci.yml/badge.svg"
          alt="GitGub Actions">
   </a>
   <a href="https://codecov.io/gh/webistomin/nanogram.js">
